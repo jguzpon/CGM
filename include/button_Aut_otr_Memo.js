@@ -1,0 +1,5 @@
+
+Runner.buttonEvents["Aut_otr_Memo"]=function(pageObj,proxy,pageid){pageObj.buttonNames[pageObj.buttonNames.length]='Aut_otr_Memo';if(!pageObj.buttonEventBefore['Aut_otr_Memo']){pageObj.buttonEventBefore['Aut_otr_Memo']=function(params,ctrl,pageObj,proxy,pageid,rowData,row,submit){var ajax=ctrl;var gpin=prompt("Introduzca el PIN de Autorizacion");if(gpin==""){return false;}else{if(gpin.length!=6){alert("El PIN es incorrecto, verifique");return false;}else{params["pin"]=gpin;}}}}
+if(!pageObj.buttonEventAfter['Aut_otr_Memo']){pageObj.buttonEventAfter['Aut_otr_Memo']=function(result,ctrl,pageObj,proxy,pageid,rowData,row,params){var ajax=ctrl;var sts=result["sts"];var message=result["txt"]+"!!!";if(sts=='A'){location.reload();ctrl.setMessage(message);}else if(sts=='R'){alert(message);}}}
+$('a[id="Aut_otr_Memo"]').each(function(){if($(this).closest('.gridRowAdd').length){return;}
+this.id="Aut_otr_Memo"+"_"+Runner.genId();var button_Aut_otr_Memo=new Runner.form.Button({id:this.id,btnName:"Aut_otr_Memo"});button_Aut_otr_Memo.init({args:[pageObj,proxy,pageid]});});};

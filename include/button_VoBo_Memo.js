@@ -1,0 +1,6 @@
+
+Runner.buttonEvents["VoBo_Memo"]=function(pageObj,proxy,pageid){pageObj.buttonNames[pageObj.buttonNames.length]='VoBo_Memo';if(!pageObj.buttonEventBefore['VoBo_Memo']){pageObj.buttonEventBefore['VoBo_Memo']=function(params,ctrl,pageObj,proxy,pageid,rowData,row,submit){var ajax=ctrl;var thePIN=prompt("PIN","Favor introduzca PIN");if(thePIN.length<6){params["pin"]="";alert("PIN introducido es incorrecto");return false;}else{params["pin"]=thePIN;}}}
+if(!pageObj.buttonEventAfter['VoBo_Memo']){pageObj.buttonEventAfter['VoBo_Memo']=function(result,ctrl,pageObj,proxy,pageid,rowData,row,params){var ajax=ctrl;var sts=result["sts"];if(sts!=""){var message=result["txt"]+" !!!";ctrl.setMessage(message);if(sts=='A')
+location.reload();}}}
+$('a[id="VoBo_Memo"]').each(function(){if($(this).closest('.gridRowAdd').length){return;}
+this.id="VoBo_Memo"+"_"+Runner.genId();var button_VoBo_Memo=new Runner.form.Button({id:this.id,btnName:"VoBo_Memo"});button_VoBo_Memo.init({args:[pageObj,proxy,pageid]});});};

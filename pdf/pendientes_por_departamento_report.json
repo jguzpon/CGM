@@ -1,0 +1,354 @@
+
+pdfDocument = {
+{BEGIN backgroundImage}
+	background: {
+		image: {$backgroundImage},
+		{BEGIN bgWidth}
+		imgWidth: {$bgWidth},
+		imgHeight: {$bgHeight},
+		{END bgWidth}
+	},
+{END backgroundImage}
+	styles: {
+				bodycell: {
+			fontSize:12,
+		},
+		headcell: {
+			fontSize:12,
+			bold: true
+		},
+
+	
+			},
+	defaultStyle: {
+		fontSize: 14,
+	},
+	"content": [
+		{BEGIN body}
+		{BEGIN embedded_grid}
+		{
+			text: '{$jscaption Pendientes_por_Departamento}',
+		},
+		{END embedded_grid}
+		{ 
+			{BEGIN standalone_page}
+			pageBreak: 'before',
+			{END standalone_page}
+			{BEGIN embedded_grid}
+			embeddedPage: true,
+			{END embedded_grid}
+			layout: {
+				hLineWidth: function(i, node) { return 0.1; },
+				vLineWidth: function(i, node) { 
+					if( node.table.embeddedPage ) {
+						return (i === 0 || i === node.table.widths.length) ? 0.1 : 0;
+					} else  {
+						return 0.1; 
+					}
+				},
+				hLineColor: function(i, node) { return 'gray'; },
+				vLineColor: function(i, node) { return 'gray'; },
+			},
+			table: {
+				{BEGIN embedded_grid}
+				embeddedPage: true,
+				{END embedded_grid}
+				
+				tableForm: true,
+				headerRows: 0 + 1 {BEGIN embedded_grid} -1 {END embedded_grid} ,
+
+				widths: [
+														"%",
+										"%",
+										"%",
+										"%",
+										"%",
+										"%",
+										"%",
+										"%",
+										"%",
+										"%",
+										"%",
+										"%",
+															],
+							
+				body: [
+				{BEGIN standalone_page}
+					[
+						{
+							colSpan: 12,
+							border:[false, false,false,false],
+							stack: [
+
+																										
+''
+,
+								
+																										
+{
+	table: {
+	
+				
+		location: 'above-grid',
+		
+		
+		widths: [
+								"*", 
+											"*", 
+					 ],	
+		
+	
+		body: [
+				
+					[
+												{
+	cellId: 'c1',
+	col:0,
+	row:0,
+			style: 'cell',
+		
+		
+	//	static colspan/rowspan
+		
+			
+	
+	
+			"text": [
+		
+				
+			{"text":"","hidden":"{$item_hide_export_report_excel}"},
+				
+				
+			{"text":"","hidden":"{$item_hide_export_report_word}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+  },
+
+																			{
+	cellId: 'c2',
+	col:0,
+	row:0,
+			style: 'cell',
+		
+		
+	//	static colspan/rowspan
+		
+			
+	
+	
+			"text": [
+		
+				
+			{"text":"Mostrando %first% - %last% de %total%","hidden":"{$item_hide_details_found}","isHtml":true,"page_indicator":true},
+				
+				
+			{"text":"","hidden":"{$item_hide_page_size}"},
+				
+				
+			{"text":"","hidden":"{$item_hide_print_panel}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'right',
+  },
+
+											],
+					]
+	}
+}
+,
+															]
+						},
+					],
+				{END standalone_page}
+
+																
+[	
+		{
+		text: '{$jslabel Pendientes_por_Departamento Solicitud }',
+		alignment: '{$Solicitud_align}',
+	},
+		{
+		text: '{$jslabel Pendientes_por_Departamento TipoSolicitud }',
+		alignment: '{$TipoSolicitud_align}',
+	},
+		{
+		text: '{$jslabel Pendientes_por_Departamento DepartamentoSolicitante }',
+		alignment: '{$DepartamentoSolicitante_align}',
+	},
+		{
+		text: '{$jslabel Pendientes_por_Departamento UsuarioSolicitante }',
+		alignment: '{$UsuarioSolicitante_align}',
+	},
+		{
+		text: '{$jslabel Pendientes_por_Departamento Nombre }',
+		alignment: '{$Nombre_align}',
+	},
+		{
+		text: '{$jslabel Pendientes_por_Departamento Asunto }',
+		alignment: '{$Asunto_align}',
+	},
+		{
+		text: '{$jslabel Pendientes_por_Departamento FechaSolicitud }',
+		alignment: '{$FechaSolicitud_align}',
+	},
+		{
+		text: '{$jslabel Pendientes_por_Departamento Estado }',
+		alignment: '{$Estado_align}',
+	},
+		{
+		text: '{$jslabel Pendientes_por_Departamento FechaAtencion }',
+		alignment: '{$FechaAtencion_align}',
+	},
+		{
+		text: '{$jslabel Pendientes_por_Departamento ProcesoAtencion }',
+		alignment: '{$ProcesoAtencion_align}',
+	},
+		{
+		text: '{$jslabel Pendientes_por_Departamento FechaFinal }',
+		alignment: '{$FechaFinal_align}',
+	},
+		{
+		text: '{$jslabel Pendientes_por_Departamento Observaciones }',
+		alignment: '{$Observaciones_align}',
+	},
+	],
+
+{BEGIN grid_row}
+	{BEGIN row_data}
+[	
+		{	
+		text: {$Solicitud_value},
+		alignment: '{$Solicitud_align}',
+	},
+		{	
+		text: {$TipoSolicitud_value},
+		alignment: '{$TipoSolicitud_align}',
+	},
+		{	
+		text: {$DepartamentoSolicitante_value},
+		alignment: '{$DepartamentoSolicitante_align}',
+	},
+		{	
+		text: {$UsuarioSolicitante_value},
+		alignment: '{$UsuarioSolicitante_align}',
+	},
+		{	
+		text: {$Nombre_value},
+		alignment: '{$Nombre_align}',
+	},
+		{	
+		text: {$Asunto_value},
+		alignment: '{$Asunto_align}',
+	},
+		{	
+		text: {$FechaSolicitud_value},
+		alignment: '{$FechaSolicitud_align}',
+	},
+		{	
+		text: {$Estado_value},
+		alignment: '{$Estado_align}',
+	},
+		{	
+		text: {$FechaAtencion_value},
+		alignment: '{$FechaAtencion_align}',
+	},
+		{	
+		text: {$ProcesoAtencion_value},
+		alignment: '{$ProcesoAtencion_align}',
+	},
+		{	
+		text: {$FechaFinal_value},
+		alignment: '{$FechaFinal_align}',
+	},
+		{	
+		text: {$Observaciones_value},
+		alignment: '{$Observaciones_align}',
+	},
+	],
+	{END row_data}
+{END grid_row}
+
+[
+		{	
+		text: '{$jslabel Pendientes_por_Departamento Solicitud }',
+		alignment: '{$Solicitud_align}',
+	},
+		{	
+		text: '{$jslabel Pendientes_por_Departamento TipoSolicitud }',
+		alignment: '{$TipoSolicitud_align}',
+	},
+		{	
+		text: '{$jslabel Pendientes_por_Departamento DepartamentoSolicitante }',
+		alignment: '{$DepartamentoSolicitante_align}',
+	},
+		{	
+		text: '{$jslabel Pendientes_por_Departamento UsuarioSolicitante }',
+		alignment: '{$UsuarioSolicitante_align}',
+	},
+		{	
+		text: '{$jslabel Pendientes_por_Departamento Nombre }',
+		alignment: '{$Nombre_align}',
+	},
+		{	
+		text: '{$jslabel Pendientes_por_Departamento Asunto }',
+		alignment: '{$Asunto_align}',
+	},
+		{	
+		text: '{$jslabel Pendientes_por_Departamento FechaSolicitud }',
+		alignment: '{$FechaSolicitud_align}',
+	},
+		{	
+		text: '{$jslabel Pendientes_por_Departamento Estado }',
+		alignment: '{$Estado_align}',
+	},
+		{	
+		text: '{$jslabel Pendientes_por_Departamento FechaAtencion }',
+		alignment: '{$FechaAtencion_align}',
+	},
+		{	
+		text: '{$jslabel Pendientes_por_Departamento ProcesoAtencion }',
+		alignment: '{$ProcesoAtencion_align}',
+	},
+		{	
+		text: '{$jslabel Pendientes_por_Departamento FechaFinal }',
+		alignment: '{$FechaFinal_align}',
+	},
+		{	
+		text: '{$jslabel Pendientes_por_Departamento Observaciones }',
+		alignment: '{$Observaciones_align}',
+	},
+	],
+
+
+
+
+
+
+
+
+
+
+{BEGIN global_summary}
+	[
+		{
+			text: 'Resumen global {$global_total_cnt} - Registros totales',
+			colSpan: 12,
+			style: 'globalsummary',
+		}
+	],
+
+	
+	
+	
+	
+{END global_summary}
+									]
+			
+			}
+		},
+		{END body}
+	]
+}

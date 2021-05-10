@@ -1,0 +1,2 @@
+
+Runner.pages.PageSettings.addPageEvent('tik_documento',Runner.pages.constants.PAGE_ADD,"afterPageReady",function(pageObj,proxy,pageid,inlineRow,inlineObject,row){var cusu=Runner.getControl(pageid,'Usuario');cusu.makeReadonly();;});Runner.pages.PageSettings.addPageEvent('tik_documento',Runner.pages.constants.PAGE_EDIT,"afterPageReady",function(pageObj,proxy,pageid,inlineRow,inlineObject,row){var cusu=Runner.getControl(pageid,'Usuario');cusu.makeReadonly();;});

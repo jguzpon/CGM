@@ -1,0 +1,5 @@
+
+Runner.buttonEvents["Print_Memo"]=function(pageObj,proxy,pageid){pageObj.buttonNames[pageObj.buttonNames.length]='Print_Memo';if(!pageObj.buttonEventBefore['Print_Memo']){pageObj.buttonEventBefore['Print_Memo']=function(params,ctrl,pageObj,proxy,pageid,rowData,row,submit){var ajax=ctrl;}}
+if(!pageObj.buttonEventAfter['Print_Memo']){pageObj.buttonEventAfter['Print_Memo']=function(result,ctrl,pageObj,proxy,pageid,rowData,row,params){var ajax=ctrl;var servidor=result["servidor"];var directorio=result["directorio"];var archivo=result["archivo"];if(archivo.trim()!=""){var ruta=archivo;var pagina=servidor+"descargar.php?ruta="+ruta;window.open(pagina,"_blank","toolbar=yes,scrollbars=yes,resizable=yes,left=500,width=400,height=400");}else{var message="Debe seleccionar Documento de Salida!!!";}}}
+$('a[id="Print_Memo"]').each(function(){if($(this).closest('.gridRowAdd').length){return;}
+this.id="Print_Memo"+"_"+Runner.genId();var button_Print_Memo=new Runner.form.Button({id:this.id,btnName:"Print_Memo"});button_Print_Memo.init({args:[pageObj,proxy,pageid]});});};

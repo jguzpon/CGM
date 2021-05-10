@@ -1,0 +1,1348 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+				<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{$pagetitle}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<base href="{$projectPath}">
+		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+	{BEGIN rtlCSS}
+	<link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
+	{END rtlCSS}
+	{BEGIN styleCSSFiles}
+	<link REL="stylesheet" href="{$stylepath}" type="text/css">
+	{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-print" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		{$locking}
+		<div class="r-small-page" 
+			data-body-align="left"
+			data-body-width="standard"
+		>
+							{BEGIN top_block}
+<div class="r-form" data-location="top" id="form_top_{$pageid}" data-makeup="small" {$form_top} data-pageid="{$pageid}" >		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="top_c2" data-pageid="{$pageid}"	{$cell_top_c2}
+	class=" r-ori-vert			col-md-12
+	
+">
+		 
+		<h2 data-itemtype="print_header" data-itemid="print_header" {$item_print_header} data-pageid="{$pageid}" >{$pagetitlelabel vtik_interno print}</h2>
+	 
+		{BEGIN printtabheader}
+<span data-itemtype="print_subheader" data-itemid="print_subheader" {$item_print_subheader} data-pageid="{$pageid}" >
+{$printtabheader_text}
+</span>
+{END printtabheader}
+		</div>					</div>
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="top_c4" data-pageid="{$pageid}"	{$cell_top_c4}
+	class=" r-ori-vert			col-md-12
+	
+">
+		 
+		{BEGIN mastertable_block}
+<div data-itemtype="master_info" data-itemid="master_info" {$item_master_info} data-pageid="{$pageid}">
+	{$showmasterfile}
+</div>
+{END mastertable_block}		</div>					</div>
+	</div>		
+{END top_block}
+									{BEGIN above-grid_block}
+<div class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="small" {$form_above-grid} data-pageid="{$pageid}" >		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="above-grid_c1" data-pageid="{$pageid}"	{$cell_above-grid_c1}
+	class=" r-ori-vert			col-md-12
+	
+">
+		{BEGIN firstAboveGridCell}
+		 
+		<span data-itemtype="print_pages" data-itemid="print_pages" {$item_print_pages} data-pageid="{$pageid}" data-small >
+	{$print_pages_labelprint_pages}
+</span>			{END firstAboveGridCell}	
+	</div>					</div>
+	</div>		
+{END above-grid_block}
+									{BEGIN grid_block}
+{BEGIN message_block}
+<div data-grid-message data-pageid="{$pageid}" class="alert {$message_class}" role="alert" {$grid_message_attrs}>{$message}</div>
+{END message_block}<table data-location="grid" id="form_grid_{$pageid}" data-makeup="small" {$form_grid} data-pageid="{$pageid}" class=" table {$grid_classes}  rnr-b-grid rnr-gridtable" 
+	cellpadding="0" 
+	data-body-height="15"
+>
+						<thead>
+			{BEGIN grid_header}
+					
+		 
+						<tr {$rowattrs} {$row_grid_0} class="{$rowclass} 
+									{$gridHeader_class}
+									
+								r-gridrow
+							">
+				 
+					{BEGIN cellblock_grid_headcell_field}
+	<th
+	
+	{$cell_grid_headcell_field}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_headcell_field" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	
+	</th>
+	{END cellblock_grid_headcell_field}
+				 
+					{BEGIN cellblock_grid_headcell_field15}
+	<th
+	
+	{$cell_grid_headcell_field15}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_headcell_field15" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	
+	</th>
+	{END cellblock_grid_headcell_field15}
+				 
+					{BEGIN cellblock_grid_headcell_field2}
+	<th
+	
+	{$cell_grid_headcell_field2}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_headcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	
+	</th>
+	{END cellblock_grid_headcell_field2}
+				 
+					{BEGIN cellblock_grid_headcell_field3}
+	<th
+	
+	{$cell_grid_headcell_field3}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_headcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	
+	</th>
+	{END cellblock_grid_headcell_field3}
+							</tr>
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+					
+					{END grid_header}
+			</thead>
+															{BEGIN grid_row}
+					<tbody>
+									
+		 
+					 
+						<tr {$rowattrs} {$row_grid_1} class="{$rowclass} 
+								
+								r-gridrow
+							">
+				 
+					{BEGIN cellblock_grid_cell_field19}
+	<td
+	
+	{$cell_grid_cell_field19}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$Documento_class}
+			"
+
+			data-field="Documento"
+	
+	data-cellId="grid_cell_field19" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN Documento_fieldheadercolumn}
+ 
+	<span data-itemtype="grid_field_label" data-itemid="grid_field_label" {$item_grid_field_label} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Documento">
+	{$label vtik_interno Documento }	</span>
+{END Documento_fieldheadercolumn}
+
+	
+	</td>
+	{END cellblock_grid_cell_field19}
+				 
+					{BEGIN cellblock_grid_cell_field20}
+	<td
+	
+	{$cell_grid_cell_field20}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$Documento_class}
+			"
+
+			data-field="Documento"
+	
+	data-cellId="grid_cell_field20" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN Documento_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field" {$item_grid_field} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Documento" data-default-width >
+{$Documento_value}
+</span>
+{END Documento_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field20}
+				 
+					{BEGIN cellblock_grid_cell_field21}
+	<td
+	
+	{$cell_grid_cell_field21}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_cell_field21" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_cell_field21}
+				 
+					{BEGIN cellblock_grid_cell_field22}
+	<td
+	
+	{$cell_grid_cell_field22}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_cell_field22" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_cell_field22}
+							</tr>
+					 
+						<tr {$rowattrs} {$row_grid_2} class="{$rowclass} 
+								
+								r-gridrow
+							">
+				 
+					{BEGIN cellblock_grid_cell_field13}
+	<td
+	
+	{$cell_grid_cell_field13}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$TipoSolicitud_class}
+			"
+
+			data-field="TipoSolicitud"
+	
+	data-cellId="grid_cell_field13" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN TipoSolicitud_fieldheadercolumn}
+ 
+	<span data-itemtype="grid_field_label" data-itemid="simple_grid_field29" {$item_simple_grid_field29} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="TipoSolicitud">
+	{$label vtik_interno TipoSolicitud }	</span>
+{END TipoSolicitud_fieldheadercolumn}
+
+	
+	</td>
+	{END cellblock_grid_cell_field13}
+				 
+					{BEGIN cellblock_grid_cell_field14}
+	<td
+	
+	{$cell_grid_cell_field14}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$TipoSolicitud_class}
+			"
+
+			data-field="TipoSolicitud"
+	
+	data-cellId="grid_cell_field14" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN TipoSolicitud_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="simple_grid_field14" {$item_simple_grid_field14} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="TipoSolicitud" data-default-width >
+{$TipoSolicitud_value}
+</span>
+{END TipoSolicitud_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field14}
+				 
+					{BEGIN cellblock_grid_cell_field16}
+	<td
+	
+	{$cell_grid_cell_field16}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_cell_field16" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_cell_field16}
+				 
+					{BEGIN cellblock_grid_cell_field17}
+	<td
+	
+	{$cell_grid_cell_field17}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_cell_field17" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_cell_field17}
+							</tr>
+					 
+						<tr {$rowattrs} {$row_grid_3} class="{$rowclass} 
+								
+								r-gridrow
+							">
+				 
+					{BEGIN cellblock_grid_cell_field}
+	<td
+	
+	{$cell_grid_cell_field}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$Solicitud_class}
+			"
+
+			data-field="Solicitud"
+	
+	data-cellId="grid_cell_field" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN Solicitud_fieldheadercolumn}
+ 
+	<span data-itemtype="grid_field_label" data-itemid="simple_grid_field15" {$item_simple_grid_field15} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Solicitud">
+	{$label vtik_interno Solicitud }	</span>
+{END Solicitud_fieldheadercolumn}
+
+	
+	</td>
+	{END cellblock_grid_cell_field}
+				 
+					{BEGIN cellblock_grid_cell_field15}
+	<td
+	
+	{$cell_grid_cell_field15}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$Solicitud_class}
+			"
+
+			data-field="Solicitud"
+	
+	data-cellId="grid_cell_field15" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN Solicitud_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="simple_grid_field" {$item_simple_grid_field} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Solicitud" data-default-width >
+{$Solicitud_value}
+</span>
+{END Solicitud_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field15}
+				 
+					{BEGIN cellblock_grid_cell_field2}
+	<td
+	
+	{$cell_grid_cell_field2}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_cell_field2" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_cell_field2}
+				 
+					{BEGIN cellblock_grid_cell_field3}
+	<td
+	
+	{$cell_grid_cell_field3}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_cell_field3" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_cell_field3}
+							</tr>
+					 
+						<tr {$rowattrs} {$row_grid_4} class="{$rowclass} 
+								
+								r-gridrow
+							">
+				 
+					{BEGIN cellblock_grid_cell_field84}
+	<td
+	
+	{$cell_grid_cell_field84}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$DepartamentoSolicitante_class}
+			"
+
+			data-field="DepartamentoSolicitante"
+	
+	data-cellId="grid_cell_field84" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN DepartamentoSolicitante_fieldheadercolumn}
+ 
+	<span data-itemtype="grid_field_label" data-itemid="simple_grid_field17" {$item_simple_grid_field17} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="DepartamentoSolicitante">
+	{$label vtik_interno DepartamentoSolicitante }	</span>
+{END DepartamentoSolicitante_fieldheadercolumn}
+
+	
+	</td>
+	{END cellblock_grid_cell_field84}
+				 
+					{BEGIN cellblock_grid_cell_field85}
+	<td
+	
+	{$cell_grid_cell_field85}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$DepartamentoSolicitante_class}
+			"
+
+			data-field="DepartamentoSolicitante"
+	
+	data-cellId="grid_cell_field85" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN DepartamentoSolicitante_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="simple_grid_field2" {$item_simple_grid_field2} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="DepartamentoSolicitante" data-default-width >
+{$DepartamentoSolicitante_value}
+</span>
+{END DepartamentoSolicitante_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field85}
+							</tr>
+					 
+						<tr {$rowattrs} {$row_grid_5} class="{$rowclass} 
+								
+								r-gridrow
+							">
+				 
+					{BEGIN cellblock_grid_cell_field70}
+	<td
+	
+	{$cell_grid_cell_field70}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$UsuarioSolicitante_class}
+			"
+
+			data-field="UsuarioSolicitante"
+	
+	data-cellId="grid_cell_field70" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN UsuarioSolicitante_fieldheadercolumn}
+ 
+	<span data-itemtype="grid_field_label" data-itemid="simple_grid_field18" {$item_simple_grid_field18} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="UsuarioSolicitante">
+	{$label vtik_interno UsuarioSolicitante }	</span>
+{END UsuarioSolicitante_fieldheadercolumn}
+
+	
+	</td>
+	{END cellblock_grid_cell_field70}
+				 
+					{BEGIN cellblock_grid_cell_field71}
+	<td
+	
+	{$cell_grid_cell_field71}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$UsuarioSolicitante_class}
+			"
+
+			data-field="UsuarioSolicitante"
+	
+	data-cellId="grid_cell_field71" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN UsuarioSolicitante_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="simple_grid_field3" {$item_simple_grid_field3} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="UsuarioSolicitante" data-default-width >
+{$UsuarioSolicitante_value}
+</span>
+{END UsuarioSolicitante_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field71}
+							</tr>
+					 
+						<tr {$rowattrs} {$row_grid_6} class="{$rowclass} 
+								
+								r-gridrow
+							">
+				 
+					{BEGIN cellblock_grid_cell_field56}
+	<td
+	
+	{$cell_grid_cell_field56}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$DepartamentoSolicitar_class}
+			"
+
+			data-field="DepartamentoSolicitar"
+	
+	data-cellId="grid_cell_field56" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN DepartamentoSolicitar_fieldheadercolumn}
+ 
+	<span data-itemtype="grid_field_label" data-itemid="simple_grid_field19" {$item_simple_grid_field19} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="DepartamentoSolicitar">
+	{$label vtik_interno DepartamentoSolicitar }	</span>
+{END DepartamentoSolicitar_fieldheadercolumn}
+
+	
+	</td>
+	{END cellblock_grid_cell_field56}
+				 
+					{BEGIN cellblock_grid_cell_field57}
+	<td
+	
+	{$cell_grid_cell_field57}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$DepartamentoSolicitar_class}
+			"
+
+			data-field="DepartamentoSolicitar"
+	
+	data-cellId="grid_cell_field57" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN DepartamentoSolicitar_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="simple_grid_field4" {$item_simple_grid_field4} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="DepartamentoSolicitar" data-default-width >
+{$DepartamentoSolicitar_value}
+</span>
+{END DepartamentoSolicitar_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field57}
+							</tr>
+					 
+						<tr {$rowattrs} {$row_grid_7} class="{$rowclass} 
+								
+								r-gridrow
+							">
+				 
+					{BEGIN cellblock_grid_cell_field42}
+	<td
+	
+	{$cell_grid_cell_field42}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$Asunto_class}
+			"
+
+			data-field="Asunto"
+	
+	data-cellId="grid_cell_field42" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN Asunto_fieldheadercolumn}
+ 
+	<span data-itemtype="grid_field_label" data-itemid="simple_grid_field20" {$item_simple_grid_field20} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Asunto">
+	{$label vtik_interno Asunto }	</span>
+{END Asunto_fieldheadercolumn}
+
+	
+	</td>
+	{END cellblock_grid_cell_field42}
+				 
+					{BEGIN cellblock_grid_cell_field43}
+	<td
+	
+	{$cell_grid_cell_field43}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$Asunto_class}
+			"
+
+			data-field="Asunto"
+	
+	data-cellId="grid_cell_field43" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN Asunto_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="simple_grid_field5" {$item_simple_grid_field5} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Asunto" data-default-width >
+{$Asunto_value}
+</span>
+{END Asunto_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field43}
+							</tr>
+					 
+						<tr {$rowattrs} {$row_grid_8} class="{$rowclass} 
+								
+								r-gridrow
+							">
+				 
+					{BEGIN cellblock_grid_cell_field28}
+	<td
+	
+	{$cell_grid_cell_field28}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$DescripcionAmplia_class}
+			"
+
+			data-field="DescripcionAmplia"
+	
+	data-cellId="grid_cell_field28" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN DescripcionAmplia_fieldheadercolumn}
+ 
+	<span data-itemtype="grid_field_label" data-itemid="simple_grid_field21" {$item_simple_grid_field21} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="DescripcionAmplia">
+	{$label vtik_interno DescripcionAmplia }	</span>
+{END DescripcionAmplia_fieldheadercolumn}
+
+	
+	</td>
+	{END cellblock_grid_cell_field28}
+				 
+					{BEGIN cellblock_grid_cell_field29}
+	<td
+	
+	{$cell_grid_cell_field29}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$DescripcionAmplia_class}
+			"
+
+			data-field="DescripcionAmplia"
+	
+	data-cellId="grid_cell_field29" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN DescripcionAmplia_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="simple_grid_field6" {$item_simple_grid_field6} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="DescripcionAmplia" data-default-width >
+{$DescripcionAmplia_value}
+</span>
+{END DescripcionAmplia_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field29}
+							</tr>
+					 
+						<tr {$rowattrs} {$row_grid_9} class="{$rowclass} 
+								
+								r-gridrow
+							">
+				 
+					{BEGIN cellblock_grid_cell_field154}
+	<td
+	
+	{$cell_grid_cell_field154}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$FechaSolicitud_class}
+			"
+
+			data-field="FechaSolicitud"
+	
+	data-cellId="grid_cell_field154" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN FechaSolicitud_fieldheadercolumn}
+ 
+	<span data-itemtype="grid_field_label" data-itemid="simple_grid_field22" {$item_simple_grid_field22} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="FechaSolicitud">
+	{$label vtik_interno FechaSolicitud }	</span>
+{END FechaSolicitud_fieldheadercolumn}
+
+	
+	</td>
+	{END cellblock_grid_cell_field154}
+				 
+					{BEGIN cellblock_grid_cell_field155}
+	<td
+	
+	{$cell_grid_cell_field155}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$FechaSolicitud_class}
+			"
+
+			data-field="FechaSolicitud"
+	
+	data-cellId="grid_cell_field155" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN FechaSolicitud_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="simple_grid_field7" {$item_simple_grid_field7} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="FechaSolicitud" data-default-width >
+{$FechaSolicitud_value}
+</span>
+{END FechaSolicitud_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field155}
+				 
+					{BEGIN cellblock_grid_cell_field156}
+	<td
+	
+	{$cell_grid_cell_field156}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$FechaFinal_class}
+			"
+
+			data-field="FechaFinal"
+	
+	data-cellId="grid_cell_field156" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN FechaFinal_fieldheadercolumn}
+ 
+	<span data-itemtype="grid_field_label" data-itemid="simple_grid_field25" {$item_simple_grid_field25} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="FechaFinal">
+	{$label vtik_interno FechaFinal }	</span>
+{END FechaFinal_fieldheadercolumn}
+
+	
+	</td>
+	{END cellblock_grid_cell_field156}
+				 
+					{BEGIN cellblock_grid_cell_field157}
+	<td
+	
+	{$cell_grid_cell_field157}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$FechaFinal_class}
+			"
+
+			data-field="FechaFinal"
+	
+	data-cellId="grid_cell_field157" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN FechaFinal_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="simple_grid_field10" {$item_simple_grid_field10} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="FechaFinal" data-default-width >
+{$FechaFinal_value}
+</span>
+{END FechaFinal_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field157}
+							</tr>
+					 
+						<tr {$rowattrs} {$row_grid_10} class="{$rowclass} 
+								
+								r-gridrow
+							">
+				 
+					{BEGIN cellblock_grid_cell_field140}
+	<td
+	
+	{$cell_grid_cell_field140}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$FechaInicio_class}
+			"
+
+			data-field="FechaInicio"
+	
+	data-cellId="grid_cell_field140" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN FechaInicio_fieldheadercolumn}
+ 
+	<span data-itemtype="grid_field_label" data-itemid="simple_grid_field23" {$item_simple_grid_field23} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="FechaInicio">
+	{$label vtik_interno FechaInicio }	</span>
+{END FechaInicio_fieldheadercolumn}
+
+	
+	</td>
+	{END cellblock_grid_cell_field140}
+				 
+					{BEGIN cellblock_grid_cell_field141}
+	<td
+	
+	{$cell_grid_cell_field141}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$FechaInicio_class}
+			"
+
+			data-field="FechaInicio"
+	
+	data-cellId="grid_cell_field141" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN FechaInicio_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="simple_grid_field8" {$item_simple_grid_field8} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="FechaInicio" data-default-width >
+{$FechaInicio_value}
+</span>
+{END FechaInicio_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field141}
+				 
+					{BEGIN cellblock_grid_cell_field142}
+	<td
+	
+	{$cell_grid_cell_field142}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$UsuarioInicio_class}
+			"
+
+			data-field="UsuarioInicio"
+	
+	data-cellId="grid_cell_field142" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN UsuarioInicio_fieldheadercolumn}
+ 
+	<span data-itemtype="grid_field_label" data-itemid="simple_grid_field24" {$item_simple_grid_field24} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="UsuarioInicio">
+	{$label vtik_interno UsuarioInicio }	</span>
+{END UsuarioInicio_fieldheadercolumn}
+
+	
+	</td>
+	{END cellblock_grid_cell_field142}
+				 
+					{BEGIN cellblock_grid_cell_field143}
+	<td
+	
+	{$cell_grid_cell_field143}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$UsuarioInicio_class}
+			"
+
+			data-field="UsuarioInicio"
+	
+	data-cellId="grid_cell_field143" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN UsuarioInicio_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="simple_grid_field9" {$item_simple_grid_field9} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="UsuarioInicio" data-default-width >
+{$UsuarioInicio_value}
+</span>
+{END UsuarioInicio_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field143}
+							</tr>
+					 
+						<tr {$rowattrs} {$row_grid_11} class="{$rowclass} 
+								
+								r-gridrow
+							">
+				 
+					{BEGIN cellblock_grid_cell_field112}
+	<td
+	
+	{$cell_grid_cell_field112}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$Observaciones_class}
+			"
+
+			data-field="Observaciones"
+	
+	data-cellId="grid_cell_field112" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN Observaciones_fieldheadercolumn}
+ 
+	<span data-itemtype="grid_field_label" data-itemid="simple_grid_field26" {$item_simple_grid_field26} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Observaciones">
+	{$label vtik_interno Observaciones }	</span>
+{END Observaciones_fieldheadercolumn}
+
+	
+	</td>
+	{END cellblock_grid_cell_field112}
+				 
+					{BEGIN cellblock_grid_cell_field113}
+	<td
+	
+	{$cell_grid_cell_field113}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$Observaciones_class}
+			"
+
+			data-field="Observaciones"
+	
+	data-cellId="grid_cell_field113" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN Observaciones_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="simple_grid_field11" {$item_simple_grid_field11} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Observaciones" data-default-width >
+{$Observaciones_value}
+</span>
+{END Observaciones_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field113}
+							</tr>
+					 
+						<tr {$rowattrs} {$row_grid_12} class="{$rowclass} 
+								
+								r-gridrow
+							">
+				 
+					{BEGIN cellblock_grid_cell_field102}
+	<td
+	
+	{$cell_grid_cell_field102}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$FechaAtencion_class}
+			"
+
+			data-field="FechaAtencion"
+	
+	data-cellId="grid_cell_field102" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN FechaAtencion_fieldheadercolumn}
+ 
+	<span data-itemtype="grid_field_label" data-itemid="grid_field_label1" {$item_grid_field_label1} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="FechaAtencion">
+	{$label vtik_interno FechaAtencion }	</span>
+{END FechaAtencion_fieldheadercolumn}
+
+	
+	</td>
+	{END cellblock_grid_cell_field102}
+				 
+					{BEGIN cellblock_grid_cell_field103}
+	<td
+	
+	{$cell_grid_cell_field103}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$FechaAtencion_class}
+			"
+
+			data-field="FechaAtencion"
+	
+	data-cellId="grid_cell_field103" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN FechaAtencion_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field1" {$item_grid_field1} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="FechaAtencion" data-default-width >
+{$FechaAtencion_value}
+</span>
+{END FechaAtencion_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field103}
+				 
+					{BEGIN cellblock_grid_cell_field104}
+	<td
+	
+	{$cell_grid_cell_field104}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_cell_field104" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_cell_field104}
+				 
+					{BEGIN cellblock_grid_cell_field105}
+	<td
+	
+	{$cell_grid_cell_field105}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_cell_field105" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_cell_field105}
+							</tr>
+					 
+						<tr {$rowattrs} {$row_grid_13} class="{$rowclass} 
+								
+								r-gridrow
+							">
+				 
+					{BEGIN cellblock_grid_cell_field107}
+	<td
+	
+	{$cell_grid_cell_field107}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$ProcesoAtencion_class}
+			"
+
+			data-field="ProcesoAtencion"
+	
+	data-cellId="grid_cell_field107" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN ProcesoAtencion_fieldheadercolumn}
+ 
+	<span data-itemtype="grid_field_label" data-itemid="grid_field_label2" {$item_grid_field_label2} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="ProcesoAtencion">
+	{$label vtik_interno ProcesoAtencion }	</span>
+{END ProcesoAtencion_fieldheadercolumn}
+
+	
+	</td>
+	{END cellblock_grid_cell_field107}
+				 
+					{BEGIN cellblock_grid_cell_field109}
+	<td
+	
+	{$cell_grid_cell_field109}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$ProcesoAtencion_class}
+			"
+
+			data-field="ProcesoAtencion"
+	
+	data-cellId="grid_cell_field109" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN ProcesoAtencion_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field2" {$item_grid_field2} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="ProcesoAtencion" data-default-width >
+{$ProcesoAtencion_value}
+</span>
+{END ProcesoAtencion_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field109}
+				 
+					{BEGIN cellblock_grid_cell_field110}
+	<td
+	
+	{$cell_grid_cell_field110}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_cell_field110" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_cell_field110}
+				 
+					{BEGIN cellblock_grid_cell_field111}
+	<td
+	
+	{$cell_grid_cell_field111}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_cell_field111" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_cell_field111}
+							</tr>
+					 
+						<tr {$rowattrs} {$row_grid_14} class="{$rowclass} 
+								
+								r-gridrow
+							">
+				 
+					{BEGIN cellblock_grid_cell_field98}
+	<td
+	
+	{$cell_grid_cell_field98}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$Estado_class}
+			"
+
+			data-field="Estado"
+	
+	data-cellId="grid_cell_field98" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN Estado_fieldheadercolumn}
+ 
+	<span data-itemtype="grid_field_label" data-itemid="simple_grid_field28" {$item_simple_grid_field28} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Estado">
+	{$label vtik_interno Estado }	</span>
+{END Estado_fieldheadercolumn}
+
+	
+	</td>
+	{END cellblock_grid_cell_field98}
+				 
+					{BEGIN cellblock_grid_cell_field99}
+	<td
+	
+	{$cell_grid_cell_field99}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$Estado_class}
+			"
+
+			data-field="Estado"
+	
+	data-cellId="grid_cell_field99" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN Estado_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="simple_grid_field13" {$item_simple_grid_field13} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Estado" data-default-width >
+{$Estado_value}
+</span>
+{END Estado_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field99}
+				 
+					{BEGIN cellblock_grid_cell_field100}
+	<td
+	
+	{$cell_grid_cell_field100}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_cell_field100" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_cell_field100}
+				 
+					{BEGIN cellblock_grid_cell_field101}
+	<td
+	
+	{$cell_grid_cell_field101}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_cell_field101" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_cell_field101}
+							</tr>
+					 
+						<tr {$rowattrs} {$row_grid_15} class="{$rowclass} 
+								
+							">
+				 
+					{BEGIN cellblock_grid_cell_dpreview}
+	<td
+	
+	{$cell_grid_cell_dpreview}
+	{$recordattrs}
+	class="
+					"
+
+	
+	data-cellId="grid_cell_dpreview" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN details_tik_documento}
+{$displayDetailTable_tik_documento}
+{END details_tik_documento}
+	 
+		{BEGIN details_tik_restulado}
+{$displayDetailTable_tik_restulado}
+{END details_tik_restulado}
+	
+	</td>
+	{END cellblock_grid_cell_dpreview}
+							</tr>
+					 
+					
+											</tbody>
+					{END grid_row}
+													<tfoot>
+					
+		 
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+						<tr {$rowattrs} {$row_grid_16} class="{$rowclass} 
+									{$gridFooter_class}
+									
+								r-gridrow
+							">
+				 
+					{BEGIN cellblock_grid_footcell_field}
+	<td
+	
+	{$cell_grid_footcell_field}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_footcell_field" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vtik_interno_print"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field}
+				 
+					{BEGIN cellblock_grid_footcell_field2}
+	<td
+	
+	{$cell_grid_footcell_field2}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_footcell_field2" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vtik_interno_print"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field2}
+				 
+					{BEGIN cellblock_grid_footcell_field3}
+	<td
+	
+	{$cell_grid_footcell_field3}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_footcell_field3" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vtik_interno_print"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field3}
+							</tr>
+					
+					</tfoot>
+				</table>
+{END grid_block}
+									{BEGIN below-grid_block}
+<div class="r-form" data-location="below-grid" id="form_below-grid_{$pageid}" data-makeup="small" {$form_below-grid} data-pageid="{$pageid}" >		
+	</div>		
+{END below-grid_block}
+			</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

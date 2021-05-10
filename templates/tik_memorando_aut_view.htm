@@ -1,0 +1,422 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+				<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{$pagetitle}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<base href="{$projectPath}">
+		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+	{BEGIN rtlCSS}
+	<link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
+	{END rtlCSS}
+	{BEGIN styleCSSFiles}
+	<link REL="stylesheet" href="{$stylepath}" type="text/css">
+	{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-view" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		{$locking}
+		<div class="r-small-page" 
+			data-body-align="center"
+			data-body-width="standard"
+		>
+							{BEGIN top_block}
+<div class="r-form" data-location="top" id="form_top_{$pageid}" data-makeup="small" {$form_top} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="top_c1" data-pageid="{$pageid}"	{$cell_top_c1}
+	class=" r-ori-vert			col-md-12
+	">
+	 
+		<h2 data-itemtype="view_header" data-itemid="view_header" {$item_view_header} data-pageid="{$pageid}" >{$pagetitlelabel tik_memorando_aut view}</h2>
+	</div>					</div>
+	</div>		
+{END top_block}
+									{BEGIN above-grid_block}
+<div class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="small" {$form_above-grid} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="1"
+	
+>		
+	</div>		
+{END above-grid_block}
+									{BEGIN grid_block}
+
+
+
+
+ 
+	 
+												<table 
+	data-body-align="center"
+	data-location="grid" id="form_grid_{$pageid}" data-makeup="small" {$form_grid} data-pageid="{$pageid}" 
+	class="r-edit-form" cellpadding="0" cellspacing="0" 
+	{$grid_hiddenattr} 
+		data-form-width="1"
+		
+		data-v-width="4"
+	>
+	<tbody>
+										<tr>
+										
+
+{BEGIN cellblock_grid_c3}
+<td
+	{$cell_grid_c3}
+	class=" r-ori-vert"
+	
+				data-fullwidth
+		
+			data-cellId="grid_c3" data-pageid="{$pageid}"
+		data-v-cell="4"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN NoMemorando_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_NoMemorando}  r-vertical-field" data-fieldname="NoMemorando" data-signal-error-for="NoMemorando{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field" {$item_integrated_edit_field} data-pageid="{$pageid}" data-field="NoMemorando" >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_NoMemorando}">
+		
+		{BEGIN NoMemorando_label}{$label tik_memorando_aut NoMemorando }{END NoMemorando_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$NoMemorando_value}	</div>
+
+		
+</div>
+
+
+{END NoMemorando_fieldblock}
+											
+{BEGIN Documento_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_Documento}  r-vertical-field" data-fieldname="Documento" data-signal-error-for="Documento{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field13" {$item_integrated_edit_field13} data-pageid="{$pageid}" data-field="Documento" >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_Documento}">
+		
+		{BEGIN Documento_label}{$label tik_memorando_aut Documento }{END Documento_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$Documento_value}	</div>
+
+		
+</div>
+
+
+{END Documento_fieldblock}
+											
+{BEGIN TipoDocumento_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_TipoDocumento}  r-vertical-field" data-fieldname="TipoDocumento" data-signal-error-for="TipoDocumento{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field14" {$item_integrated_edit_field14} data-pageid="{$pageid}" data-field="TipoDocumento" >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_TipoDocumento}">
+		
+		{BEGIN TipoDocumento_label}{$label tik_memorando_aut TipoDocumento }{END TipoDocumento_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$TipoDocumento_value}	</div>
+
+		
+</div>
+
+
+{END TipoDocumento_fieldblock}
+											
+{BEGIN TipoPapel_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_TipoPapel}  r-vertical-field" data-fieldname="TipoPapel" data-signal-error-for="TipoPapel{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field8" {$item_integrated_edit_field8} data-pageid="{$pageid}" data-field="TipoPapel" >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_TipoPapel}">
+		
+		{BEGIN TipoPapel_label}{$label tik_memorando_aut TipoPapel }{END TipoPapel_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$TipoPapel_value}	</div>
+
+		
+</div>
+
+
+{END TipoPapel_fieldblock}
+											
+{BEGIN Fecha_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_Fecha}  r-vertical-field" data-fieldname="Fecha" data-signal-error-for="Fecha{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field1" {$item_integrated_edit_field1} data-pageid="{$pageid}" data-field="Fecha" >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_Fecha}">
+		
+		{BEGIN Fecha_label}{$label tik_memorando_aut Fecha }{END Fecha_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$Fecha_value}	</div>
+
+		
+</div>
+
+
+{END Fecha_fieldblock}
+											
+{BEGIN De_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_De}  r-vertical-field" data-fieldname="De" data-signal-error-for="De{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field2" {$item_integrated_edit_field2} data-pageid="{$pageid}" data-field="De" >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_De}">
+		
+		{BEGIN De_label}{$label tik_memorando_aut De }{END De_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$De_value}	</div>
+
+		
+</div>
+
+
+{END De_fieldblock}
+											
+{BEGIN A_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_A}  r-vertical-field" data-fieldname="A" data-signal-error-for="A{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field3" {$item_integrated_edit_field3} data-pageid="{$pageid}" data-field="A" >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_A}">
+		
+		{BEGIN A_label}{$label tik_memorando_aut A }{END A_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$A_value}	</div>
+
+		
+</div>
+
+
+{END A_fieldblock}
+											
+{BEGIN Todos_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_Todos}  r-vertical-field" data-fieldname="Todos" data-signal-error-for="Todos{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field4" {$item_integrated_edit_field4} data-pageid="{$pageid}" data-field="Todos" >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_Todos}">
+		
+		{BEGIN Todos_label}{$label tik_memorando_aut Todos }{END Todos_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$Todos_value}	</div>
+
+		
+</div>
+
+
+{END Todos_fieldblock}
+											
+{BEGIN RequiereAutorizacion_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_RequiereAutorizacion}  r-vertical-field" data-fieldname="RequiereAutorizacion" data-signal-error-for="RequiereAutorizacion{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field16" {$item_integrated_edit_field16} data-pageid="{$pageid}" data-field="RequiereAutorizacion" >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_RequiereAutorizacion}">
+		
+		{BEGIN RequiereAutorizacion_label}{$label tik_memorando_aut RequiereAutorizacion }{END RequiereAutorizacion_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$RequiereAutorizacion_value}	</div>
+
+		
+</div>
+
+
+{END RequiereAutorizacion_fieldblock}
+											
+{BEGIN Autorizador_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_Autorizador}  r-vertical-field" data-fieldname="Autorizador" data-signal-error-for="Autorizador{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field17" {$item_integrated_edit_field17} data-pageid="{$pageid}" data-field="Autorizador" >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_Autorizador}">
+		
+		{BEGIN Autorizador_label}{$label tik_memorando_aut Autorizador }{END Autorizador_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$Autorizador_value}	</div>
+
+		
+</div>
+
+
+{END Autorizador_fieldblock}
+											
+{BEGIN Descripcion_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_Descripcion}  r-vertical-field" data-fieldname="Descripcion" data-signal-error-for="Descripcion{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field5" {$item_integrated_edit_field5} data-pageid="{$pageid}" data-field="Descripcion" >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_Descripcion}">
+		
+		{BEGIN Descripcion_label}{$label tik_memorando_aut Descripcion }{END Descripcion_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$Descripcion_value}	</div>
+
+		
+</div>
+
+
+{END Descripcion_fieldblock}
+											
+{BEGIN Texto_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_Texto}  r-vertical-field" data-fieldname="Texto" data-signal-error-for="Texto{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field6" {$item_integrated_edit_field6} data-pageid="{$pageid}" data-field="Texto" >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_Texto}">
+		
+		{BEGIN Texto_label}{$label tik_memorando_aut Texto }{END Texto_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$Texto_value}	</div>
+
+		
+</div>
+
+
+{END Texto_fieldblock}
+											
+{BEGIN Estado_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_Estado}  r-vertical-field" data-fieldname="Estado" data-signal-error-for="Estado{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field9" {$item_integrated_edit_field9} data-pageid="{$pageid}" data-field="Estado" >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_Estado}">
+		
+		{BEGIN Estado_label}{$label tik_memorando_aut Estado }{END Estado_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$Estado_value}	</div>
+
+		
+</div>
+
+
+{END Estado_fieldblock}
+											
+{BEGIN Usuario_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_Usuario}  r-vertical-field" data-fieldname="Usuario" data-signal-error-for="Usuario{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field11" {$item_integrated_edit_field11} data-pageid="{$pageid}" data-field="Usuario" >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_Usuario}">
+		
+		{BEGIN Usuario_label}{$label tik_memorando_aut Usuario }{END Usuario_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$Usuario_value}	</div>
+
+		
+</div>
+
+
+{END Usuario_fieldblock}
+											
+{BEGIN FechaHora_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_FechaHora}  r-vertical-field" data-fieldname="FechaHora" data-signal-error-for="FechaHora{$id}" data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field12" {$item_integrated_edit_field12} data-pageid="{$pageid}" data-field="FechaHora" >
+
+	
+	<label class="col-md-offset-3 col-md-6" for="{$labelfor_FechaHora}">
+		
+		{BEGIN FechaHora_label}{$label tik_memorando_aut FechaHora }{END FechaHora_label}
+	</label>
+	<div class="col-md-offset-3 col-md-6" >
+		{$FechaHora_value}	</div>
+
+		
+</div>
+
+
+{END FechaHora_fieldblock}
+	
+								</td>
+			{END cellblock_grid_c3}
+								</tr>
+			</tbody></table>
+{END grid_block}
+									{BEGIN below-grid_block}
+<div class="r-form" data-location="below-grid" id="form_below-grid_{$pageid}" data-makeup="small" {$form_below-grid} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="below-grid_c1" data-pageid="{$pageid}"	{$cell_below-grid_c1}
+	class="			col-md-6
+	">
+	 
+		{BEGIN back_button}
+<span data-itemtype="view_back_list" data-itemid="view_back_list" {$item_view_back_list} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" {$backbutton_attrs} >
+							Volver a la lista			</a>
+</span>
+{END back_button}
+	 
+		{BEGIN close_button}
+<span data-itemtype="view_close" data-itemid="view_close" {$item_view_close} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" href="#" {$closebutton_attrs} >
+							Cerrar ventana			</a>
+</span>
+{END close_button}
+	</div>			 
+				<div 
+	data-cellId="below-grid_c2" data-pageid="{$pageid}"	{$cell_below-grid_c2}
+	class="r-align-right r-ori-vert			col-md-6
+	">
+	 
+		<span data-itemtype="hamburger" data-itemid="hamburger" {$item_hamburger} data-pageid="{$pageid}" data-small data-button-item>
+</span>
+	</div>					</div>
+	</div>		
+{END below-grid_block}
+			</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

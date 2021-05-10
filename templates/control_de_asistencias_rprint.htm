@@ -1,0 +1,219 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+				<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{$pagetitle}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<base href="{$projectPath}">
+		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+	{BEGIN rtlCSS}
+	<link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
+	{END rtlCSS}
+	{BEGIN styleCSSFiles}
+	<link REL="stylesheet" href="{$stylepath}" type="text/css">
+	{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-rprint" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		{$locking}
+		<div class="r-small-page" 
+			data-body-align="left"
+			data-body-width="standard"
+		>
+							{BEGIN top_block}
+<div class="r-form" data-location="top" id="form_top_{$pageid}" data-makeup="small" {$form_top} data-pageid="{$pageid}" >		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="top_c2" data-pageid="{$pageid}"	{$cell_top_c2}
+	class=" r-ori-vert			col-md-12
+	
+">
+		 
+		<h2 data-itemtype="print_header" data-itemid="print_header" {$item_print_header} data-pageid="{$pageid}" >{$pagetitlelabel Control_de_Asistencias rprint}</h2>
+	 
+		{BEGIN printtabheader}
+<span data-itemtype="print_subheader" data-itemid="print_subheader" {$item_print_subheader} data-pageid="{$pageid}" >
+{$printtabheader_text}
+</span>
+{END printtabheader}
+		</div>					</div>
+	</div>		
+{END top_block}
+									{BEGIN above-grid_block}
+<div class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="small" {$form_above-grid} data-pageid="{$pageid}" >		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="above-grid_c1" data-pageid="{$pageid}"	{$cell_above-grid_c1}
+	class=" r-ori-vert			col-md-12
+	
+">
+		{BEGIN firstAboveGridCell}
+		 
+		<span data-itemtype="print_pages" data-itemid="print_pages" {$item_print_pages} data-pageid="{$pageid}" data-small >
+	{$print_pages_labelprint_pages}
+</span>			{END firstAboveGridCell}	
+	</div>					</div>
+	</div>		
+{END above-grid_block}
+									{BEGIN grid_block}
+<style>
+	td.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary {
+		background-color: #ffffbb;
+	}
+	td.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary {background-color: #ffe0b0;
+	}
+	.rnr-report {
+		width: 100%;
+	}
+	td {
+		padding: 2px; 4px;
+	}
+			td.group_1{
+			background-color: #90EE90;
+		}
+		td.nbgroup_1{
+			background-color: #90EE90;
+		}
+		td.header_1 {
+			background-color: #7ACA7A; 
+			font-size: 120%;
+			padding: 2px 8px;
+			font-weight: bold;
+		}
+		td.blackshade {
+		font-size: 120%;
+	}
+	.summaryrow > * {
+		border:solid #808080 1px; 
+		border-left: none; 
+		border-right: none;
+	}
+		td.blackshade {
+		border-bottom:solid #808080 1px; 
+	}
+	.grouptotalsrow + :not(.grouptotalsrow) > * {
+		border-top:solid #808080 1px; 
+	}
+	</style>
+<div id="grid_block{$id}" class="rnr-report-gridblock">
+						
+ <!-- add to settings ? -->
+
+
+<table  class="table table-striped table-bordered rnr-b-grid rnr-gridtable" cellpadding="0" >
+	<tbody>
+{BEGIN grid_row}
+		<!--  group headers -->
+			{BEGIN DepartamentoSolicitar_newgroup}
+
+		<tr class="group-spliter-1" >
+				
+			<td class="header_1" colspan="5">
+				{$label Control_de_Asistencias DepartamentoSolicitar }:&nbsp;
+										<span data-itemtype="grid_field" data-field="DepartamentoSolicitar" data-itemid="grid_field2" data-pageid={$pageid} data-record-id="{$recId}">
+{$DepartamentoSolicitar_grval}
+</span>			</td>
+		</tr>
+
+					<tr class="group-headers">
+							<td class="group_1">&nbsp;</td>
+																									<td class="blackshade {$fieldclass_TipoSolicitud}">{$label Control_de_Asistencias TipoSolicitud }</td>
+																	<td class="blackshade {$fieldclass_Descripcion}">{$label Control_de_Asistencias Descripcion }</td>
+																	<td class="blackshade {$fieldclass_Evaluacion}">{$label Control_de_Asistencias Evaluacion }</td>
+																	<td class="blackshade {$fieldclass_Valoracion}">{$label Control_de_Asistencias Valoracion }</td>
+											</tr>
+					{END DepartamentoSolicitar_newgroup}
+	
+			<!--  data-->
+		{BEGIN row_data}
+		<tr>
+							<td class="group_1">
+									&nbsp;
+								</td>
+				
+																					<td class="data {$fieldclass_TipoSolicitud}">
+								<span data-itemtype="grid_field" data-field="TipoSolicitud" data-itemid="grid_field3" data-pageid={$pageid} data-record-id="{$recId}">
+{$TipoSolicitud_value}
+</span>			</td>
+																	<td class="data {$fieldclass_Descripcion}">
+								<span data-itemtype="grid_field" data-field="Descripcion" data-itemid="grid_field4" data-pageid={$pageid} data-record-id="{$recId}">
+{$Descripcion_value}
+</span>			</td>
+																	<td class="data {$fieldclass_Evaluacion}">
+								<span data-itemtype="grid_field" data-field="Evaluacion" data-itemid="grid_field5" data-pageid={$pageid} data-record-id="{$recId}">
+{$Evaluacion_value}
+</span>			</td>
+																	<td class="data {$fieldclass_Valoracion}">
+								<span data-itemtype="grid_field" data-field="Valoracion" data-itemid="grid_field6" data-pageid={$pageid} data-record-id="{$recId}">
+{$Valoracion_value}
+</span>			</td>
+											</tr>
+		{END row_data}
+	
+	<!---  group summary-->
+					{BEGIN DepartamentoSolicitar_endgroup}
+
+		<tr class="summaryrow" >
+			
+						<td  class="group_1" colspan=5 >
+				Resumen de&nbsp;{$label Control_de_Asistencias DepartamentoSolicitar }&nbsp;{$DepartamentoSolicitar_grval}
+					- <span class="summary-1" data-type="summary">{$groupDepartamentoSolicitar_total_cnt}
+					</span> Registros totales			</td>
+					</tr>
+
+	
+	
+	
+	
+		{END DepartamentoSolicitar_endgroup}
+			
+{END grid_row}
+
+{BEGIN summary_header}
+		<tr class="summary-header">
+						<td class="blackshade {$fieldclass_DepartamentoSolicitar}">{$label Control_de_Asistencias DepartamentoSolicitar }</td>
+																								<td class="blackshade {$fieldclass_TipoSolicitud}">{$label Control_de_Asistencias TipoSolicitud }</td>
+								<td class="blackshade {$fieldclass_Descripcion}">{$label Control_de_Asistencias Descripcion }</td>
+								<td class="blackshade {$fieldclass_Evaluacion}">{$label Control_de_Asistencias Evaluacion }</td>
+								<td class="blackshade {$fieldclass_Valoracion}">{$label Control_de_Asistencias Valoracion }</td>
+					</tr>
+{END summary_header}		
+
+	
+
+
+    
+
+	<!-- global summary-->
+	{BEGIN global_summary}
+    <tr class="summaryrow summary-global">
+        <td class="globalsummary" colspan="5">
+            Resumen global {$global_total_cnt} - Registros totales        </td>
+    </tr>
+
+	
+	
+	
+		{END global_summary}
+
+	</tbody>
+</table>			</div>
+{END grid_block}									{BEGIN below-grid_block}
+<div class="r-form" data-location="below-grid" id="form_below-grid_{$pageid}" data-makeup="small" {$form_below-grid} data-pageid="{$pageid}" >		
+	</div>		
+{END below-grid_block}
+			</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

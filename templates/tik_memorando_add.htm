@@ -1,0 +1,505 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+				<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{$pagetitle}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<base href="{$projectPath}">
+		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+	{BEGIN rtlCSS}
+	<link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
+	{END rtlCSS}
+	{BEGIN styleCSSFiles}
+	<link REL="stylesheet" href="{$stylepath}" type="text/css">
+	{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-add" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		{$locking}
+		<div class="r-small-page" 
+			data-body-align="center"
+			data-body-width="standard"
+		>
+							{BEGIN top_block}
+<div class="r-form" data-location="top" id="form_top_{$pageid}" data-makeup="small" {$form_top} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="top_c1" data-pageid="{$pageid}"	{$cell_top_c1}
+	class=" r-ori-vert			col-md-12
+	">
+	 
+		<h2 data-itemtype="add_header" data-itemid="add_header" {$item_add_header} data-pageid="{$pageid}" >{$pagetitlelabel tik_memorando add}</h2>
+	</div>					</div>
+	</div>		
+{END top_block}
+									{BEGIN above-grid_block}
+<div class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="small" {$form_above-grid} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="above-grid_c1" data-pageid="{$pageid}"	{$cell_above-grid_c1}
+	class=" r-ori-vert			col-md-12
+	">
+	 
+		{BEGIN message_block}
+<div data-itemtype="add_message" data-itemid="add_message" {$item_add_message} data-pageid="{$pageid}" class="alert {$message_class}" role="alert">
+<h5>{$message}</h5>
+<div>
+{BEGIN back_button}
+		
+	<button class="btn btn-sm btn-default" {$backbutton_attrs}>Volver a la lista</button>
+	{END back_button}
+{BEGIN view_page_button}
+	<button class="btn btn-sm btn-default" {$view_page_button_attrs}>Ver</button>
+{END view_page_button}
+{BEGIN edit_page_button}
+	<button class="btn btn-sm btn-default" {$edit_page_button_attrs}>Editar</button>
+{END edit_page_button}
+</div>
+</div>
+{END message_block}	</div>					</div>
+	</div>		
+{END above-grid_block}
+									{BEGIN grid_block}
+
+
+
+
+ 
+	 
+												<table 
+	data-body-align="center"
+	data-location="grid" id="form_grid_{$pageid}" data-makeup="small" {$form_grid} data-pageid="{$pageid}" 
+	class="r-edit-form" cellpadding="0" cellspacing="0" 
+	{$grid_hiddenattr} 
+		data-form-width="1"
+		
+		data-v-width="4"
+	>
+	<tbody>
+										<tr>
+										
+
+{BEGIN cellblock_grid_c3}
+<td
+	{$cell_grid_c3}
+	class=" r-ori-vert"
+	
+				data-fullwidth
+		
+			data-cellId="grid_c3" data-pageid="{$pageid}"
+		data-v-cell="4"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN TipoDocumento_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_TipoDocumento}  r-vertical-field" 
+	data-fieldname="TipoDocumento" 
+	data-signal-error-for="TipoDocumento{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field11" {$item_integrated_edit_field11} data-pageid="{$pageid}" data-field="TipoDocumento" >
+
+
+	<label class="r-edit-label control-label" for="{$labelfor_TipoDocumento}">
+		{BEGIN TipoDocumento_label}{$label tik_memorando TipoDocumento }{END TipoDocumento_label}
+	</label>
+	<div class="r-edit-field">
+		{$TipoDocumento_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="TipoDocumento">
+		<div class="text-muted" >
+		{$tooltip tik_memorando TipoDocumento }		</div>
+	</div>
+</div>
+
+
+{END TipoDocumento_fieldblock}
+											
+{BEGIN Categoria_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_Categoria}  r-vertical-field" 
+	data-fieldname="Categoria" 
+	data-signal-error-for="Categoria{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field14" {$item_integrated_edit_field14} data-pageid="{$pageid}" data-field="Categoria" >
+
+
+	<label class="r-edit-label control-label" for="{$labelfor_Categoria}">
+		{BEGIN Categoria_label}{$label tik_memorando Categoria }{END Categoria_label}
+	</label>
+	<div class="r-edit-field">
+		{$Categoria_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="Categoria">
+		<div class="text-muted" >
+		{$tooltip tik_memorando Categoria }		</div>
+	</div>
+</div>
+
+
+{END Categoria_fieldblock}
+											
+{BEGIN TipoPapel_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_TipoPapel}  r-vertical-field" 
+	data-fieldname="TipoPapel" 
+	data-signal-error-for="TipoPapel{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field6" {$item_integrated_edit_field6} data-pageid="{$pageid}" data-field="TipoPapel" >
+
+
+	<label class="r-edit-label control-label" for="{$labelfor_TipoPapel}">
+		{BEGIN TipoPapel_label}{$label tik_memorando TipoPapel }{END TipoPapel_label}
+	</label>
+	<div class="r-edit-field">
+		{$TipoPapel_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="TipoPapel">
+		<div class="text-muted" >
+		{$tooltip tik_memorando TipoPapel }		</div>
+	</div>
+</div>
+
+
+{END TipoPapel_fieldblock}
+											
+{BEGIN Fecha_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_Fecha}  r-vertical-field" 
+	data-fieldname="Fecha" 
+	data-signal-error-for="Fecha{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field1" {$item_integrated_edit_field1} data-pageid="{$pageid}" data-field="Fecha" >
+
+
+	<label class="r-edit-label control-label" for="{$labelfor_Fecha}">
+		{BEGIN Fecha_label}{$label tik_memorando Fecha }{END Fecha_label}
+	</label>
+	<div class="r-edit-field">
+		{$Fecha_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="Fecha">
+		<div class="text-muted" >
+		{$tooltip tik_memorando Fecha }		</div>
+	</div>
+</div>
+
+
+{END Fecha_fieldblock}
+											
+{BEGIN De_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_De}  r-vertical-field" 
+	data-fieldname="De" 
+	data-signal-error-for="De{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field2" {$item_integrated_edit_field2} data-pageid="{$pageid}" data-field="De" >
+
+
+	<label class="r-edit-label control-label" for="{$labelfor_De}">
+		{BEGIN De_label}{$label tik_memorando De }{END De_label}
+	</label>
+	<div class="r-edit-field">
+		{$De_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="De">
+		<div class="text-muted" >
+		{$tooltip tik_memorando De }		</div>
+	</div>
+</div>
+
+
+{END De_fieldblock}
+											
+{BEGIN Todos_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_Todos}  r-vertical-field" 
+	data-fieldname="Todos" 
+	data-signal-error-for="Todos{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field7" {$item_integrated_edit_field7} data-pageid="{$pageid}" data-field="Todos" >
+
+
+	<label class="r-edit-label control-label" for="{$labelfor_Todos}">
+		{BEGIN Todos_label}{$label tik_memorando Todos }{END Todos_label}
+	</label>
+	<div class="r-edit-field">
+		{$Todos_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="Todos">
+		<div class="text-muted" >
+		{$tooltip tik_memorando Todos }		</div>
+	</div>
+</div>
+
+
+{END Todos_fieldblock}
+											
+{BEGIN A_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_A}  r-vertical-field" 
+	data-fieldname="A" 
+	data-signal-error-for="A{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field3" {$item_integrated_edit_field3} data-pageid="{$pageid}" data-field="A" >
+
+
+	<label class="r-edit-label control-label" for="{$labelfor_A}">
+		{BEGIN A_label}{$label tik_memorando A }{END A_label}
+	</label>
+	<div class="r-edit-field">
+		{$A_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="A">
+		<div class="text-muted" >
+		{$tooltip tik_memorando A }		</div>
+	</div>
+</div>
+
+
+{END A_fieldblock}
+											
+{BEGIN ADepartamento_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_ADepartamento}  r-vertical-field" 
+	data-fieldname="ADepartamento" 
+	data-signal-error-for="ADepartamento{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field13" {$item_integrated_edit_field13} data-pageid="{$pageid}" data-field="ADepartamento" >
+
+
+	<label class="r-edit-label control-label" for="{$labelfor_ADepartamento}">
+		{BEGIN ADepartamento_label}{$label tik_memorando ADepartamento }{END ADepartamento_label}
+	</label>
+	<div class="r-edit-field">
+		{$ADepartamento_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="ADepartamento">
+		<div class="text-muted" >
+		{$tooltip tik_memorando ADepartamento }		</div>
+	</div>
+</div>
+
+
+{END ADepartamento_fieldblock}
+											
+{BEGIN RequiereAutorizacion_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_RequiereAutorizacion}  r-vertical-field" 
+	data-fieldname="RequiereAutorizacion" 
+	data-signal-error-for="RequiereAutorizacion{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field10" {$item_integrated_edit_field10} data-pageid="{$pageid}" data-field="RequiereAutorizacion" >
+
+
+	<label class="r-edit-label control-label" for="{$labelfor_RequiereAutorizacion}">
+		{BEGIN RequiereAutorizacion_label}{$label tik_memorando RequiereAutorizacion }{END RequiereAutorizacion_label}
+	</label>
+	<div class="r-edit-field">
+		{$RequiereAutorizacion_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="RequiereAutorizacion">
+		<div class="text-muted" >
+		{$tooltip tik_memorando RequiereAutorizacion }		</div>
+	</div>
+</div>
+
+
+{END RequiereAutorizacion_fieldblock}
+											
+{BEGIN Autorizador_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_Autorizador}  r-vertical-field" 
+	data-fieldname="Autorizador" 
+	data-signal-error-for="Autorizador{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field12" {$item_integrated_edit_field12} data-pageid="{$pageid}" data-field="Autorizador" >
+
+
+	<label class="r-edit-label control-label" for="{$labelfor_Autorizador}">
+		{BEGIN Autorizador_label}{$label tik_memorando Autorizador }{END Autorizador_label}
+	</label>
+	<div class="r-edit-field">
+		{$Autorizador_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="Autorizador">
+		<div class="text-muted" >
+		{$tooltip tik_memorando Autorizador }		</div>
+	</div>
+</div>
+
+
+{END Autorizador_fieldblock}
+											
+{BEGIN Descripcion_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_Descripcion}  r-vertical-field" 
+	data-fieldname="Descripcion" 
+	data-signal-error-for="Descripcion{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field4" {$item_integrated_edit_field4} data-pageid="{$pageid}" data-field="Descripcion" >
+
+
+	<label class="r-edit-label control-label" for="{$labelfor_Descripcion}">
+		{BEGIN Descripcion_label}{$label tik_memorando Descripcion }{END Descripcion_label}
+	</label>
+	<div class="r-edit-field">
+		{$Descripcion_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="Descripcion">
+		<div class="text-muted" >
+		{$tooltip tik_memorando Descripcion }		</div>
+	</div>
+</div>
+
+
+{END Descripcion_fieldblock}
+											
+{BEGIN Texto_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_Texto}  r-vertical-field" 
+	data-fieldname="Texto" 
+	data-signal-error-for="Texto{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field5" {$item_integrated_edit_field5} data-pageid="{$pageid}" data-field="Texto" >
+
+
+	<label class="r-edit-label control-label" for="{$labelfor_Texto}">
+		{BEGIN Texto_label}{$label tik_memorando Texto }{END Texto_label}
+	</label>
+	<div class="r-edit-field">
+		{$Texto_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="Texto">
+		<div class="text-muted" >
+		{$tooltip tik_memorando Texto }		</div>
+	</div>
+</div>
+
+
+{END Texto_fieldblock}
+											
+{BEGIN Estado_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_Estado}  r-vertical-field" 
+	data-fieldname="Estado" 
+	data-signal-error-for="Estado{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field" {$item_integrated_edit_field} data-pageid="{$pageid}" data-field="Estado" >
+
+
+	<label class="r-edit-label control-label" for="{$labelfor_Estado}">
+		{BEGIN Estado_label}{$label tik_memorando Estado }{END Estado_label}
+	</label>
+	<div class="r-edit-field">
+		{$Estado_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="Estado">
+		<div class="text-muted" >
+		{$tooltip tik_memorando Estado }		</div>
+	</div>
+</div>
+
+
+{END Estado_fieldblock}
+											
+{BEGIN Usuario_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_Usuario}  r-vertical-field" 
+	data-fieldname="Usuario" 
+	data-signal-error-for="Usuario{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field8" {$item_integrated_edit_field8} data-pageid="{$pageid}" data-field="Usuario" >
+
+
+	<label class="r-edit-label control-label" for="{$labelfor_Usuario}">
+		{BEGIN Usuario_label}{$label tik_memorando Usuario }{END Usuario_label}
+	</label>
+	<div class="r-edit-field">
+		{$Usuario_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="Usuario">
+		<div class="text-muted" >
+		{$tooltip tik_memorando Usuario }		</div>
+	</div>
+</div>
+
+
+{END Usuario_fieldblock}
+											
+{BEGIN FechaHora_fieldblock}
+
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_FechaHora}  r-vertical-field" 
+	data-fieldname="FechaHora" 
+	data-signal-error-for="FechaHora{$id}" 
+	data-itemtype="integrated_edit_field" data-itemid="integrated_edit_field9" {$item_integrated_edit_field9} data-pageid="{$pageid}" data-field="FechaHora" >
+
+
+	<label class="r-edit-label control-label" for="{$labelfor_FechaHora}">
+		{BEGIN FechaHora_label}{$label tik_memorando FechaHora }{END FechaHora_label}
+	</label>
+	<div class="r-edit-field">
+		{$FechaHora_editcontrol}	</div>
+	<div class="r-edit-tooltip" data-helpfor="FechaHora">
+		<div class="text-muted" >
+		{$tooltip tik_memorando FechaHora }		</div>
+	</div>
+</div>
+
+
+{END FechaHora_fieldblock}
+	
+								</td>
+			{END cellblock_grid_c3}
+								</tr>
+			</tbody></table>
+{END grid_block}
+									{BEGIN below-grid_block}
+<div class="r-form" data-location="below-grid" id="form_below-grid_{$pageid}" data-makeup="small" {$form_below-grid} data-pageid="{$pageid}"
+		data-v-width="4"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="below-grid_c1" data-pageid="{$pageid}"	{$cell_below-grid_c1}
+	class="			col-md-12
+	">
+	 
+		<span data-itemtype="add_save" data-itemid="add_save" {$item_add_save} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-primary   
+	" {$savebutton_attrs} >
+							Guardar			</a>
+</span>
+	 
+		{BEGIN back_button}
+<span data-itemtype="add_back_list" data-itemid="add_back_list" {$item_add_back_list} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" id="backButton{$id}" >
+							Volver a la lista			</a>
+</span>
+{END back_button}
+	 
+		{BEGIN cancel_button}
+<span data-itemtype="add_cancel" data-itemid="add_cancel" {$item_add_cancel} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" id="cancelButton{$id}" >
+							Cancelar			</a>
+</span>
+{END cancel_button}
+	</div>					</div>
+	</div>		
+{END below-grid_block}
+			</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

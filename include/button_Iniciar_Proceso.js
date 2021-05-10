@@ -1,0 +1,5 @@
+
+Runner.buttonEvents["Iniciar_Proceso"]=function(pageObj,proxy,pageid){pageObj.buttonNames[pageObj.buttonNames.length]='Iniciar_Proceso';if(!pageObj.buttonEventBefore['Iniciar_Proceso']){pageObj.buttonEventBefore['Iniciar_Proceso']=function(params,ctrl,pageObj,proxy,pageid,rowData,row,submit){var ajax=ctrl;params["txt"]="Proceso";ctrl.setMessage("Solicitud Enviada...");}}
+if(!pageObj.buttonEventAfter['Iniciar_Proceso']){pageObj.buttonEventAfter['Iniciar_Proceso']=function(result,ctrl,pageObj,proxy,pageid,rowData,row,params){var ajax=ctrl;var message=result["txt"]+" !!!";ctrl.setMessage(message);location.reload();}}
+$('a[id="Iniciar_Proceso"]').each(function(){if($(this).closest('.gridRowAdd').length){return;}
+this.id="Iniciar_Proceso"+"_"+Runner.genId();var button_Iniciar_Proceso=new Runner.form.Button({id:this.id,btnName:"Iniciar_Proceso"});button_Iniciar_Proceso.init({args:[pageObj,proxy,pageid]});});};

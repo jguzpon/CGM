@@ -1,0 +1,165 @@
+
+pdfDocument = {
+{BEGIN backgroundImage}
+	background: {
+		image: {$backgroundImage},
+		{BEGIN bgWidth}
+		imgWidth: {$bgWidth},
+		imgHeight: {$bgHeight},
+		{END bgWidth}
+	},
+{END backgroundImage}
+	styles: {
+				bodycell: {
+			fontSize:12,
+		},
+		headcell: {
+			fontSize:12,
+			bold: true
+		},
+
+	
+	},
+	defaultStyle: {
+		fontSize: 14,
+	},
+	"content": [
+								
+{
+	table: {
+	
+				
+		location: 'top',
+		
+		
+		widths: [
+								"*", 
+					 ],	
+		
+	
+		body: [
+				
+					[
+												{
+	cellId: 'c1',
+	col:0,
+	row:0,
+			style: 'cell',
+		
+		
+	//	static colspan/rowspan
+		
+			
+	
+	
+			"text": [
+		
+				
+			{"text":"{$jspagetitlelabel tik_calendario export}","hidden":"{$item_hide_export_header}","fontSize":30},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+  },
+
+											],
+					]
+	}
+}
+,
+		
+				
+								
+{
+	table: {
+	
+				
+		location: 'grid',
+		
+		
+		widths: [
+								"%", 
+					 ],	
+		
+			heights: [
+								
+			"%",
+			 
+				],
+	
+		body: [
+				
+					[
+												{
+	cellId: 'c1',
+	col:0,
+	row:0,
+			style: 'cell',
+		
+		
+	//	static colspan/rowspan
+		
+			
+	
+	
+			"text": [
+		
+				
+			{"hidden":"{$item_hide_export_field}","text":{$Fecha_pdfvalue}},
+				
+				
+			{"hidden":"{$item_hide_export_field1}","text":{$Descripcion_pdfvalue}},
+				
+				
+			{"hidden":"{$item_hide_export_field2}","text":{$DescripcionAmplia_pdfvalue}},
+				
+				
+			{"hidden":"{$item_hide_export_field3}","text":{$DepartamentoSolicitar_pdfvalue}},
+				
+				
+			{"hidden":"{$item_hide_export_field14}","text":{$TipoSolicitud_pdfvalue}},
+				
+				
+			{"hidden":"{$item_hide_export_field4}","text":{$TipoActividad_pdfvalue}},
+				
+				
+			{"hidden":"{$item_hide_export_field5}","text":{$Estado_pdfvalue}},
+				
+				
+			{"hidden":"{$item_hide_export_field9}","text":{$Repetir_pdfvalue}},
+				
+				
+			{"hidden":"{$item_hide_export_field10}","text":{$TipoRepeticion_pdfvalue}},
+				
+				
+			{"hidden":"{$item_hide_export_field6}","text":{$FechaVencimiento_pdfvalue}},
+				
+				
+			{"hidden":"{$item_hide_export_field7}","text":{$UsuarioProgramador_pdfvalue}},
+				
+				
+			{"hidden":"{$item_hide_export_field8}","text":{$DepartamentoProgramador_pdfvalue}},
+				
+				
+			{"hidden":"{$item_hide_export_field11}","text":{$FechaSistema_pdfvalue}},
+				
+				
+			{"hidden":"{$item_hide_export_field12}","text":{$AgregarTicket_pdfvalue}},
+				
+				
+			{"hidden":"{$item_hide_export_field13}","text":{$Contar_pdfvalue}},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+  },
+
+											],
+					]
+	}
+}
+,
+		
+					]
+}
+  

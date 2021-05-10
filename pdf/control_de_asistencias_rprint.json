@@ -1,0 +1,345 @@
+
+pdfDocument = {
+{BEGIN backgroundImage}
+	background: {
+		image: {$backgroundImage},
+		{BEGIN bgWidth}
+		imgWidth: {$bgWidth},
+		imgHeight: {$bgHeight},
+		{END bgWidth}
+	},
+{END backgroundImage}
+	styles: {
+				bodycell: {
+			fontSize:12,
+		},
+		headcell: {
+			fontSize:12,
+			bold: true
+		},
+
+	
+						pagesummary: {
+		fillColor: '#ffffbb',
+	},
+	globalsummary: {
+		fillColor: '#ffe0b0',
+	},
+			group_1: {
+			fillColor: '#90EE90'
+		},
+		nbgroup_1: {
+			fillColor: '#90EE90'
+		},
+		header_1: {
+			fillColor: '#7ACA7A',
+			fontSize: 15,
+			bold: true
+		},
+		
+	blackshade: {
+		fontSize: 15,
+	},
+	summarycell: {
+		border:[false, true, false, true ]
+	},
+/*
+		td.blackshade {
+		border-bottom:solid #808080 1px; 
+	}
+	.grouptotalsrow + :not(.grouptotalsrow) > * {
+		border-top:solid #808080 1px; 
+	}
+	*/	
+			},
+	defaultStyle: {
+		fontSize: 14,
+	},
+	"content": [
+		{BEGIN body}
+		{BEGIN embedded_grid}
+		{
+			text: '{$jscaption Control_de_Asistencias}',
+		},
+		{END embedded_grid}
+		{ 
+			{BEGIN standalone_page}
+			pageBreak: 'before',
+			{END standalone_page}
+			{BEGIN embedded_grid}
+			embeddedPage: true,
+			{END embedded_grid}
+			layout: {
+				hLineWidth: function(i, node) { return 0.1; },
+				vLineWidth: function(i, node) { 
+					if( node.table.embeddedPage ) {
+						return (i === 0 || i === node.table.widths.length) ? 0.1 : 0;
+					} else  {
+						return 0.1; 
+					}
+				},
+				hLineColor: function(i, node) { return 'gray'; },
+				vLineColor: function(i, node) { return 'gray'; },
+			},
+			table: {
+				{BEGIN embedded_grid}
+				embeddedPage: true,
+				{END embedded_grid}
+				
+				tableForm: true,
+				headerRows: 0 + 1 {BEGIN embedded_grid} -1 {END embedded_grid} ,
+
+				widths: [
+														"%",
+										"%",
+										"%",
+										"%",
+										"%",
+															],
+							
+				body: [
+				{BEGIN standalone_page}
+					[
+						{
+							colSpan: 5,
+							border:[false, false,false,false],
+							stack: [
+
+																										
+{
+	table: {
+	
+				
+		location: 'top',
+		
+		
+		widths: [
+								"*", 
+					 ],	
+		
+	
+		body: [
+				
+					[
+												{
+	cellId: 'c2',
+	col:0,
+	row:0,
+			style: 'cell',
+		
+		
+	//	static colspan/rowspan
+		
+			
+	
+	
+			"stack": [
+		
+				
+			{"text":"{$jspagetitlelabel Control_de_Asistencias rprint}","hidden":"{$item_hide_print_header}","fontSize":30},
+				
+				
+			{"text":"{$printtabheader_text}","hidden":"{$item_hide_print_subheader}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+  },
+
+											],
+					]
+	}
+}
+,
+								
+																										
+{
+	table: {
+	
+				
+		location: 'above-grid',
+		
+		
+		widths: [
+								"*", 
+					 ],	
+		
+	
+		body: [
+				
+					[
+												{
+	cellId: 'c1',
+	col:0,
+	row:0,
+			style: 'cell',
+		
+		
+	//	static colspan/rowspan
+		
+			
+	
+	
+			"text": [
+		
+				
+			{"text":"Página %current% / %total%","hidden":"{$item_hide_print_pages}","isHtml":true,"page_indicator":true},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+  },
+
+											],
+					]
+	}
+}
+,
+															]
+						},
+					],
+				{END standalone_page}
+
+																
+
+
+{BEGIN grid_row}
+			{BEGIN DepartamentoSolicitar_newgroup}
+		[
+						{
+				colSpan: 5,
+				text: ['{$jslabel Control_de_Asistencias DepartamentoSolicitar } ', {$DepartamentoSolicitar_grval}],
+				style: 'header_1',
+			}
+		],
+
+				[
+								{
+					text: [''],
+					style: 'group_1',
+				},
+																											{
+						text: '{$jslabel Control_de_Asistencias TipoSolicitud }',
+						style: 'blackshade'
+					},
+																			{
+						text: '{$jslabel Control_de_Asistencias Descripcion }',
+						style: 'blackshade'
+					},
+																			{
+						text: '{$jslabel Control_de_Asistencias Evaluacion }',
+						style: 'blackshade'
+					},
+																			{
+						text: '{$jslabel Control_de_Asistencias Valoracion }',
+						style: 'blackshade'
+					},
+											],
+				{END DepartamentoSolicitar_newgroup}
+	
+			{BEGIN row_data}
+		[
+						{
+							text: '',
+							style: 'group_1',
+			},
+			
+																		{
+					text: {$TipoSolicitud_value},
+					alignment: '{$TipoSolicitud_align}',
+				},
+															{
+					text: {$Descripcion_value},
+					alignment: '{$Descripcion_align}',
+				},
+															{
+					text: {$Evaluacion_value},
+					alignment: '{$Evaluacion_align}',
+				},
+															{
+					text: {$Valoracion_value},
+					alignment: '{$Valoracion_align}',
+				},
+									],
+		{END row_data}
+	
+					{BEGIN DepartamentoSolicitar_endgroup}
+
+				[
+			
+						{
+				colSpan:5,
+				text: ['Resumen de {$jslabel Control_de_Asistencias DepartamentoSolicitar } ', 
+					{$DepartamentoSolicitar_grval},
+					' - ', 
+					{$groupDepartamentoSolicitar_total_cnt}, 
+					' Registros totales'],
+				style: 'group_1',
+			},
+					],
+			
+		
+		
+		
+		
+		{END DepartamentoSolicitar_endgroup}
+			
+{END grid_row}
+
+		[
+								{
+				text: '{$jslabel Control_de_Asistencias DepartamentoSolicitar }',
+				style: 'blackshade'
+			},
+																																						{
+				text: '{$jslabel Control_de_Asistencias TipoSolicitud }',
+				alignment: '{$TipoSolicitud_align}',
+				style: 'blackshade'
+			},
+											{
+				text: '{$jslabel Control_de_Asistencias Descripcion }',
+				alignment: '{$Descripcion_align}',
+				style: 'blackshade'
+			},
+											{
+				text: '{$jslabel Control_de_Asistencias Evaluacion }',
+				alignment: '{$Evaluacion_align}',
+				style: 'blackshade'
+			},
+											{
+				text: '{$jslabel Control_de_Asistencias Valoracion }',
+				alignment: '{$Valoracion_align}',
+				style: 'blackshade'
+			},
+							],
+
+
+
+
+
+
+
+
+
+
+{BEGIN global_summary}
+	[
+		{
+			text: 'Resumen global {$global_total_cnt} - Registros totales',
+			colSpan: 5,
+			style: 'globalsummary',
+		}
+	],
+
+	
+	
+	
+	
+{END global_summary}
+									]
+			
+			}
+		},
+		{END body}
+	]
+}

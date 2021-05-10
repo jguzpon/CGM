@@ -1,0 +1,233 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+				<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{$pagetitle}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<base href="{$projectPath}">
+		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+	{BEGIN rtlCSS}
+	<link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
+	{END rtlCSS}
+	{BEGIN styleCSSFiles}
+	<link REL="stylesheet" href="{$stylepath}" type="text/css">
+	{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-rprint" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		{$locking}
+		<div class="r-small-page" 
+			data-body-align="left"
+			data-body-width="standard"
+		>
+							{BEGIN top_block}
+<div class="r-form" data-location="top" id="form_top_{$pageid}" data-makeup="small" {$form_top} data-pageid="{$pageid}" >		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="top_c1" data-pageid="{$pageid}"	{$cell_top_c1}
+	class=" r-ori-vert			col-md-12
+	
+">
+		 
+		{BEGIN pdflink_block}
+<span data-itemtype="print_pdf" data-itemid="print_pdf" {$item_print_pdf} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	pdflink" data-pdfpage="rprint" 
+data-scope="0" 
+data-split="0" 
+data-records="10" 
+data-orientation="portrait" 
+data-scale="100" 
+data-filename="Pendientes por Departamento.pdf" 
+data-pagetype="rprint" 
+{$pdflink_attrs} >
+							Vista PDF			</a>
+</span>
+{END pdflink_block}
+		</div>					</div>
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="top_c2" data-pageid="{$pageid}"	{$cell_top_c2}
+	class=" r-ori-vert			col-md-12
+	
+">
+		 
+		<h2 data-itemtype="print_header" data-itemid="print_header" {$item_print_header} data-pageid="{$pageid}" >{$pagetitlelabel Pendientes_por_Departamento rprint}</h2>
+	 
+		{BEGIN printtabheader}
+<span data-itemtype="print_subheader" data-itemid="print_subheader" {$item_print_subheader} data-pageid="{$pageid}" >
+{$printtabheader_text}
+</span>
+{END printtabheader}
+		</div>					</div>
+	</div>		
+{END top_block}
+									{BEGIN above-grid_block}
+<div class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="small" {$form_above-grid} data-pageid="{$pageid}" >		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="above-grid_c1" data-pageid="{$pageid}"	{$cell_above-grid_c1}
+	class=" r-ori-vert			col-md-12
+	
+">
+		{BEGIN firstAboveGridCell}
+		 
+		<span data-itemtype="print_pages" data-itemid="print_pages" {$item_print_pages} data-pageid="{$pageid}" data-small >
+	{$print_pages_labelprint_pages}
+</span>			{END firstAboveGridCell}	
+	</div>					</div>
+	</div>		
+{END above-grid_block}
+									{BEGIN grid_block}
+<style>
+	td.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary {
+		background-color: #ffffbb;
+	}
+	td.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary {background-color: #ffe0b0;
+	}
+</style>
+<div id="grid_block{$id}" class="rnr-report-gridblock">
+			<!-- 0 group fields -->
+
+ <!-- add to settings ? -->
+<table class="table table-striped table-bordered rnr-b-grid rnr-gridtable" cellpadding="0" data-location="grid" id="form_grid_{$pageid}" data-makeup="small" {$form_grid} data-pageid="{$pageid}" >
+	<thead>
+		{BEGIN grid_header}
+		<tr class="rnr-toprow table-header style1">
+					<th class="{$fieldclass_Solicitud}"> {$label Pendientes_por_Departamento Solicitud }</th>
+					<th class="{$fieldclass_TipoSolicitud}"> {$label Pendientes_por_Departamento TipoSolicitud }</th>
+					<th class="{$fieldclass_DepartamentoSolicitar}"> {$label Pendientes_por_Departamento DepartamentoSolicitar }</th>
+					<th class="{$fieldclass_UsuarioSolicitante}"> {$label Pendientes_por_Departamento UsuarioSolicitante }</th>
+					<th class="{$fieldclass_Nombre}"> {$label Pendientes_por_Departamento Nombre }</th>
+					<th class="{$fieldclass_Asunto}"> {$label Pendientes_por_Departamento Asunto }</th>
+					<th class="{$fieldclass_FechaSolicitud}"> {$label Pendientes_por_Departamento FechaSolicitud }</th>
+					<th class="{$fieldclass_Estado}"> {$label Pendientes_por_Departamento Estado }</th>
+					<th class="{$fieldclass_FechaAtencion}"> {$label Pendientes_por_Departamento FechaAtencion }</th>
+					<th class="{$fieldclass_ProcesoAtencion}"> {$label Pendientes_por_Departamento ProcesoAtencion }</th>
+					<th class="{$fieldclass_FechaFinal}"> {$label Pendientes_por_Departamento FechaFinal }</th>
+					<th class="{$fieldclass_Observaciones}"> {$label Pendientes_por_Departamento Observaciones }</th>
+				</tr>
+		{END grid_header}
+	</thead>
+	<tbody>
+{BEGIN grid_row}
+	{BEGIN row_data}
+		<tr class="rnr-row style1" {$rowattrs}>
+			
+			<td {$recordattrs} class="{$fieldclass_Solicitud}">
+						<span data-itemtype="grid_field" data-field="Solicitud" data-itemid="grid_field2" data-pageid={$pageid} data-record-id="{$recId}">
+{$Solicitud_value}
+</span>			</td>
+			
+			<td {$recordattrs} class="{$fieldclass_TipoSolicitud}">
+						<span data-itemtype="grid_field" data-field="TipoSolicitud" data-itemid="grid_field3" data-pageid={$pageid} data-record-id="{$recId}">
+{$TipoSolicitud_value}
+</span>			</td>
+			
+			<td {$recordattrs} class="{$fieldclass_DepartamentoSolicitar}">
+						<span data-itemtype="grid_field" data-field="DepartamentoSolicitar" data-itemid="grid_field4" data-pageid={$pageid} data-record-id="{$recId}">
+{$DepartamentoSolicitar_value}
+</span>			</td>
+			
+			<td {$recordattrs} class="{$fieldclass_UsuarioSolicitante}">
+						<span data-itemtype="grid_field" data-field="UsuarioSolicitante" data-itemid="grid_field5" data-pageid={$pageid} data-record-id="{$recId}">
+{$UsuarioSolicitante_value}
+</span>			</td>
+			
+			<td {$recordattrs} class="{$fieldclass_Nombre}">
+						<span data-itemtype="grid_field" data-field="Nombre" data-itemid="grid_field6" data-pageid={$pageid} data-record-id="{$recId}">
+{$Nombre_value}
+</span>			</td>
+			
+			<td {$recordattrs} class="{$fieldclass_Asunto}">
+						<span data-itemtype="grid_field" data-field="Asunto" data-itemid="grid_field7" data-pageid={$pageid} data-record-id="{$recId}">
+{$Asunto_value}
+</span>			</td>
+			
+			<td {$recordattrs} class="{$fieldclass_FechaSolicitud}">
+						<span data-itemtype="grid_field" data-field="FechaSolicitud" data-itemid="grid_field8" data-pageid={$pageid} data-record-id="{$recId}">
+{$FechaSolicitud_value}
+</span>			</td>
+			
+			<td {$recordattrs} class="{$fieldclass_Estado}">
+						<span data-itemtype="grid_field" data-field="Estado" data-itemid="grid_field9" data-pageid={$pageid} data-record-id="{$recId}">
+{$Estado_value}
+</span>			</td>
+			
+			<td {$recordattrs} class="{$fieldclass_FechaAtencion}">
+						<span data-itemtype="grid_field" data-field="FechaAtencion" data-itemid="grid_field10" data-pageid={$pageid} data-record-id="{$recId}">
+{$FechaAtencion_value}
+</span>			</td>
+			
+			<td {$recordattrs} class="{$fieldclass_ProcesoAtencion}">
+						<span data-itemtype="grid_field" data-field="ProcesoAtencion" data-itemid="grid_field11" data-pageid={$pageid} data-record-id="{$recId}">
+{$ProcesoAtencion_value}
+</span>			</td>
+			
+			<td {$recordattrs} class="{$fieldclass_FechaFinal}">
+						<span data-itemtype="grid_field" data-field="FechaFinal" data-itemid="grid_field12" data-pageid={$pageid} data-record-id="{$recId}">
+{$FechaFinal_value}
+</span>			</td>
+			
+			<td {$recordattrs} class="{$fieldclass_Observaciones}">
+						<span data-itemtype="grid_field" data-field="Observaciones" data-itemid="grid_field13" data-pageid={$pageid} data-record-id="{$recId}">
+{$Observaciones_value}
+</span>			</td>
+				</tr>
+	{END row_data}
+{END grid_row}
+
+		{BEGIN summary_header}
+		<tr class="rnr-toprow summary-header style1">
+					<td class="{$fieldclass_Solicitud}">{$label Pendientes_por_Departamento Solicitud }</td>
+					<td class="{$fieldclass_TipoSolicitud}">{$label Pendientes_por_Departamento TipoSolicitud }</td>
+					<td class="{$fieldclass_DepartamentoSolicitar}">{$label Pendientes_por_Departamento DepartamentoSolicitar }</td>
+					<td class="{$fieldclass_UsuarioSolicitante}">{$label Pendientes_por_Departamento UsuarioSolicitante }</td>
+					<td class="{$fieldclass_Nombre}">{$label Pendientes_por_Departamento Nombre }</td>
+					<td class="{$fieldclass_Asunto}">{$label Pendientes_por_Departamento Asunto }</td>
+					<td class="{$fieldclass_FechaSolicitud}">{$label Pendientes_por_Departamento FechaSolicitud }</td>
+					<td class="{$fieldclass_Estado}">{$label Pendientes_por_Departamento Estado }</td>
+					<td class="{$fieldclass_FechaAtencion}">{$label Pendientes_por_Departamento FechaAtencion }</td>
+					<td class="{$fieldclass_ProcesoAtencion}">{$label Pendientes_por_Departamento ProcesoAtencion }</td>
+					<td class="{$fieldclass_FechaFinal}">{$label Pendientes_por_Departamento FechaFinal }</td>
+					<td class="{$fieldclass_Observaciones}">{$label Pendientes_por_Departamento Observaciones }</td>
+				</tr>
+	{END summary_header}	
+	
+
+	
+	<!-- global summary-->
+	{BEGIN global_summary}
+		<tr class="rnr-row summary-global style1">
+			<td class="globalsummary rnr-edge" colspan="12">Resumen global 
+			 {$global_total_cnt} - Registros totales</td>
+		</tr>
+
+		
+		
+		
+			{END global_summary}
+
+	</tbody>
+</table>	</div>
+{END grid_block}									{BEGIN below-grid_block}
+<div class="r-form" data-location="below-grid" id="form_below-grid_{$pageid}" data-makeup="small" {$form_below-grid} data-pageid="{$pageid}" >		
+	</div>		
+{END below-grid_block}
+			</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

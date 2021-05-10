@@ -1,0 +1,963 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+				<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{$pagetitle}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<base href="{$projectPath}">
+		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+	{BEGIN rtlCSS}
+	<link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
+	{END rtlCSS}
+	{BEGIN styleCSSFiles}
+	<link REL="stylesheet" href="{$stylepath}" type="text/css">
+	{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-report" {$bodyattrs}>
+	{BEGIN body}
+		<style>
+		{$containerCss}
+		</style>
+		<div class="r-vbar-page">
+			<div data-width="" data-fixed class="r-left clearfix {$leftbar_class}" >
+								<div data-location="left" id="form_left_{$pageid}" data-makeup="leftbar" {$form_left} data-pageid="{$pageid}">
+{BEGIN left_block}
+ 
+     
+         
+
+			<div data-cellId="left_c0" data-pageid="{$pageid}" data-logo-cell class="clearfix " data-itemid="logo" {$item_logo}>
+				{BEGIN logo_block}
+	<A data-itemtype="logo" data-itemid="logo" {$item_logo} data-pageid="{$pageid}" class="navbar-brand" href="{$home_link}" data-pageid="{$pageid}" {$logo_hiddenattr}>
+		{$logo}
+	</A>
+{END logo_block}
+				<button data-pageid="1" type="button" class="navbar-toggle collapsed" data-runner-toggle="collapse" data-target="[data-mobile-controlled]">	
+					<span class="sr-only">Toggle navigation</span>	
+					<span class="icon-bar"></span>					
+				</button>				
+			</div>
+		
+ 
+
+			<div class="clearfix " data-cellId="left_c0" data-pageid="{$pageid}" data-logo-cell data-itemid="expand_button" {$item_expand_button} data-topcell-item-type="expand_button" >
+				<span data-itemtype="expand_button" data-itemid="expand_button" {$item_expand_button} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="Expand" class="btn btn-link   
+	" href="#" >
+					<span class="glyphicon glyphicon-triangle-right"></span>
+										</a>
+</span>
+			</div>
+		
+     
+     
+         
+
+			<div data-cellId="left_c1" data-pageid="{$pageid}" class="clearfix  r-ori-vert " data-itemtype="menu" data-itemid="menu" {$item_menu} data-pageid="{$pageid}">
+				{$menu main}			</div>
+		
+ 
+
+			<div class="clearfix  r-ori-vert" data-cellId="left_c1" data-pageid="{$pageid}" data-itemid="search_panel" {$item_search_panel} data-topcell-item-type="search_panel" >
+				<!-- Begin Search panel content -->
+<div class="searchOptions panel panel-primary searchPanelContainer " {$srchOpt_attrs} data-itemtype="search_panel" data-itemid="search_panel" {$item_search_panel} data-pageid="{$pageid}" >
+
+	<div class="panel-heading">
+		<div class="btn-group" id="addSearchFieldButton{$id}">
+			<button id="showHideControlChooseMenu{$id}" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			Búsqueda			<span class="caret"></span>
+			</button>
+		</div>
+
+
+		<div class="btn-group searchpanel-options" id="searchPanelOptions{$id}">
+			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<span class="glyphicon glyphicon glyphicon-option-vertical"></span>
+			</button>
+			<ul class="dropdown-menu dropdown-left">
+				<li id="showHideSearchType{$id}" {$showHideCtrlsOpt_attrs}><a>Mostrar opciones</a></li>
+				<li role="separator" class="divider"></li>
+				<li class="srchCritTop" style="display: none;"><a><input type="radio" name="srchType{$id}" id="radioAll" {$all_checkbox}><label for="radioAll"><span class="glyphicon">&nbsp;</span>todas las condiciones</label></a></li>
+				<li class="srchCritTop" style="display: none;"><a><input type="radio" name="srchType{$id}" id="radioAny" {$any_checkbox}><label for="radioAny"><span class="glyphicon">&nbsp;</span>cualquier condición</label></a></li>
+				<li role="separator" class="divider"></li>
+				<li><a class="close-button"><span class="glyphicon glyphicon-remove">&nbsp;</span>esconder</a></li>
+			</ul>
+		</div>
+
+
+		</div>
+	<div class="panel-body controlsBlock" {$bottomSearchButt_attrs} >
+
+
+		
+		{BEGIN searchCtrlBlock}
+		<div class="srchPanelRow form-group" {$filterRow_attrs}>
+			<label>{$fLabel}</label>	{$delCtrlButt}
+				<span class="rnr-searchtype">{$searchtype}</span>
+				<span class="rnr-searchcontrol">{$searchcontrol}</span>
+				<span class="rnr-searchcontrol">{$searchcontrol1}</span>
+		</div>
+		{END searchCtrlBlock}
+																		{BEGIN searchCtrlBlock_Asunto}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_Asunto}" {$filterRow_attrs_Asunto}>
+			<label>{$label Pendientes_por_Departamento Asunto }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_Asunto}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_Asunto}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_Asunto}</span>
+						</div>
+		{END searchCtrlBlock_Asunto}
+																{BEGIN searchCtrlBlock_Observaciones}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_Observaciones}" {$filterRow_attrs_Observaciones}>
+			<label>{$label Pendientes_por_Departamento Observaciones }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_Observaciones}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_Observaciones}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_Observaciones}</span>
+						</div>
+		{END searchCtrlBlock_Observaciones}
+																{BEGIN searchCtrlBlock_FechaFinal}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_FechaFinal}" {$filterRow_attrs_FechaFinal}>
+			<label>{$label Pendientes_por_Departamento FechaFinal }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_FechaFinal}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_FechaFinal}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_FechaFinal}</span>
+						</div>
+		{END searchCtrlBlock_FechaFinal}
+																{BEGIN searchCtrlBlock_ProcesoAtencion}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_ProcesoAtencion}" {$filterRow_attrs_ProcesoAtencion}>
+			<label>{$label Pendientes_por_Departamento ProcesoAtencion }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_ProcesoAtencion}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_ProcesoAtencion}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_ProcesoAtencion}</span>
+						</div>
+		{END searchCtrlBlock_ProcesoAtencion}
+																{BEGIN searchCtrlBlock_FechaAtencion}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_FechaAtencion}" {$filterRow_attrs_FechaAtencion}>
+			<label>{$label Pendientes_por_Departamento FechaAtencion }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_FechaAtencion}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_FechaAtencion}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_FechaAtencion}</span>
+						</div>
+		{END searchCtrlBlock_FechaAtencion}
+																{BEGIN searchCtrlBlock_DepartamentoSolicitar}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_DepartamentoSolicitar}" {$filterRow_attrs_DepartamentoSolicitar}>
+			<label>{$label Pendientes_por_Departamento DepartamentoSolicitar }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_DepartamentoSolicitar}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_DepartamentoSolicitar}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_DepartamentoSolicitar}</span>
+						</div>
+		{END searchCtrlBlock_DepartamentoSolicitar}
+																{BEGIN searchCtrlBlock_Nombre}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_Nombre}" {$filterRow_attrs_Nombre}>
+			<label>{$label Pendientes_por_Departamento Nombre }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_Nombre}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_Nombre}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_Nombre}</span>
+						</div>
+		{END searchCtrlBlock_Nombre}
+																{BEGIN searchCtrlBlock_UsuarioSolicitante}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_UsuarioSolicitante}" {$filterRow_attrs_UsuarioSolicitante}>
+			<label>{$label Pendientes_por_Departamento UsuarioSolicitante }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_UsuarioSolicitante}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_UsuarioSolicitante}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_UsuarioSolicitante}</span>
+						</div>
+		{END searchCtrlBlock_UsuarioSolicitante}
+																{BEGIN searchCtrlBlock_TipoSolicitud}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_TipoSolicitud}" {$filterRow_attrs_TipoSolicitud}>
+			<label>{$label Pendientes_por_Departamento TipoSolicitud }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_TipoSolicitud}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_TipoSolicitud}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_TipoSolicitud}</span>
+						</div>
+		{END searchCtrlBlock_TipoSolicitud}
+																{BEGIN searchCtrlBlock_Solicitud}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_Solicitud}" {$filterRow_attrs_Solicitud}>
+			<label>{$label Pendientes_por_Departamento Solicitud }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_Solicitud}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_Solicitud}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_Solicitud}</span>
+						</div>
+		{END searchCtrlBlock_Solicitud}
+																{BEGIN searchCtrlBlock_FechaSolicitud}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_FechaSolicitud}" {$filterRow_attrs_FechaSolicitud}>
+			<label>{$label Pendientes_por_Departamento FechaSolicitud }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_FechaSolicitud}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_FechaSolicitud}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_FechaSolicitud}</span>
+						</div>
+		{END searchCtrlBlock_FechaSolicitud}
+																{BEGIN searchCtrlBlock_Estado}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_Estado}" {$filterRow_attrs_Estado}>
+			<label>{$label Pendientes_por_Departamento Estado }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_Estado}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_Estado}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_Estado}</span>
+						</div>
+		{END searchCtrlBlock_Estado}
+																{BEGIN searchCtrlBlock_DepartamentoSolicitante}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_DepartamentoSolicitante}" {$filterRow_attrs_DepartamentoSolicitante}>
+			<label>{$label Pendientes_por_Departamento DepartamentoSolicitante }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_DepartamentoSolicitante}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_DepartamentoSolicitante}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_DepartamentoSolicitante}</span>
+						</div>
+		{END searchCtrlBlock_DepartamentoSolicitante}
+		
+
+	</div>
+
+	<div class="panel-footer bottomSearchButt" {$bottomSearchButt_attrs}>
+		<button class="btn btn-primary" id="searchButton{$id}" {$searchbutton_attrs}>Buscar</button>
+		<button class="btn btn-default" {$showAllCont_attrs} {$showallbutton_attrs}>Mostrar todo</button>
+	</div>
+</div>
+<!-- End Search panel content -->
+			</div>
+		
+ 
+
+			<div class="clearfix  r-ori-vert" data-cellId="left_c1" data-pageid="{$pageid}" data-itemid="filter_panel" {$item_filter_panel} data-topcell-item-type="filter_panel" >
+				<div data-itemtype="filter_panel" data-itemid="filter_panel" {$item_filter_panel} data-pageid="{$pageid}">
+<!--
+	<button type="button" class="btn btn-info bs-togglebutton bottom-margin collapsed" data-runner-toggle="collapse" data-target=".filterPanelContainer">	
+		<span class="glyphicon glyphicon-filter"><span> Filter	
+	</button>
+-->	
+	<div class="filterPanelContainer {$filterPanelStateClass}">
+
+
+
+			
+	 	
+
+		
+		 
+		 
+
+		 	
+
+		{BEGIN filter_control_TipoSolicitud}
+		<div class="panel panel-info filter-field filter-TipoSolicitud-container">
+			<div class="panel-heading filter-expander">
+																	<span class="filter-indicator glyphicon glyphicon-triangle-bottom"></span>	
+
+			
+				<label>{$label Pendientes_por_Departamento TipoSolicitud }</label>
+
+				{BEGIN clearLink_TipoSolicitud}
+				<a href="#" class="filter-clear filter-clear-TipoSolicitud">borrar</a>
+				{END clearLink_TipoSolicitud}				
+			</div>
+
+			<ul class="list-group">
+				{BEGIN filterCtrlBlock_TipoSolicitud}
+				<li class="list-group-item filter-values filter-values-TipoSolicitud {$collapsedClass_TipoSolicitud} {$visibilityClass_TipoSolicitud}">
+					{$TipoSolicitud_filter}
+								
+			
+			
+			
+			
+			
+			
+			
+			
+				</li>				
+				{END filterCtrlBlock_TipoSolicitud}
+
+							{BEGIN filter_button_showmore_TipoSolicitud}
+				<li class="list-group-item filter-show-more {$collapsedClass_TipoSolicitud} {$showMoreBtnClass_TipoSolicitud}">
+					<a class="filter-show-more-link filterShowMore_TipoSolicitud" href="#">{$show_n_more_TipoSolicitud}</a>
+				</li>
+				{END filter_button_showmore_TipoSolicitud}			
+			
+
+
+			
+
+				
+	
+			</ul>			
+		</div>
+		{END filter_control_TipoSolicitud}
+	 
+			
+	 	
+
+		
+		 
+		 
+
+		 	
+
+		{BEGIN filter_control_DepartamentoSolicitar}
+		<div class="panel panel-info filter-field filter-DepartamentoSolicitar-container">
+			<div class="panel-heading filter-expander">
+																	<span class="filter-indicator glyphicon glyphicon-triangle-bottom"></span>	
+
+			
+				<label>{$label Pendientes_por_Departamento DepartamentoSolicitar }</label>
+
+				{BEGIN clearLink_DepartamentoSolicitar}
+				<a href="#" class="filter-clear filter-clear-DepartamentoSolicitar">borrar</a>
+				{END clearLink_DepartamentoSolicitar}				
+			</div>
+
+			<ul class="list-group">
+				{BEGIN filterCtrlBlock_DepartamentoSolicitar}
+				<li class="list-group-item filter-values filter-values-DepartamentoSolicitar {$collapsedClass_DepartamentoSolicitar} {$visibilityClass_DepartamentoSolicitar}">
+					{$DepartamentoSolicitar_filter}
+								
+			
+			
+			
+			
+			
+			
+			
+			
+				</li>				
+				{END filterCtrlBlock_DepartamentoSolicitar}
+
+							{BEGIN filter_button_showmore_DepartamentoSolicitar}
+				<li class="list-group-item filter-show-more {$collapsedClass_DepartamentoSolicitar} {$showMoreBtnClass_DepartamentoSolicitar}">
+					<a class="filter-show-more-link filterShowMore_DepartamentoSolicitar" href="#">{$show_n_more_DepartamentoSolicitar}</a>
+				</li>
+				{END filter_button_showmore_DepartamentoSolicitar}			
+			
+
+
+			
+
+				
+	
+			</ul>			
+		</div>
+		{END filter_control_DepartamentoSolicitar}
+	 
+			
+	 	
+
+		
+		 
+		 
+
+		 	
+
+		{BEGIN filter_control_Estado}
+		<div class="panel panel-info filter-field filter-Estado-container">
+			<div class="panel-heading filter-expander">
+																	<span class="filter-indicator glyphicon glyphicon-triangle-bottom"></span>	
+
+			
+				<label>{$label Pendientes_por_Departamento Estado }</label>
+
+				{BEGIN clearLink_Estado}
+				<a href="#" class="filter-clear filter-clear-Estado">borrar</a>
+				{END clearLink_Estado}				
+			</div>
+
+			<ul class="list-group">
+				{BEGIN filterCtrlBlock_Estado}
+				<li class="list-group-item filter-values filter-values-Estado {$collapsedClass_Estado} {$visibilityClass_Estado}">
+					{$Estado_filter}
+								
+			
+			
+			
+			
+			
+			
+			
+			
+				</li>				
+				{END filterCtrlBlock_Estado}
+
+							{BEGIN filter_button_showmore_Estado}
+				<li class="list-group-item filter-show-more {$collapsedClass_Estado} {$showMoreBtnClass_Estado}">
+					<a class="filter-show-more-link filterShowMore_Estado" href="#">{$show_n_more_Estado}</a>
+				</li>
+				{END filter_button_showmore_Estado}			
+			
+
+
+			
+
+				
+	
+			</ul>			
+		</div>
+		{END filter_control_Estado}
+	 
+			
+	 	
+
+		
+		 
+		 
+
+		 	
+
+		{BEGIN filter_control_DepartamentoSolicitante}
+		<div class="panel panel-info filter-field filter-DepartamentoSolicitante-container">
+			<div class="panel-heading filter-expander">
+																	<span class="filter-indicator glyphicon glyphicon-triangle-bottom"></span>	
+
+			
+				<label>{$label Pendientes_por_Departamento DepartamentoSolicitante }</label>
+
+				{BEGIN clearLink_DepartamentoSolicitante}
+				<a href="#" class="filter-clear filter-clear-DepartamentoSolicitante">borrar</a>
+				{END clearLink_DepartamentoSolicitante}				
+			</div>
+
+			<ul class="list-group">
+				{BEGIN filterCtrlBlock_DepartamentoSolicitante}
+				<li class="list-group-item filter-values filter-values-DepartamentoSolicitante {$collapsedClass_DepartamentoSolicitante} {$visibilityClass_DepartamentoSolicitante}">
+					{$DepartamentoSolicitante_filter}
+								
+			
+			
+			
+			
+			
+			
+			
+			
+				</li>				
+				{END filterCtrlBlock_DepartamentoSolicitante}
+
+							{BEGIN filter_button_showmore_DepartamentoSolicitante}
+				<li class="list-group-item filter-show-more {$collapsedClass_DepartamentoSolicitante} {$showMoreBtnClass_DepartamentoSolicitante}">
+					<a class="filter-show-more-link filterShowMore_DepartamentoSolicitante" href="#">{$show_n_more_DepartamentoSolicitante}</a>
+				</li>
+				{END filter_button_showmore_DepartamentoSolicitante}			
+			
+
+
+			
+
+				
+	
+			</ul>			
+		</div>
+		{END filter_control_DepartamentoSolicitante}
+	 
+	</div>
+</div>			</div>
+		
+    {END left_block}
+</div>				</div>	
+			<div class="r-content-col" data-resize-left="leftbar">
+				<div  class="r-topheader" data-resize-name="topbar">
+									{BEGIN supertop_block}
+<nav class="navbar navbar-default" 
+	data-location="supertop" id="form_supertop_{$pageid}" data-makeup="leftbar" {$form_supertop} data-pageid="{$pageid}" >
+			 
+							 
+				<span class="navbar-form  navbar-header" data-cellId="supertop_c1" data-pageid="{$pageid}" data-itemid="collapse_button" {$item_collapse_button} data-topcell-item-type="collapse_button" >
+				<span data-itemtype="collapse_button" data-itemid="collapse_button" {$item_collapse_button} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="Collapse" class="btn-link   
+	 glyphicon glyphicon-triangle-left" href="#" >		
+				
+								</a>
+</span>
+			</span>
+		 
+				<span class="navbar-form  navbar-collapse" data-cellId="supertop_c1" data-pageid="{$pageid}" data-itemid="breadcrumb" {$item_breadcrumb} data-topcell-item-type="breadcrumb" >
+				{BEGIN breadcrumb}
+<ol class="breadcrumb" data-itemtype="breadcrumb" data-itemid="breadcrumb" {$item_breadcrumb} data-pageid="{$pageid}">
+<li ><a href="{$crumb_home_link}"><span class="glyphicon glyphicon-home"></span></a>{$crumb_dropdown}</li>
+{BEGIN crumb}
+  <li class="{$crumb_item_class}">
+{BEGIN crumb_title_link}
+	<a {$crumb_attrs}>{$crumb_title}</a>
+{END crumb_title_link}
+{BEGIN crumb_title_span}
+	<span {$crumb_attrs}>{$crumb_title}</span>
+{END crumb_title_span}	
+	{$crumb_dropdown}
+  </li>
+{END crumb}
+</ol>
+{END breadcrumb}			</span>
+							 
+							 
+				<span class="navbar-form r-align-right navbar-collapse" data-cellId="supertop_c2" data-pageid="{$pageid}" data-itemid="simple_search" {$item_simple_search} data-topcell-item-type="simple_search" >
+				<span data-itemtype="simple_search" data-itemid="simple_search" {$item_simple_search} data-pageid="{$pageid}" class="form-group">
+
+<div  class="input-group">
+{BEGIN searchform_text}
+	<input type="search" class="form-control" {$searchfor_attrs} size="25">
+{END searchform_text}
+	<span class="input-group-btn">
+	{BEGIN searchform_showall}
+		<button class="btn btn-default" {$showAllCont_attrs} {$showallbutton_attrs} title="Mostrar todo">
+			<span class="glyphicon glyphicon-remove"></span>
+		</button>
+	{END searchform_showall}
+	{BEGIN searchform_search}
+	<button {$searchbutton_attrs} class="btn btn-primary" >
+		<span class="glyphicon glyphicon-search"></span>
+	</button>
+	{END searchform_search}
+	</span>
+</div>
+		
+</span>			</span>
+		 
+				<span class="navbar-form r-align-right navbar-collapse" data-cellId="supertop_c2" data-pageid="{$pageid}" data-itemid="list_options" {$item_list_options} data-topcell-item-type="list_options" >
+				<span data-itemtype="list_options" data-itemid="list_options" {$item_list_options} data-pageid="{$pageid}" data-small data-button-item>
+	<span class="dropdown ">
+		<button type="button" title="" class="btn btn-default   dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">		
+							<span class="glyphicon glyphicon-cog"></span>
+									<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+								<li data-itemtype="advsearch_link" data-itemid="advsearch_link" {$item_advsearch_link} data-pageid="{$pageid}" data-small >
+				<a   href="pendientes_por_departamento_search.php{$stateLink_full}" {$advsearchlink_attrs}  title="" >
+				
+		Búsqueda avanzada		
+		</a>
+	</li>
+							{BEGIN searchPanelTopButtons}
+	<li data-itemtype="show_search_panel" data-itemid="show_search_panel" {$item_show_search_panel} data-pageid="{$pageid}" data-small >
+				<a  id="showOptPanel{$id}"  title="" >
+				
+		Mostrar panel de búsqueda		
+		</a>
+	</li>
+{END searchPanelTopButtons}
+							{BEGIN searchPanelTopButtons}
+	<li data-itemtype="hide_search_panel" data-itemid="hide_search_panel" {$item_hide_search_panel} data-pageid="{$pageid}" data-small >
+				<a  id="hideOptPanel{$id}"  title="" >
+				
+		Ocultar panel de búsqueda		
+		</a>
+	</li>
+{END searchPanelTopButtons}
+							<li role="separator" class="divider"></li>							{BEGIN export_link}
+	<li data-itemtype="export_report_pdf" data-itemid="export_report_pdf" {$item_export_report_pdf} data-pageid="{$pageid}" data-small >
+				<a  data-pdfpage="rprint" 
+data-scope="0" 
+data-split="0" 
+data-records="10" 
+data-orientation="portrait" 
+data-scale="100" 
+data-filename="Pendientes por Departamento.pdf" 
+data-pagetype="rprint" 
+  title="" >
+				
+		Exportar a PDF		
+		</a>
+	</li>
+{END export_link}
+					</ul>
+	</span>
+</span>
+			</span>
+		 
+				<span class="navbar-form r-align-right navbar-collapse" data-cellId="supertop_c2" data-pageid="{$pageid}" data-itemid="loginform_login" {$item_loginform_login} data-topcell-item-type="loginform_login" >
+				{BEGIN guestloginbutton}
+<span data-itemtype="loginform_login" data-itemid="loginform_login" {$item_loginform_login} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-primary   
+	" href="#" {$guestloginlink_attrs} >
+							Conectar			</a>
+</span>
+{END guestloginbutton}
+			</span>
+		 
+				<span class="navbar-form r-align-right navbar-collapse" data-cellId="supertop_c2" data-pageid="{$pageid}" data-itemid="username_button" {$item_username_button} data-topcell-item-type="username_button" >
+				{BEGIN loggedas_message}
+<span data-itemtype="username_button" data-itemid="username_button" {$item_username_button} data-pageid="{$pageid}" data-small data-button-item>
+	<span class="dropdown ">
+		<button type="button" title="" class="btn btn-default   dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">		
+							<span class="glyphicon glyphicon-user"></span>
+						{$username}			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu">
+							{BEGIN logoutbutton}
+	<li data-itemtype="logout_link" data-itemid="logout_link" {$item_logout_link} data-pageid="{$pageid}" data-small >
+				<a  href="#" {$logoutlink_attrs}  title="" >
+				
+		Desconectarse		
+		</a>
+	</li>
+{END logoutbutton}
+							{BEGIN adminarea_link}
+	<li data-itemtype="adminarea_link" data-itemid="adminarea_link" {$item_adminarea_link} data-pageid="{$pageid}" data-small >
+				<a  href="admin_rights_list.php"  title="" >
+				
+		Area Admin		
+		</a>
+	</li>
+{END adminarea_link}
+							{BEGIN changepwd_link}
+	<li data-itemtype="changepassword_link" data-itemid="changepassword_link" {$item_changepassword_link} data-pageid="{$pageid}" data-small >
+				<a  href="#" {$changepwdlink_attrs}  title="" >
+				
+		Cambiar contraseña		
+		</a>
+	</li>
+{END changepwd_link}
+					</ul>
+	</span>
+</span>
+{END loggedas_message}
+			</span>
+								</nav>
+{END supertop_block}
+						{$locking}
+				</div>	
+				<div class="r-body" data-resize-top="topbar" data-body-width="standard">
+					{$header}
+					<div class="r-top">
+									{BEGIN top_block}
+<div class="r-form" data-location="top" id="form_top_{$pageid}" data-makeup="leftbar" {$form_top} data-pageid="{$pageid}" >		
+	</div>		
+{END top_block}
+						</div>
+					<div class="r-above">
+										{BEGIN above-grid_block}
+<div class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="leftbar" {$form_above-grid} data-pageid="{$pageid}" >		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="above-grid_c1" data-pageid="{$pageid}"	{$cell_above-grid_c1}
+	class="			col-md-6
+	
+">
+		{BEGIN firstAboveGridCell}
+		 
+		{BEGIN export_link}
+<span data-itemtype="export_report_excel" data-itemid="export_report_excel" {$item_export_report_excel} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" href="pendientes_por_departamento_print.php?all=1&amp;format=excel{$stateLink}" {$excellink_attrs} >
+							Exportar a Excel			</a>
+</span>
+{END export_link}
+	 
+		{BEGIN export_link}
+<span data-itemtype="export_report_word" data-itemid="export_report_word" {$item_export_report_word} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" href="pendientes_por_departamento_print.php?all=1&amp;format=word{$stateLink}" {$wordlink_attrs} >
+							Exportar a Word 			</a>
+</span>
+{END export_link}
+			{END firstAboveGridCell}	
+	</div>			 
+				<div 
+	data-cellId="above-grid_c2" data-pageid="{$pageid}"	{$cell_above-grid_c2}
+	class="r-align-right			col-md-6
+	
+">
+		 
+		<span data-itemtype="details_found" data-itemid="details_found" {$item_details_found} data-pageid="{$pageid}" data-small >
+{$details_found_labeldetails_found}
+</span>	 
+		<span data-itemtype="page_size" data-itemid="page_size" {$item_page_size} data-pageid="{$pageid}" >
+		{$grpsPerPage}
+</span>	 
+		{BEGIN print_friendly}
+<span id="printpanelblock{$id}"  data-pageid="{$pageid}" {$printpanel_hiddenattr} data-itemtype="print_panel" data-itemid="print_panel" {$item_print_panel} data-pageid="{$pageid}">
+	<button title="Página para imprimir" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+					<span class="glyphicon glyphicon-print"></span>
+				<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu pull-right">
+										 
+				 
+					<li class="container-fluid 
+										">
+									<div id="print_friendly_scope{$id}">
+	<div class="row">
+		<div class="col-md-4">
+			Rango:		</div>
+
+		{BEGIN print_friendly_all}
+		<div class="col-md-8">
+			<label for="printAll{$id}">
+				<input type="radio" id="printAll{$id}" data-href="pendientes_por_departamento_print.php?all=1&amp;{$crosstable_attrs}" name="printScope">
+									Imprimir informe completo							</label>
+		</div>
+		{END print_friendly_all}
+	</div>
+	<div class="row">
+		<div class="col-md-4">&nbsp;</div>
+		<div class="col-md-8">
+			<label for="printPage{$id}">
+				<input name="printScope" id="printPage{$id}" type="radio" checked data-href="pendientes_por_departamento_print.php?{$crosstable_attrs}">
+				Imprimir esta página			</label>
+		</div>
+	</div>
+	
+	</div>				 
+					</li>
+											<li class="divider" role="separator"></li>
+																				 
+				 
+					<li class="container-fluid 
+										">
+									<div>
+	<label for="printPerPage{$id}">
+					Grupos por página							
+	</label>
+	<input type="number" id="printPerPage{$id}" value="{$print_recspp}" class="rnr-printrecspp">		
+</div>
+				 
+					</li>
+											<li class="divider" role="separator"></li>
+																				 
+				 
+					<li class="container-fluid 
+					 text-center 					">
+									<span data-itemtype="print_button" data-itemid="print_button" {$item_print_button} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-primary   
+	" id="print_friendly_button{$id}" >
+							Imprimir			</a>
+</span>
+				 
+					</li>
+															</ul>
+</span>
+{END print_friendly}
+		</div>					</div>
+	</div>		
+{END above-grid_block}
+						</div>
+					<div class="r-grid">
+										{BEGIN grid_block}
+{BEGIN grid_tabs}
+  <ul class="nav nav-tabs bsgrid_tabs">
+	{$grid_tabs_content}
+  </ul>
+{END grid_tabs}
+{BEGIN message_block}
+<div data-grid-message data-pageid="{$pageid}" class="alert {$message_class}" role="alert" {$grid_message_attrs}>{$message}</div>
+{END message_block}<style>
+	td.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary.pagesummary {
+		background-color: #ffffbb;
+	}
+	td.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary.globalsummary {background-color: #ffe0b0;
+	}
+</style>
+
+	<!-- 0 group fields -->
+
+ <!-- add to settings ? -->
+<table class="table table-striped table-bordered rnr-b-grid rnr-gridtable" cellpadding="0" data-location="grid" id="form_grid_{$pageid}" data-makeup="leftbar" {$form_grid} data-pageid="{$pageid}" >
+	<thead>
+		{BEGIN grid_header}
+		<tr class="rnr-toprow table-header style1">
+					<th class="{$fieldclass_Solicitud}"> {$label Pendientes_por_Departamento Solicitud }</th>
+					<th class="{$fieldclass_TipoSolicitud}"> {$label Pendientes_por_Departamento TipoSolicitud }</th>
+					<th class="{$fieldclass_DepartamentoSolicitante}"> {$label Pendientes_por_Departamento DepartamentoSolicitante }</th>
+					<th class="{$fieldclass_UsuarioSolicitante}"> {$label Pendientes_por_Departamento UsuarioSolicitante }</th>
+					<th class="{$fieldclass_Nombre}"> {$label Pendientes_por_Departamento Nombre }</th>
+					<th class="{$fieldclass_Asunto}"> {$label Pendientes_por_Departamento Asunto }</th>
+					<th class="{$fieldclass_FechaSolicitud}"> {$label Pendientes_por_Departamento FechaSolicitud }</th>
+					<th class="{$fieldclass_Estado}"> {$label Pendientes_por_Departamento Estado }</th>
+					<th class="{$fieldclass_FechaAtencion}"> {$label Pendientes_por_Departamento FechaAtencion }</th>
+					<th class="{$fieldclass_ProcesoAtencion}"> {$label Pendientes_por_Departamento ProcesoAtencion }</th>
+					<th class="{$fieldclass_FechaFinal}"> {$label Pendientes_por_Departamento FechaFinal }</th>
+					<th class="{$fieldclass_Observaciones}"> {$label Pendientes_por_Departamento Observaciones }</th>
+				</tr>
+		{END grid_header}
+	</thead>
+	<tbody>
+{BEGIN grid_row}
+	{BEGIN row_data}
+		<tr class="rnr-row style1" {$rowattrs}>
+			
+			<td {$recordattrs} class="{$fieldclass_Solicitud}">
+						<span data-itemtype="grid_field" data-field="Solicitud" data-itemid="grid_field2" data-pageid={$pageid} data-record-id="{$recId}">
+{$Solicitud_value}
+</span>			</td>
+			
+			<td {$recordattrs} class="{$fieldclass_TipoSolicitud}">
+						<span data-itemtype="grid_field" data-field="TipoSolicitud" data-itemid="grid_field3" data-pageid={$pageid} data-record-id="{$recId}">
+{$TipoSolicitud_value}
+</span>			</td>
+			
+			<td {$recordattrs} class="{$fieldclass_DepartamentoSolicitante}">
+						<span data-itemtype="grid_field" data-field="DepartamentoSolicitante" data-itemid="grid_field4" data-pageid={$pageid} data-record-id="{$recId}">
+{$DepartamentoSolicitante_value}
+</span>			</td>
+			
+			<td {$recordattrs} class="{$fieldclass_UsuarioSolicitante}">
+						<span data-itemtype="grid_field" data-field="UsuarioSolicitante" data-itemid="grid_field5" data-pageid={$pageid} data-record-id="{$recId}">
+{$UsuarioSolicitante_value}
+</span>			</td>
+			
+			<td {$recordattrs} class="{$fieldclass_Nombre}">
+						<span data-itemtype="grid_field" data-field="Nombre" data-itemid="grid_field6" data-pageid={$pageid} data-record-id="{$recId}">
+{$Nombre_value}
+</span>			</td>
+			
+			<td {$recordattrs} class="{$fieldclass_Asunto}">
+						<span data-itemtype="grid_field" data-field="Asunto" data-itemid="grid_field7" data-pageid={$pageid} data-record-id="{$recId}">
+{$Asunto_value}
+</span>			</td>
+			
+			<td {$recordattrs} class="{$fieldclass_FechaSolicitud}">
+						<span data-itemtype="grid_field" data-field="FechaSolicitud" data-itemid="grid_field8" data-pageid={$pageid} data-record-id="{$recId}">
+{$FechaSolicitud_value}
+</span>			</td>
+			
+			<td {$recordattrs} class="{$fieldclass_Estado}">
+						<span data-itemtype="grid_field" data-field="Estado" data-itemid="grid_field9" data-pageid={$pageid} data-record-id="{$recId}">
+{$Estado_value}
+</span>			</td>
+			
+			<td {$recordattrs} class="{$fieldclass_FechaAtencion}">
+						<span data-itemtype="grid_field" data-field="FechaAtencion" data-itemid="grid_field10" data-pageid={$pageid} data-record-id="{$recId}">
+{$FechaAtencion_value}
+</span>			</td>
+			
+			<td {$recordattrs} class="{$fieldclass_ProcesoAtencion}">
+						<span data-itemtype="grid_field" data-field="ProcesoAtencion" data-itemid="grid_field11" data-pageid={$pageid} data-record-id="{$recId}">
+{$ProcesoAtencion_value}
+</span>			</td>
+			
+			<td {$recordattrs} class="{$fieldclass_FechaFinal}">
+						<span data-itemtype="grid_field" data-field="FechaFinal" data-itemid="grid_field12" data-pageid={$pageid} data-record-id="{$recId}">
+{$FechaFinal_value}
+</span>			</td>
+			
+			<td {$recordattrs} class="{$fieldclass_Observaciones}">
+						<span data-itemtype="grid_field" data-field="Observaciones" data-itemid="grid_field13" data-pageid={$pageid} data-record-id="{$recId}">
+{$Observaciones_value}
+</span>			</td>
+				</tr>
+	{END row_data}
+{END grid_row}
+
+		{BEGIN summary_header}
+		<tr class="rnr-toprow summary-header style1">
+					<td class="{$fieldclass_Solicitud}">{$label Pendientes_por_Departamento Solicitud }</td>
+					<td class="{$fieldclass_TipoSolicitud}">{$label Pendientes_por_Departamento TipoSolicitud }</td>
+					<td class="{$fieldclass_DepartamentoSolicitante}">{$label Pendientes_por_Departamento DepartamentoSolicitante }</td>
+					<td class="{$fieldclass_UsuarioSolicitante}">{$label Pendientes_por_Departamento UsuarioSolicitante }</td>
+					<td class="{$fieldclass_Nombre}">{$label Pendientes_por_Departamento Nombre }</td>
+					<td class="{$fieldclass_Asunto}">{$label Pendientes_por_Departamento Asunto }</td>
+					<td class="{$fieldclass_FechaSolicitud}">{$label Pendientes_por_Departamento FechaSolicitud }</td>
+					<td class="{$fieldclass_Estado}">{$label Pendientes_por_Departamento Estado }</td>
+					<td class="{$fieldclass_FechaAtencion}">{$label Pendientes_por_Departamento FechaAtencion }</td>
+					<td class="{$fieldclass_ProcesoAtencion}">{$label Pendientes_por_Departamento ProcesoAtencion }</td>
+					<td class="{$fieldclass_FechaFinal}">{$label Pendientes_por_Departamento FechaFinal }</td>
+					<td class="{$fieldclass_Observaciones}">{$label Pendientes_por_Departamento Observaciones }</td>
+				</tr>
+	{END summary_header}	
+	
+
+	
+	<!-- global summary-->
+	{BEGIN global_summary}
+		<tr class="rnr-row summary-global style1">
+			<td class="globalsummary rnr-edge" colspan="12">Resumen global 
+			 {$global_total_cnt} - Registros totales</td>
+		</tr>
+
+		
+		
+		
+			{END global_summary}
+
+	</tbody>
+</table>{END grid_block}						</div>
+					<div class="r-below">
+										{BEGIN below-grid_block}
+<div class="r-form" data-location="below-grid" id="form_below-grid_{$pageid}" data-makeup="leftbar" {$form_below-grid} data-pageid="{$pageid}" >		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="below-grid_c1" data-pageid="{$pageid}"	{$cell_below-grid_c1}
+	class="r-align-center r-ori-vert			col-md-12
+	
+">
+		 
+		{BEGIN pagination_block}
+<span data-itemtype="pagination" data-itemid="pagination" {$item_pagination} data-pageid="{$pageid}" >
+{$pagination}
+</span>
+{END pagination_block}
+		</div>					</div>
+	</div>		
+{END below-grid_block}
+						</div>
+					{$footer}
+				</div>	
+			</div>	
+		</div>
+	{END body}
+	</body>
+</html>

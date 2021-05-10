@@ -1,0 +1,3 @@
+
+Runner.pages.PageSettings.addPageEvent('tik_memorando_adjunto',Runner.pages.constants.PAGE_ADD,"afterPageReady",function(pageObj,proxy,pageid,inlineRow,inlineObject,row){var cusu=Runner.getControl(pageid,'Usuario');cusu.makeReadonly();;});Runner.pages.PageSettings.addPageEvent('tik_memorando_adjunto',Runner.pages.constants.PAGE_EDIT,"afterPageReady",function(pageObj,proxy,pageid,inlineRow,inlineObject,row){var cusu=Runner.getControl(pageid,'Usuario');cusu.makeReadonly();;});Runner.pages.PageSettings.addPageEvent('tik_memorando_adjunto',Runner.pages.constants.PAGE_LIST,"afterPageReady",function(pageObj,proxy,pageid,inlineRow,inlineObject,row){if(proxy.sts!='Pendiente')
+pageObj.getItemButton('add').addClass('disabled');;});

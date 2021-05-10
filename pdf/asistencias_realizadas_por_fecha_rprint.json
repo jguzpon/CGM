@@ -1,0 +1,332 @@
+
+pdfDocument = {
+{BEGIN backgroundImage}
+	background: {
+		image: {$backgroundImage},
+		{BEGIN bgWidth}
+		imgWidth: {$bgWidth},
+		imgHeight: {$bgHeight},
+		{END bgWidth}
+	},
+{END backgroundImage}
+	styles: {
+				bodycell: {
+			fontSize:12,
+		},
+		headcell: {
+			fontSize:12,
+			bold: true
+		},
+
+	
+						pagesummary: {
+		fillColor: '#ffffbb',
+	},
+	globalsummary: {
+		fillColor: '#ffe0b0',
+	},
+			},
+	defaultStyle: {
+		fontSize: 14,
+	},
+	"content": [
+		{BEGIN body}
+		{BEGIN embedded_grid}
+		{
+			text: '{$jscaption Asistencias_Realizadas_por_Fecha}',
+		},
+		{END embedded_grid}
+		{ 
+			{BEGIN standalone_page}
+			pageBreak: 'before',
+			{END standalone_page}
+			{BEGIN embedded_grid}
+			embeddedPage: true,
+			{END embedded_grid}
+			layout: {
+				hLineWidth: function(i, node) { return 0.1; },
+				vLineWidth: function(i, node) { 
+					if( node.table.embeddedPage ) {
+						return (i === 0 || i === node.table.widths.length) ? 0.1 : 0;
+					} else  {
+						return 0.1; 
+					}
+				},
+				hLineColor: function(i, node) { return 'gray'; },
+				vLineColor: function(i, node) { return 'gray'; },
+			},
+			table: {
+				{BEGIN embedded_grid}
+				embeddedPage: true,
+				{END embedded_grid}
+				
+				tableForm: true,
+				headerRows: 0 + 1 {BEGIN embedded_grid} -1 {END embedded_grid} ,
+
+				widths: [
+														"%",
+										"%",
+										"%",
+										"%",
+										"%",
+										"%",
+										"%",
+										"%",
+										"%",
+															],
+							
+				body: [
+				{BEGIN standalone_page}
+					[
+						{
+							colSpan: 9,
+							border:[false, false,false,false],
+							stack: [
+
+																										
+{
+	table: {
+	
+				
+		location: 'top',
+		
+		
+		widths: [
+								"*", 
+					 ],	
+		
+	
+		body: [
+				
+					[
+												{
+	cellId: 'c2',
+	col:0,
+	row:0,
+			style: 'cell',
+		
+		
+	//	static colspan/rowspan
+		
+			
+	
+	
+			"stack": [
+		
+				
+			{"text":"{$jspagetitlelabel Asistencias_Realizadas_por_Fecha rprint}","hidden":"{$item_hide_print_header}","fontSize":30},
+				
+				
+			{"text":"{$printtabheader_text}","hidden":"{$item_hide_print_subheader}"},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+  },
+
+											],
+					]
+	}
+}
+,
+								
+																										
+{
+	table: {
+	
+				
+		location: 'above-grid',
+		
+		
+		widths: [
+								"*", 
+					 ],	
+		
+	
+		body: [
+				
+					[
+												{
+	cellId: 'c1',
+	col:0,
+	row:0,
+			style: 'cell',
+		
+		
+	//	static colspan/rowspan
+		
+			
+	
+	
+			"text": [
+		
+				
+			{"text":"Página %current% / %total%","hidden":"{$item_hide_print_pages}","isHtml":true,"page_indicator":true},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+  },
+
+											],
+					]
+	}
+}
+,
+															]
+						},
+					],
+				{END standalone_page}
+
+																
+[	
+		{
+		text: '{$jslabel Asistencias_Realizadas_por_Fecha Solicitud }',
+		alignment: '{$Solicitud_align}',
+	},
+		{
+		text: '{$jslabel Asistencias_Realizadas_por_Fecha TipoSolicitud }',
+		alignment: '{$TipoSolicitud_align}',
+	},
+		{
+		text: '{$jslabel Asistencias_Realizadas_por_Fecha DepartamentoSolicitante }',
+		alignment: '{$DepartamentoSolicitante_align}',
+	},
+		{
+		text: '{$jslabel Asistencias_Realizadas_por_Fecha UsuarioSolicitante }',
+		alignment: '{$UsuarioSolicitante_align}',
+	},
+		{
+		text: '{$jslabel Asistencias_Realizadas_por_Fecha DepartamentoSolicitar }',
+		alignment: '{$DepartamentoSolicitar_align}',
+	},
+		{
+		text: '{$jslabel Asistencias_Realizadas_por_Fecha Asunto }',
+		alignment: '{$Asunto_align}',
+	},
+		{
+		text: '{$jslabel Asistencias_Realizadas_por_Fecha Estado }',
+		alignment: '{$Estado_align}',
+	},
+		{
+		text: '{$jslabel Asistencias_Realizadas_por_Fecha Nombre }',
+		alignment: '{$Nombre_align}',
+	},
+		{
+		text: '{$jslabel Asistencias_Realizadas_por_Fecha FechaInicio }',
+		alignment: '{$FechaInicio_align}',
+	},
+	],
+
+{BEGIN grid_row}
+	{BEGIN row_data}
+[	
+		{	
+		text: {$Solicitud_value},
+		alignment: '{$Solicitud_align}',
+	},
+		{	
+		text: {$TipoSolicitud_value},
+		alignment: '{$TipoSolicitud_align}',
+	},
+		{	
+		text: {$DepartamentoSolicitante_value},
+		alignment: '{$DepartamentoSolicitante_align}',
+	},
+		{	
+		text: {$UsuarioSolicitante_value},
+		alignment: '{$UsuarioSolicitante_align}',
+	},
+		{	
+		text: {$DepartamentoSolicitar_value},
+		alignment: '{$DepartamentoSolicitar_align}',
+	},
+		{	
+		text: {$Asunto_value},
+		alignment: '{$Asunto_align}',
+	},
+		{	
+		text: {$Estado_value},
+		alignment: '{$Estado_align}',
+	},
+		{	
+		text: {$Nombre_value},
+		alignment: '{$Nombre_align}',
+	},
+		{	
+		text: {$FechaInicio_value},
+		alignment: '{$FechaInicio_align}',
+	},
+	],
+	{END row_data}
+{END grid_row}
+
+[
+		{	
+		text: '{$jslabel Asistencias_Realizadas_por_Fecha Solicitud }',
+		alignment: '{$Solicitud_align}',
+	},
+		{	
+		text: '{$jslabel Asistencias_Realizadas_por_Fecha TipoSolicitud }',
+		alignment: '{$TipoSolicitud_align}',
+	},
+		{	
+		text: '{$jslabel Asistencias_Realizadas_por_Fecha DepartamentoSolicitante }',
+		alignment: '{$DepartamentoSolicitante_align}',
+	},
+		{	
+		text: '{$jslabel Asistencias_Realizadas_por_Fecha UsuarioSolicitante }',
+		alignment: '{$UsuarioSolicitante_align}',
+	},
+		{	
+		text: '{$jslabel Asistencias_Realizadas_por_Fecha DepartamentoSolicitar }',
+		alignment: '{$DepartamentoSolicitar_align}',
+	},
+		{	
+		text: '{$jslabel Asistencias_Realizadas_por_Fecha Asunto }',
+		alignment: '{$Asunto_align}',
+	},
+		{	
+		text: '{$jslabel Asistencias_Realizadas_por_Fecha Estado }',
+		alignment: '{$Estado_align}',
+	},
+		{	
+		text: '{$jslabel Asistencias_Realizadas_por_Fecha Nombre }',
+		alignment: '{$Nombre_align}',
+	},
+		{	
+		text: '{$jslabel Asistencias_Realizadas_por_Fecha FechaInicio }',
+		alignment: '{$FechaInicio_align}',
+	},
+	],
+
+
+
+
+
+
+
+
+
+
+{BEGIN global_summary}
+	[
+		{
+			text: 'Resumen global {$global_total_cnt} - Registros totales',
+			colSpan: 9,
+			style: 'globalsummary',
+		}
+	],
+
+	
+	
+	
+	
+{END global_summary}
+									]
+			
+			}
+		},
+		{END body}
+	]
+}
