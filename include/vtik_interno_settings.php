@@ -262,7 +262,7 @@ $tdatavtik_interno[".orderindexes"] = array();
 
 
 
-$tdatavtik_interno[".sqlHead"] = "SELECT Solicitud,  Documento,  TipoSolicitud,  DepartamentoSolicitante,  UsuarioSolicitante,  DepartamentoSolicitar,  Asunto,  DescripcionAmplia,  FechaSolicitud,  FechaInicio,  UsuarioInicio,  FechaFinal,  Observaciones,  Evaluacion,  Estado,  FechaAtencion,  ProcesoAtencion,  tik_getexpireddate(FechaSolicitud, 3) AS FechaExpiracion,  tik_getm1dayfromdate(FechaSolicitud, 3) AS FechaMaxima";
+$tdatavtik_interno[".sqlHead"] = "SELECT Solicitud,  Documento,  TipoSolicitud,  DepartamentoSolicitante,  UsuarioSolicitante,  DepartamentoSolicitar,  Asunto,  DescripcionAmplia,  FechaSolicitud,  FechaInicio,  UsuarioInicio,  FechaFinal,  Observaciones,  Evaluacion,  Estado,  FechaAtencion,  ProcesoAtencion,  tik_sumdaysdate(FechaSolicitud, 3) AS FechaExpiracion,  tik_getm1dayfromdate(FechaSolicitud, 3) AS FechaMaxima";
 $tdatavtik_interno[".sqlFrom"] = "FROM tik_interno";
 $tdatavtik_interno[".sqlWhereExpr"] = "(Estado <>\"Evaluado\")";
 $tdatavtik_interno[".sqlTail"] = "";
@@ -2821,7 +2821,7 @@ $tdatavtik_interno[".hideMobileList"] = array();
 
 	
 		$fdata["isSQLExpression"] = true;
-	$fdata["FullName"] = "tik_getexpireddate(FechaSolicitud, 3)";
+	$fdata["FullName"] = "tik_sumdaysdate(FechaSolicitud, 3)";
 
 	
 	
@@ -3147,7 +3147,7 @@ function createSqlQuery_vtik_interno()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "Solicitud,  Documento,  TipoSolicitud,  DepartamentoSolicitante,  UsuarioSolicitante,  DepartamentoSolicitar,  Asunto,  DescripcionAmplia,  FechaSolicitud,  FechaInicio,  UsuarioInicio,  FechaFinal,  Observaciones,  Evaluacion,  Estado,  FechaAtencion,  ProcesoAtencion,  tik_getexpireddate(FechaSolicitud, 3) AS FechaExpiracion,  tik_getm1dayfromdate(FechaSolicitud, 3) AS FechaMaxima";
+$proto0["m_strFieldList"] = "Solicitud,  Documento,  TipoSolicitud,  DepartamentoSolicitante,  UsuarioSolicitante,  DepartamentoSolicitar,  Asunto,  DescripcionAmplia,  FechaSolicitud,  FechaInicio,  UsuarioInicio,  FechaFinal,  Observaciones,  Evaluacion,  Estado,  FechaAtencion,  ProcesoAtencion,  tik_sumdaysdate(FechaSolicitud, 3) AS FechaExpiracion,  tik_getm1dayfromdate(FechaSolicitud, 3) AS FechaMaxima";
 $proto0["m_strFrom"] = "FROM tik_interno";
 $proto0["m_strWhere"] = "(Estado <>\"Evaluado\")";
 $proto0["m_strOrderBy"] = "ORDER BY Solicitud DESC";
@@ -3441,10 +3441,10 @@ $proto41["m_arguments"][]=$obj;
 ));
 
 $proto41["m_arguments"][]=$obj;
-$proto41["m_strFunctionName"] = "tik_getexpireddate";
+$proto41["m_strFunctionName"] = "tik_sumdaysdate";
 $obj = new SQLFunctionCall($proto41);
 
-$proto40["m_sql"] = "tik_getexpireddate(FechaSolicitud, 3)";
+$proto40["m_sql"] = "tik_sumdaysdate(FechaSolicitud, 3)";
 $proto40["m_srcTableName"] = "vtik_interno";
 $proto40["m_expr"]=$obj;
 $proto40["m_alias"] = "FechaExpiracion";
