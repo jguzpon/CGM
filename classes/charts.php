@@ -548,6 +548,8 @@ class Chart
 			return true;
 		if("tik_memorando_aut_otrdep" == $this->chrt_array['tables'][0])
 			return true;
+		if("tik_interno" == $this->chrt_array['tables'][0])
+			return true;
 		return false;
 	}
 	

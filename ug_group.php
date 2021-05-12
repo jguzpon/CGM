@@ -46,6 +46,7 @@ $nonAdminTablesArr[] = "tik_cfg";
 $nonAdminTablesArr[] = "Asistencias Realizadas por Fecha";
 $nonAdminTablesArr[] = "tik_tipomemo";
 $nonAdminTablesArr[] = "tik_memorando_aut_otrdep";
+$nonAdminTablesArr[] = "SolicitudesVencidas";
 
 $ug_connection = $cman->getForUserGroups();
 

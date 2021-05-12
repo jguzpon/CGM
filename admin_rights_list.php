@@ -534,6 +534,23 @@ if( pageEnabled($table, 'print') || pageEnabled($table, 'rprint') || pageEnabled
 
 $pageMask[$table] = $mask;
 $tables[$table] = array("tik_memorando_aut_otrdep", " " . "Autorizacion de Memorando de Otros Departamentos Autorizados");
+$table = "SolicitudesVencidas";
+$mask="";
+if( pageEnabled($table, 'add') || pageEnabled($table, 'inline_add') )
+	$mask .= "A";
+if( pageEnabled($table, 'edit') || pageEnabled($table, 'inline_edit') )
+	$mask .= "E";
+if( pageEnabled($table, 'delete') )
+	$mask .= "D";
+if( pageEnabled($table, 'import') )
+	$mask .= "I";
+if( pageEnabled($table, 'view') || pageEnabled($table, 'list') || pageEnabled($table, 'chart') || pageEnabled($table, 'report') || pageEnabled($table, 'dashboard') )
+	$mask .= "S";
+if( pageEnabled($table, 'print') || pageEnabled($table, 'rprint') || pageEnabled($table, 'export')  )
+	$mask .= "P";
+
+$pageMask[$table] = $mask;
+$tables[$table] = array("solicitudesvencidas", " " . "Solicitudes Vencidas");
 
 require_once('include/xtempl.php');
 require_once('classes/listpage.php');

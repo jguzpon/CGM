@@ -66,6 +66,8 @@ include_once(getabspath("include/tik_tipomemo_events.php"));
 $tableEvents["tik_tipomemo"] = new eventclass_tik_tipomemo;
 include_once(getabspath("include/tik_memorando_aut_otrdep_events.php"));
 $tableEvents["tik_memorando_aut_otrdep"] = new eventclass_tik_memorando_aut_otrdep;
+include_once(getabspath("include/solicitudesvencidas_events.php"));
+$tableEvents["SolicitudesVencidas"] = new eventclass_solicitudesvencidas;
 
 $xt = new Xtempl();
 

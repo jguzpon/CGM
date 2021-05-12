@@ -490,6 +490,10 @@ class AuditTrailTable
 		{
 			return false;
 		}
+		if($table=="SolicitudesVencidas")
+		{
+			return true;
+		}
 	}
 
 	protected function insert($datetime, $ip, $user, $table, $action, $description)
@@ -987,6 +991,10 @@ class AuditTrailFile
 		if($table=="tik_memorando_aut_otrdep")
 		{
 			return false;
+		}
+		if($table=="SolicitudesVencidas")
+		{
+			return true;
 		}
 	}
 

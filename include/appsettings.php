@@ -660,9 +660,9 @@ $suggestAllContent = true;
 $strLastSQL = "";
 $showCustomMarkerOnPrint = false;
 
-$projectBuildKey = "343_1620631239";
+$projectBuildKey = "344_1620631239";
 $wizardBuildKey = "35214";
-$projectBuildNumber = "343";
+$projectBuildNumber = "344";
 
 $mlang_messages = array();
 $mlang_charsets = array();
@@ -717,6 +717,7 @@ $tableCaptions["Spanish"]["Asistencias_Realizadas_por_Fecha"] = "Asistencias Rea
 $tableCaptions["Spanish"]["MPCChat"] = "MPCChat";
 $tableCaptions["Spanish"]["tik_tipomemo"] = "Tipos de Memorando";
 $tableCaptions["Spanish"]["tik_memorando_aut_otrdep"] = "Autorizacion de Memorando de Otros Departamentos Autorizados";
+$tableCaptions["Spanish"]["SolicitudesVencidas"] = "Solicitudes Vencidas";
 
 
 $globalEvents = new class_GlobalEvents;

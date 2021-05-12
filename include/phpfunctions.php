@@ -946,6 +946,11 @@ function GetLWWhere($field, $ptype, $table = "")
 		$strWhere = "Proceso is not null";
 		return $strWhere;
 	}
+		if($table=="SolicitudesVencidas" && $field=="DepartamentoSolicitar")
+	{
+		$strWhere = "Proceso is not null";
+		return $strWhere;
+	}
 	return "";
 }
 
@@ -1172,6 +1177,18 @@ function GetDefaultValue($field, $ptype, $table="")
 				if($table=="tik_tipomemo" && $field=="FechaRegistro")
 	{
 		return strftime("%Y-%m-%d %H:%M:%S");
+	}
+				if($table=="SolicitudesVencidas" && $field=="UsuarioSolicitante")
+	{
+		return $_SESSION["UserID"];
+	}
+				if($table=="SolicitudesVencidas" && $field=="FechaSolicitud")
+	{
+		return strftime("%Y-%m-%d %H:%M:%S");
+	}
+				if($table=="SolicitudesVencidas" && $field=="Estado")
+	{
+		return Pendiente;
 	}
 	return "";
 }

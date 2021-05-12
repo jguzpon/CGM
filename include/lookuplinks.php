@@ -460,6 +460,48 @@ function InitLookupLinks()
 			$lookupTableLinks["zusuarios"]["tik_memorando_aut_otrdep.Usuario"] = array();
 		}
 		$lookupTableLinks["zusuarios"]["tik_memorando_aut_otrdep.Usuario"]["edit"] = array("table" => "tik_memorando_aut_otrdep", "field" => "Usuario", "page" => "edit");
+		if( !isset( $lookupTableLinks["tik_tipo"] ) ) {
+			$lookupTableLinks["tik_tipo"] = array();
+		}
+		if( !isset( $lookupTableLinks["tik_tipo"]["solicitudesvencidas.TipoSolicitud"] )) {
+			$lookupTableLinks["tik_tipo"]["solicitudesvencidas.TipoSolicitud"] = array();
+		}
+		$lookupTableLinks["tik_tipo"]["solicitudesvencidas.TipoSolicitud"]["edit"] = array("table" => "SolicitudesVencidas", "field" => "TipoSolicitud", "page" => "edit");
+		if( !isset( $lookupTableLinks["zdepartamentos"] ) ) {
+			$lookupTableLinks["zdepartamentos"] = array();
+		}
+		if( !isset( $lookupTableLinks["zdepartamentos"]["solicitudesvencidas.DepartamentoSolicitante"] )) {
+			$lookupTableLinks["zdepartamentos"]["solicitudesvencidas.DepartamentoSolicitante"] = array();
+		}
+		$lookupTableLinks["zdepartamentos"]["solicitudesvencidas.DepartamentoSolicitante"]["edit"] = array("table" => "SolicitudesVencidas", "field" => "DepartamentoSolicitante", "page" => "edit");
+		if( !isset( $lookupTableLinks["zusuarios"] ) ) {
+			$lookupTableLinks["zusuarios"] = array();
+		}
+		if( !isset( $lookupTableLinks["zusuarios"]["solicitudesvencidas.UsuarioSolicitante"] )) {
+			$lookupTableLinks["zusuarios"]["solicitudesvencidas.UsuarioSolicitante"] = array();
+		}
+		$lookupTableLinks["zusuarios"]["solicitudesvencidas.UsuarioSolicitante"]["edit"] = array("table" => "SolicitudesVencidas", "field" => "UsuarioSolicitante", "page" => "edit");
+		if( !isset( $lookupTableLinks["zdepartamentos"] ) ) {
+			$lookupTableLinks["zdepartamentos"] = array();
+		}
+		if( !isset( $lookupTableLinks["zdepartamentos"]["solicitudesvencidas.DepartamentoSolicitar"] )) {
+			$lookupTableLinks["zdepartamentos"]["solicitudesvencidas.DepartamentoSolicitar"] = array();
+		}
+		$lookupTableLinks["zdepartamentos"]["solicitudesvencidas.DepartamentoSolicitar"]["edit"] = array("table" => "SolicitudesVencidas", "field" => "DepartamentoSolicitar", "page" => "edit");
+		if( !isset( $lookupTableLinks["zusuarios"] ) ) {
+			$lookupTableLinks["zusuarios"] = array();
+		}
+		if( !isset( $lookupTableLinks["zusuarios"]["solicitudesvencidas.UsuarioInicio"] )) {
+			$lookupTableLinks["zusuarios"]["solicitudesvencidas.UsuarioInicio"] = array();
+		}
+		$lookupTableLinks["zusuarios"]["solicitudesvencidas.UsuarioInicio"]["edit"] = array("table" => "SolicitudesVencidas", "field" => "UsuarioInicio", "page" => "edit");
+		if( !isset( $lookupTableLinks["tik_satisfaccion"] ) ) {
+			$lookupTableLinks["tik_satisfaccion"] = array();
+		}
+		if( !isset( $lookupTableLinks["tik_satisfaccion"]["solicitudesvencidas.Evaluacion"] )) {
+			$lookupTableLinks["tik_satisfaccion"]["solicitudesvencidas.Evaluacion"] = array();
+		}
+		$lookupTableLinks["tik_satisfaccion"]["solicitudesvencidas.Evaluacion"]["edit"] = array("table" => "SolicitudesVencidas", "field" => "Evaluacion", "page" => "edit");
 }
 
 ?>

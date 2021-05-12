@@ -253,6 +253,8 @@ function checkTableName($shortTName )
 		return true;
 	if ("tik_memorando_aut_otrdep" == $shortTName )
 		return true;
+	if ("solicitudesvencidas" == $shortTName )
+		return true;
 	return false;
 }
 
@@ -609,6 +611,15 @@ function GetTablesList($pdfMode = false)
 	if( $tableAvailable ) {
 		$arr[]="tik_memorando_aut_otrdep";
 	}
+	$tableAvailable = true;
+	if( $checkPermissions ) {
+		$strPerm = GetUserPermissions("SolicitudesVencidas");
+		$tableAvailable = ( strpos($strPerm, "P") !== false
+			|| $pdfMode && strpos($strPerm, "S") !== false );
+	}
+	if( $tableAvailable ) {
+		$arr[]="SolicitudesVencidas";
+	}
 	return $arr;
 }
 
@@ -652,6 +663,7 @@ function GetTablesListWithoutSecurity()
 	$arr[]="Asistencias Realizadas por Fecha";
 	$arr[]="tik_tipomemo";
 	$arr[]="tik_memorando_aut_otrdep";
+	$arr[]="SolicitudesVencidas";
 	return $arr;
 }
 
@@ -1539,6 +1551,11 @@ function GetUserPermissionsStatic( $table )
 //	default permissions
 		return "ADESPI".$extraPerm;
 	}
+	if( $table=="SolicitudesVencidas" )
+	{
+//	default permissions
+		return "ADESPI".$extraPerm;
+	}
 	// grant nothing by default
 	return "";
 }
@@ -1665,6 +1682,7 @@ function SetAuthSessionData($pUsername, &$data, $password, &$pageObject = null, 
 		$_SESSION["_tik_calendario_OwnerID"] = $data["CodigoDepto"];
 		$_SESSION["_vtik_interno_OwnerID"] = $data["CodigoDepto"];
 		$_SESSION["_Pendientes por Departamento_OwnerID"] = $data["CodigoDepto"];
+		$_SESSION["_SolicitudesVencidas_OwnerID"] = $data["CodigoDepto"];
 
 	$_SESSION["UserData"] = $data;
 
