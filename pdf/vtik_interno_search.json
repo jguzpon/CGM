@@ -170,6 +170,9 @@ pdfDocument = {
 				
 			{"hidden":"{$item_hide_integrated_search_field17}","text":{$FechaMaxima_pdfvalue}},
 				
+				
+			{"hidden":"{$item_hide_integrated_search_field18}","text":{$FechaExpiracion_pdfvalue}},
+				
 		  ],
   "border": [ false, false, false, false ],
               "alignment": 'left',

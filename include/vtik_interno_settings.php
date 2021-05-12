@@ -79,6 +79,9 @@ if(mlang_getcurrentlang()=="Spanish")
 	$fieldLabelsvtik_interno["Spanish"]["FechaMaxima"] = "Fecha Maxima";
 	$fieldToolTipsvtik_interno["Spanish"]["FechaMaxima"] = "";
 	$placeHoldersvtik_interno["Spanish"]["FechaMaxima"] = "";
+	$fieldLabelsvtik_interno["Spanish"]["FechaExpiracion"] = "Fecha Expiracion";
+	$fieldToolTipsvtik_interno["Spanish"]["FechaExpiracion"] = "";
+	$placeHoldersvtik_interno["Spanish"]["FechaExpiracion"] = "";
 	if (count($fieldToolTipsvtik_interno["Spanish"]))
 		$tdatavtik_interno[".isUseToolTips"] = true;
 }
@@ -220,6 +223,7 @@ $tdatavtik_interno[".googleLikeFields"][] = "Evaluacion";
 $tdatavtik_interno[".googleLikeFields"][] = "Estado";
 $tdatavtik_interno[".googleLikeFields"][] = "FechaAtencion";
 $tdatavtik_interno[".googleLikeFields"][] = "ProcesoAtencion";
+$tdatavtik_interno[".googleLikeFields"][] = "FechaExpiracion";
 $tdatavtik_interno[".googleLikeFields"][] = "FechaMaxima";
 
 
@@ -258,7 +262,7 @@ $tdatavtik_interno[".orderindexes"] = array();
 
 
 
-$tdatavtik_interno[".sqlHead"] = "SELECT Solicitud,  Documento,  TipoSolicitud,  DepartamentoSolicitante,  UsuarioSolicitante,  DepartamentoSolicitar,  Asunto,  DescripcionAmplia,  FechaSolicitud,  FechaInicio,  UsuarioInicio,  FechaFinal,  Observaciones,  Evaluacion,  Estado,  FechaAtencion,  ProcesoAtencion,  tik_getm1dayfromdate(FechaSolicitud, 3) AS FechaMaxima";
+$tdatavtik_interno[".sqlHead"] = "SELECT Solicitud,  Documento,  TipoSolicitud,  DepartamentoSolicitante,  UsuarioSolicitante,  DepartamentoSolicitar,  Asunto,  DescripcionAmplia,  FechaSolicitud,  FechaInicio,  UsuarioInicio,  FechaFinal,  Observaciones,  Evaluacion,  Estado,  FechaAtencion,  ProcesoAtencion,  tik_getexpireddate(FechaSolicitud, 3) AS FechaExpiracion,  tik_getm1dayfromdate(FechaSolicitud, 3) AS FechaMaxima";
 $tdatavtik_interno[".sqlFrom"] = "FROM tik_interno";
 $tdatavtik_interno[".sqlWhereExpr"] = "(Estado <>\"Evaluado\")";
 $tdatavtik_interno[".sqlTail"] = "";
@@ -2798,10 +2802,149 @@ $tdatavtik_interno[".hideMobileList"] = array();
 
 	$tdatavtik_interno["ProcesoAtencion"] = $fdata;
 		$tdatavtik_interno[".searchableFields"][] = "ProcesoAtencion";
-//	FechaMaxima
+//	FechaExpiracion
 //	Custom field settings
 	$fdata = array();
 	$fdata["Index"] = 18;
+	$fdata["strName"] = "FechaExpiracion";
+	$fdata["GoodName"] = "FechaExpiracion";
+	$fdata["ownerTable"] = "";
+	$fdata["Label"] = GetFieldLabel("vtik_interno","FechaExpiracion");
+	$fdata["FieldType"] = 135;
+
+	
+	
+	
+			
+
+		$fdata["strField"] = "FechaExpiracion";
+
+	
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "tik_getexpireddate(FechaSolicitud, 3)";
+
+	
+	
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "Short Date");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	
+		$vdata["NeedEncode"] = true;
+
+	
+		$vdata["truncateText"] = true;
+	$vdata["NumberOfChars"] = 80;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Date");
+
+	
+		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
+	$edata["weekdays"] = "[]";
+
+
+	
+	
+
+
+
+		$edata["IsRequired"] = true;
+
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+		$edata["acceptFileTypesHtml"] = "";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+		$edata["DateEditType"] = 13;
+	$edata["InitialYearFactor"] = 100;
+	$edata["LastYearFactor"] = 10;
+
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+						$edata["validateAs"]["basicValidate"][] = "IsRequired";
+		
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Equals";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Equals", "More than", "Less than", "Between", EMPTY_SEARCH, NOT_EMPTY );
+// the end of search options settings
+
+
+//Filters settings
+	$fdata["filterTotals"] = 0;
+		$fdata["filterMultiSelect"] = 0;
+			$fdata["filterFormat"] = "Values list";
+		$fdata["showCollapsed"] = false;
+
+		$fdata["sortValueType"] = 0;
+		$fdata["numberOfVisibleItems"] = 10;
+
+		$fdata["filterBy"] = 0;
+
+	
+
+	
+	
+//end of Filters settings
+
+
+	$tdatavtik_interno["FechaExpiracion"] = $fdata;
+		$tdatavtik_interno[".searchableFields"][] = "FechaExpiracion";
+//	FechaMaxima
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 19;
 	$fdata["strName"] = "FechaMaxima";
 	$fdata["GoodName"] = "FechaMaxima";
 	$fdata["ownerTable"] = "";
@@ -3004,7 +3147,7 @@ function createSqlQuery_vtik_interno()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "Solicitud,  Documento,  TipoSolicitud,  DepartamentoSolicitante,  UsuarioSolicitante,  DepartamentoSolicitar,  Asunto,  DescripcionAmplia,  FechaSolicitud,  FechaInicio,  UsuarioInicio,  FechaFinal,  Observaciones,  Evaluacion,  Estado,  FechaAtencion,  ProcesoAtencion,  tik_getm1dayfromdate(FechaSolicitud, 3) AS FechaMaxima";
+$proto0["m_strFieldList"] = "Solicitud,  Documento,  TipoSolicitud,  DepartamentoSolicitante,  UsuarioSolicitante,  DepartamentoSolicitar,  Asunto,  DescripcionAmplia,  FechaSolicitud,  FechaInicio,  UsuarioInicio,  FechaFinal,  Observaciones,  Evaluacion,  Estado,  FechaAtencion,  ProcesoAtencion,  tik_getexpireddate(FechaSolicitud, 3) AS FechaExpiracion,  tik_getm1dayfromdate(FechaSolicitud, 3) AS FechaMaxima";
 $proto0["m_strFrom"] = "FROM tik_interno";
 $proto0["m_strWhere"] = "(Estado <>\"Evaluado\")";
 $proto0["m_strOrderBy"] = "ORDER BY Solicitud DESC";
@@ -3298,78 +3441,102 @@ $proto41["m_arguments"][]=$obj;
 ));
 
 $proto41["m_arguments"][]=$obj;
-$proto41["m_strFunctionName"] = "tik_getm1dayfromdate";
+$proto41["m_strFunctionName"] = "tik_getexpireddate";
 $obj = new SQLFunctionCall($proto41);
 
-$proto40["m_sql"] = "tik_getm1dayfromdate(FechaSolicitud, 3)";
+$proto40["m_sql"] = "tik_getexpireddate(FechaSolicitud, 3)";
 $proto40["m_srcTableName"] = "vtik_interno";
 $proto40["m_expr"]=$obj;
-$proto40["m_alias"] = "FechaMaxima";
+$proto40["m_alias"] = "FechaExpiracion";
 $obj = new SQLFieldListItem($proto40);
 
 $proto0["m_fieldlist"][]=$obj;
-$proto0["m_fromlist"] = array();
-												$proto44=array();
-$proto44["m_link"] = "SQLL_MAIN";
+						$proto44=array();
 			$proto45=array();
-$proto45["m_strName"] = "tik_interno";
-$proto45["m_srcTableName"] = "vtik_interno";
-$proto45["m_columns"] = array();
-$proto45["m_columns"][] = "Solicitud";
-$proto45["m_columns"][] = "Documento";
-$proto45["m_columns"][] = "TipoSolicitud";
-$proto45["m_columns"][] = "DepartamentoSolicitante";
-$proto45["m_columns"][] = "UsuarioSolicitante";
-$proto45["m_columns"][] = "DepartamentoSolicitar";
-$proto45["m_columns"][] = "Asunto";
-$proto45["m_columns"][] = "DescripcionAmplia";
-$proto45["m_columns"][] = "FechaSolicitud";
-$proto45["m_columns"][] = "FechaInicio";
-$proto45["m_columns"][] = "UsuarioInicio";
-$proto45["m_columns"][] = "FechaFinal";
-$proto45["m_columns"][] = "Observaciones";
-$proto45["m_columns"][] = "Evaluacion";
-$proto45["m_columns"][] = "Estado";
-$proto45["m_columns"][] = "FechaAtencion";
-$proto45["m_columns"][] = "ProcesoAtencion";
-$obj = new SQLTable($proto45);
+$proto45["m_functiontype"] = "SQLF_CUSTOM";
+$proto45["m_arguments"] = array();
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "FechaSolicitud"
+));
 
-$proto44["m_table"] = $obj;
-$proto44["m_sql"] = "tik_interno";
-$proto44["m_alias"] = "";
+$proto45["m_arguments"][]=$obj;
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "3"
+));
+
+$proto45["m_arguments"][]=$obj;
+$proto45["m_strFunctionName"] = "tik_getm1dayfromdate";
+$obj = new SQLFunctionCall($proto45);
+
+$proto44["m_sql"] = "tik_getm1dayfromdate(FechaSolicitud, 3)";
 $proto44["m_srcTableName"] = "vtik_interno";
-$proto46=array();
-$proto46["m_sql"] = "";
-$proto46["m_uniontype"] = "SQLL_UNKNOWN";
+$proto44["m_expr"]=$obj;
+$proto44["m_alias"] = "FechaMaxima";
+$obj = new SQLFieldListItem($proto44);
+
+$proto0["m_fieldlist"][]=$obj;
+$proto0["m_fromlist"] = array();
+												$proto48=array();
+$proto48["m_link"] = "SQLL_MAIN";
+			$proto49=array();
+$proto49["m_strName"] = "tik_interno";
+$proto49["m_srcTableName"] = "vtik_interno";
+$proto49["m_columns"] = array();
+$proto49["m_columns"][] = "Solicitud";
+$proto49["m_columns"][] = "Documento";
+$proto49["m_columns"][] = "TipoSolicitud";
+$proto49["m_columns"][] = "DepartamentoSolicitante";
+$proto49["m_columns"][] = "UsuarioSolicitante";
+$proto49["m_columns"][] = "DepartamentoSolicitar";
+$proto49["m_columns"][] = "Asunto";
+$proto49["m_columns"][] = "DescripcionAmplia";
+$proto49["m_columns"][] = "FechaSolicitud";
+$proto49["m_columns"][] = "FechaInicio";
+$proto49["m_columns"][] = "UsuarioInicio";
+$proto49["m_columns"][] = "FechaFinal";
+$proto49["m_columns"][] = "Observaciones";
+$proto49["m_columns"][] = "Evaluacion";
+$proto49["m_columns"][] = "Estado";
+$proto49["m_columns"][] = "FechaAtencion";
+$proto49["m_columns"][] = "ProcesoAtencion";
+$obj = new SQLTable($proto49);
+
+$proto48["m_table"] = $obj;
+$proto48["m_sql"] = "tik_interno";
+$proto48["m_alias"] = "";
+$proto48["m_srcTableName"] = "vtik_interno";
+$proto50=array();
+$proto50["m_sql"] = "";
+$proto50["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto46["m_column"]=$obj;
-$proto46["m_contained"] = array();
-$proto46["m_strCase"] = "";
-$proto46["m_havingmode"] = false;
-$proto46["m_inBrackets"] = false;
-$proto46["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto46);
+$proto50["m_column"]=$obj;
+$proto50["m_contained"] = array();
+$proto50["m_strCase"] = "";
+$proto50["m_havingmode"] = false;
+$proto50["m_inBrackets"] = false;
+$proto50["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto50);
 
-$proto44["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto44);
+$proto48["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto48);
 
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
 $proto0["m_orderby"] = array();
-												$proto48=array();
+												$proto52=array();
 						$obj = new SQLField(array(
 	"m_strName" => "Solicitud",
 	"m_strTable" => "tik_interno",
 	"m_srcTableName" => "vtik_interno"
 ));
 
-$proto48["m_column"]=$obj;
-$proto48["m_bAsc"] = 0;
-$proto48["m_nColumn"] = 0;
-$obj = new SQLOrderByItem($proto48);
+$proto52["m_column"]=$obj;
+$proto52["m_bAsc"] = 0;
+$proto52["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto52);
 
 $proto0["m_orderby"][]=$obj;					
 $proto0["m_srcTableName"]="vtik_interno";		
@@ -3383,7 +3550,7 @@ $queryData_vtik_interno = createSqlQuery_vtik_interno();
 	
 		;
 
-																		
+																			
 
 $tdatavtik_interno[".sqlquery"] = $queryData_vtik_interno;
 

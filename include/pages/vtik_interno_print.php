@@ -19,6 +19,7 @@
 'Estado' => array( 'totalsType' => '' ),
 'FechaAtencion' => array( 'totalsType' => '' ),
 'ProcesoAtencion' => array( 'totalsType' => '' ),
+'FechaExpiracion' => array( 'totalsType' => '' ),
 'FechaMaxima' => array( 'totalsType' => '' ) ),
 'fields' => array( 'gridFields' => array( 'Solicitud',
 'DepartamentoSolicitante',
