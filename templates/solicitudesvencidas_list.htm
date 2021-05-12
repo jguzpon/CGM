@@ -284,6 +284,19 @@
 								<span class="rnr-searchcontrol">{$searchcontrol1_Asunto}</span>
 						</div>
 		{END searchCtrlBlock_Asunto}
+																{BEGIN searchCtrlBlock_FechaVencimiento}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_FechaVencimiento}" {$filterRow_attrs_FechaVencimiento}>
+			<label>{$label SolicitudesVencidas FechaVencimiento }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_FechaVencimiento}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_FechaVencimiento}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_FechaVencimiento}</span>
+						</div>
+		{END searchCtrlBlock_FechaVencimiento}
 																{BEGIN searchCtrlBlock_ProcesoAtencion}
 
 
@@ -598,6 +611,9 @@
 				[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="FechaSolicitud"]:before {
 		content: "{$label SolicitudesVencidas FechaSolicitud}";
 	}
+			[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="FechaVencimiento"]:before {
+		content: "{$label SolicitudesVencidas FechaVencimiento}";
+	}
 								[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="Estado"]:before {
 		content: "{$label SolicitudesVencidas Estado}";
 	}
@@ -690,7 +706,7 @@
 	 
 		{BEGIN Solicitud_fieldheadercolumn}
 	{BEGIN Solicitud_fieldheader}
-	<SPAN {$Solicitud_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field1" {$item_simple_grid_field1} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Solicitud">
+	<SPAN {$Solicitud_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field8" {$item_simple_grid_field8} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Solicitud">
 	{$label SolicitudesVencidas Solicitud }	{$arrow_icon_Solicitud}
 	</SPAN>
 	{END Solicitud_fieldheader}
@@ -744,7 +760,7 @@
 	 
 		{BEGIN TipoSolicitud_fieldheadercolumn}
 	{BEGIN TipoSolicitud_fieldheader}
-	<SPAN {$TipoSolicitud_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field8" {$item_simple_grid_field8} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="TipoSolicitud">
+	<SPAN {$TipoSolicitud_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field9" {$item_simple_grid_field9} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="TipoSolicitud">
 	{$label SolicitudesVencidas TipoSolicitud }	{$arrow_icon_TipoSolicitud}
 	</SPAN>
 	{END TipoSolicitud_fieldheader}
@@ -771,7 +787,7 @@
 	 
 		{BEGIN DepartamentoSolicitante_fieldheadercolumn}
 	{BEGIN DepartamentoSolicitante_fieldheader}
-	<SPAN {$DepartamentoSolicitante_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field9" {$item_simple_grid_field9} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="DepartamentoSolicitante">
+	<SPAN {$DepartamentoSolicitante_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field10" {$item_simple_grid_field10} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="DepartamentoSolicitante">
 	{$label SolicitudesVencidas DepartamentoSolicitante }	{$arrow_icon_DepartamentoSolicitante}
 	</SPAN>
 	{END DepartamentoSolicitante_fieldheader}
@@ -798,7 +814,7 @@
 	 
 		{BEGIN UsuarioSolicitante_fieldheadercolumn}
 	{BEGIN UsuarioSolicitante_fieldheader}
-	<SPAN {$UsuarioSolicitante_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field10" {$item_simple_grid_field10} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="UsuarioSolicitante">
+	<SPAN {$UsuarioSolicitante_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field11" {$item_simple_grid_field11} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="UsuarioSolicitante">
 	{$label SolicitudesVencidas UsuarioSolicitante }	{$arrow_icon_UsuarioSolicitante}
 	</SPAN>
 	{END UsuarioSolicitante_fieldheader}
@@ -825,7 +841,7 @@
 	 
 		{BEGIN DepartamentoSolicitar_fieldheadercolumn}
 	{BEGIN DepartamentoSolicitar_fieldheader}
-	<SPAN {$DepartamentoSolicitar_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field11" {$item_simple_grid_field11} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="DepartamentoSolicitar">
+	<SPAN {$DepartamentoSolicitar_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field12" {$item_simple_grid_field12} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="DepartamentoSolicitar">
 	{$label SolicitudesVencidas DepartamentoSolicitar }	{$arrow_icon_DepartamentoSolicitar}
 	</SPAN>
 	{END DepartamentoSolicitar_fieldheader}
@@ -852,7 +868,7 @@
 	 
 		{BEGIN FechaSolicitud_fieldheadercolumn}
 	{BEGIN FechaSolicitud_fieldheader}
-	<SPAN {$FechaSolicitud_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field12" {$item_simple_grid_field12} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="FechaSolicitud">
+	<SPAN {$FechaSolicitud_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field14" {$item_simple_grid_field14} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="FechaSolicitud">
 	{$label SolicitudesVencidas FechaSolicitud }	{$arrow_icon_FechaSolicitud}
 	</SPAN>
 	{END FechaSolicitud_fieldheader}
@@ -868,22 +884,22 @@
 	{$cell_grid_headcell_field7}
 	{$recordattrs}
 	class="
-		 r-ori-vert				{$Asunto_class}
+		 r-ori-vert				{$FechaVencimiento_class}
 			"
 
-			data-field="Asunto"
+			data-field="FechaVencimiento"
 	
 	data-cellId="grid_headcell_field7" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-		{BEGIN Asunto_fieldheadercolumn}
-	{BEGIN Asunto_fieldheader}
-	<SPAN {$Asunto_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field14" {$item_simple_grid_field14} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Asunto">
-	{$label SolicitudesVencidas Asunto }	{$arrow_icon_Asunto}
+		{BEGIN FechaVencimiento_fieldheadercolumn}
+	{BEGIN FechaVencimiento_fieldheader}
+	<SPAN {$FechaVencimiento_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field15" {$item_simple_grid_field15} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="FechaVencimiento">
+	{$label SolicitudesVencidas FechaVencimiento }	{$arrow_icon_FechaVencimiento}
 	</SPAN>
-	{END Asunto_fieldheader}
-{END Asunto_fieldheadercolumn}
+	{END FechaVencimiento_fieldheader}
+{END FechaVencimiento_fieldheadercolumn}
 
 	
 	</th>
@@ -895,18 +911,45 @@
 	{$cell_grid_headcell_field8}
 	{$recordattrs}
 	class="
-		 r-ori-vert				{$Estado_class}
+		 r-ori-vert				{$Asunto_class}
 			"
 
-			data-field="Estado"
+			data-field="Asunto"
 	
 	data-cellId="grid_headcell_field8" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
+		{BEGIN Asunto_fieldheadercolumn}
+	{BEGIN Asunto_fieldheader}
+	<SPAN {$Asunto_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field16" {$item_simple_grid_field16} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Asunto">
+	{$label SolicitudesVencidas Asunto }	{$arrow_icon_Asunto}
+	</SPAN>
+	{END Asunto_fieldheader}
+{END Asunto_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field8}
+				 
+					{BEGIN cellblock_grid_headcell_field9}
+	<th
+	
+	{$cell_grid_headcell_field9}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$Estado_class}
+			"
+
+			data-field="Estado"
+	
+	data-cellId="grid_headcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
 		{BEGIN Estado_fieldheadercolumn}
 	{BEGIN Estado_fieldheader}
-	<SPAN {$Estado_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field15" {$item_simple_grid_field15} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Estado">
+	<SPAN {$Estado_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field17" {$item_simple_grid_field17} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Estado">
 	{$label SolicitudesVencidas Estado }	{$arrow_icon_Estado}
 	</SPAN>
 	{END Estado_fieldheader}
@@ -914,7 +957,7 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field8}
+	{END cellblock_grid_headcell_field9}
 							</tr>
 					 
 					 
@@ -1217,20 +1260,20 @@
 	{$cell_grid_cell_field7}
 	{$recordattrs}
 	class="
-		 r-ori-vert				{$Asunto_class}
+		 r-ori-vert				{$FechaVencimiento_class}
 			"
 
-			data-field="Asunto"
+			data-field="FechaVencimiento"
 	
 	data-cellId="grid_cell_field7" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-		{BEGIN Asunto_fieldcolumn}
-<span data-itemtype="grid_field" data-itemid="simple_grid_field5" {$item_simple_grid_field5} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Asunto" data-default-width >
-{$Asunto_value}
+		{BEGIN FechaVencimiento_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="simple_grid_field1" {$item_simple_grid_field1} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="FechaVencimiento" data-default-width >
+{$FechaVencimiento_value}
 </span>
-{END Asunto_fieldcolumn}	
+{END FechaVencimiento_fieldcolumn}	
 	</td>
 	{END cellblock_grid_cell_field7}
 				 
@@ -1240,12 +1283,35 @@
 	{$cell_grid_cell_field8}
 	{$recordattrs}
 	class="
+		 r-ori-vert				{$Asunto_class}
+			"
+
+			data-field="Asunto"
+	
+	data-cellId="grid_cell_field8" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN Asunto_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="simple_grid_field5" {$item_simple_grid_field5} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Asunto" data-default-width >
+{$Asunto_value}
+</span>
+{END Asunto_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field8}
+				 
+					{BEGIN cellblock_grid_cell_field9}
+	<td
+	
+	{$cell_grid_cell_field9}
+	{$recordattrs}
+	class="
 		 r-ori-vert				{$Estado_class}
 			"
 
 			data-field="Estado"
 	
-	data-cellId="grid_cell_field8" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field9" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1255,7 +1321,7 @@
 </span>
 {END Estado_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field8}
+	{END cellblock_grid_cell_field9}
 							</tr>
 					 
 						<tr {$rowattrs} {$row_grid_2} class="{$rowclass} 
@@ -1497,6 +1563,22 @@
 	
 	</td>
 	{END cellblock_grid_footcell_field8}
+				 
+					{BEGIN cellblock_grid_footcell_field9}
+	<td
+	
+	{$cell_grid_footcell_field9}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_footcell_field9" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="solicitudesvencidas_list"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field9}
 							</tr>
 					
 					</tfoot>

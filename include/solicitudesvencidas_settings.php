@@ -43,7 +43,7 @@ if(mlang_getcurrentlang()=="Spanish")
 	$fieldLabelssolicitudesvencidas["Spanish"]["DescripcionAmplia"] = "Descripcion Amplia";
 	$fieldToolTipssolicitudesvencidas["Spanish"]["DescripcionAmplia"] = "";
 	$placeHolderssolicitudesvencidas["Spanish"]["DescripcionAmplia"] = "";
-	$fieldLabelssolicitudesvencidas["Spanish"]["FechaSolicitud"] = "Fecha Solicitud";
+	$fieldLabelssolicitudesvencidas["Spanish"]["FechaSolicitud"] = "Fecha/Hora Solicitud";
 	$fieldToolTipssolicitudesvencidas["Spanish"]["FechaSolicitud"] = "";
 	$placeHolderssolicitudesvencidas["Spanish"]["FechaSolicitud"] = "";
 	$fieldLabelssolicitudesvencidas["Spanish"]["FechaInicio"] = "Fecha Inicio";
@@ -76,6 +76,9 @@ if(mlang_getcurrentlang()=="Spanish")
 	$fieldLabelssolicitudesvencidas["Spanish"]["ProcesoAtencion"] = "Proceso Atencion";
 	$fieldToolTipssolicitudesvencidas["Spanish"]["ProcesoAtencion"] = "";
 	$placeHolderssolicitudesvencidas["Spanish"]["ProcesoAtencion"] = "";
+	$fieldLabelssolicitudesvencidas["Spanish"]["FechaVencimiento"] = "Fecha/Hora Vencimiento";
+	$fieldToolTipssolicitudesvencidas["Spanish"]["FechaVencimiento"] = "";
+	$placeHolderssolicitudesvencidas["Spanish"]["FechaVencimiento"] = "";
 	if (count($fieldToolTipssolicitudesvencidas["Spanish"]))
 		$tdatasolicitudesvencidas[".isUseToolTips"] = true;
 }
@@ -209,6 +212,7 @@ $tdatasolicitudesvencidas[".googleLikeFields"][] = "DepartamentoSolicitar";
 $tdatasolicitudesvencidas[".googleLikeFields"][] = "Asunto";
 $tdatasolicitudesvencidas[".googleLikeFields"][] = "DescripcionAmplia";
 $tdatasolicitudesvencidas[".googleLikeFields"][] = "FechaSolicitud";
+$tdatasolicitudesvencidas[".googleLikeFields"][] = "FechaVencimiento";
 $tdatasolicitudesvencidas[".googleLikeFields"][] = "FechaInicio";
 $tdatasolicitudesvencidas[".googleLikeFields"][] = "UsuarioInicio";
 $tdatasolicitudesvencidas[".googleLikeFields"][] = "FechaFinal";
@@ -254,7 +258,7 @@ $tdatasolicitudesvencidas[".orderindexes"] = array();
 
 
 
-$tdatasolicitudesvencidas[".sqlHead"] = "SELECT Solicitud,  Documento,  TipoSolicitud,  DepartamentoSolicitante,  UsuarioSolicitante,  DepartamentoSolicitar,  Asunto,  DescripcionAmplia,  FechaSolicitud,  FechaInicio,  UsuarioInicio,  FechaFinal,  Observaciones,  Evaluacion,  Estado,  IFNULL(FechaAtencion, '') AS fechaatencion,  ProcesoAtencion";
+$tdatasolicitudesvencidas[".sqlHead"] = "SELECT Solicitud,  Documento,  TipoSolicitud,  DepartamentoSolicitante,  UsuarioSolicitante,  DepartamentoSolicitar,  Asunto,  DescripcionAmplia,  FechaSolicitud,  tik_sumdaysdate(FechaSolicitud, 3) AS FechaVencimiento,  FechaInicio,  UsuarioInicio,  FechaFinal,  Observaciones,  Evaluacion,  Estado,  IFNULL(FechaAtencion, '') AS fechaatencion,  ProcesoAtencion";
 $tdatasolicitudesvencidas[".sqlFrom"] = "FROM tik_interno";
 $tdatasolicitudesvencidas[".sqlWhereExpr"] = "(Evaluacion =1) AND (Estado ='Evaluado') AND (IFNULL(FechaAtencion, '') ='')";
 $tdatasolicitudesvencidas[".sqlTail"] = "";
@@ -1649,10 +1653,149 @@ $tdatasolicitudesvencidas[".hideMobileList"] = array();
 
 	$tdatasolicitudesvencidas["FechaSolicitud"] = $fdata;
 		$tdatasolicitudesvencidas[".searchableFields"][] = "FechaSolicitud";
-//	FechaInicio
+//	FechaVencimiento
 //	Custom field settings
 	$fdata = array();
 	$fdata["Index"] = 10;
+	$fdata["strName"] = "FechaVencimiento";
+	$fdata["GoodName"] = "FechaVencimiento";
+	$fdata["ownerTable"] = "";
+	$fdata["Label"] = GetFieldLabel("SolicitudesVencidas","FechaVencimiento");
+	$fdata["FieldType"] = 135;
+
+	
+	
+	
+			
+
+		$fdata["strField"] = "FechaVencimiento";
+
+	
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "tik_sumdaysdate(FechaSolicitud, 3)";
+
+	
+	
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "Datetime");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	
+		$vdata["NeedEncode"] = true;
+
+	
+		$vdata["truncateText"] = true;
+	$vdata["NumberOfChars"] = 80;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Date");
+
+	
+		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
+	$edata["weekdays"] = "[]";
+
+
+	
+	
+
+
+
+		$edata["IsRequired"] = true;
+
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+		$edata["acceptFileTypesHtml"] = "";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+		$edata["DateEditType"] = 13;
+	$edata["InitialYearFactor"] = 100;
+	$edata["LastYearFactor"] = 10;
+
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+						$edata["validateAs"]["basicValidate"][] = "IsRequired";
+		
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Equals";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Equals", "More than", "Less than", "Between", EMPTY_SEARCH, NOT_EMPTY );
+// the end of search options settings
+
+
+//Filters settings
+	$fdata["filterTotals"] = 0;
+		$fdata["filterMultiSelect"] = 0;
+			$fdata["filterFormat"] = "Values list";
+		$fdata["showCollapsed"] = false;
+
+		$fdata["sortValueType"] = 0;
+		$fdata["numberOfVisibleItems"] = 10;
+
+		$fdata["filterBy"] = 0;
+
+	
+
+	
+	
+//end of Filters settings
+
+
+	$tdatasolicitudesvencidas["FechaVencimiento"] = $fdata;
+		$tdatasolicitudesvencidas[".searchableFields"][] = "FechaVencimiento";
+//	FechaInicio
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 11;
 	$fdata["strName"] = "FechaInicio";
 	$fdata["GoodName"] = "FechaInicio";
 	$fdata["ownerTable"] = "tik_interno";
@@ -1786,7 +1929,7 @@ $tdatasolicitudesvencidas[".hideMobileList"] = array();
 //	UsuarioInicio
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 11;
+	$fdata["Index"] = 12;
 	$fdata["strName"] = "UsuarioInicio";
 	$fdata["GoodName"] = "UsuarioInicio";
 	$fdata["ownerTable"] = "tik_interno";
@@ -1947,7 +2090,7 @@ $tdatasolicitudesvencidas[".hideMobileList"] = array();
 //	FechaFinal
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 12;
+	$fdata["Index"] = 13;
 	$fdata["strName"] = "FechaFinal";
 	$fdata["GoodName"] = "FechaFinal";
 	$fdata["ownerTable"] = "tik_interno";
@@ -2081,7 +2224,7 @@ $tdatasolicitudesvencidas[".hideMobileList"] = array();
 //	Observaciones
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 13;
+	$fdata["Index"] = 14;
 	$fdata["strName"] = "Observaciones";
 	$fdata["GoodName"] = "Observaciones";
 	$fdata["ownerTable"] = "tik_interno";
@@ -2215,7 +2358,7 @@ $tdatasolicitudesvencidas[".hideMobileList"] = array();
 //	Evaluacion
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 14;
+	$fdata["Index"] = 15;
 	$fdata["strName"] = "Evaluacion";
 	$fdata["GoodName"] = "Evaluacion";
 	$fdata["ownerTable"] = "tik_interno";
@@ -2377,7 +2520,7 @@ $tdatasolicitudesvencidas[".hideMobileList"] = array();
 //	Estado
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 15;
+	$fdata["Index"] = 16;
 	$fdata["strName"] = "Estado";
 	$fdata["GoodName"] = "Estado";
 	$fdata["ownerTable"] = "tik_interno";
@@ -2512,7 +2655,7 @@ $tdatasolicitudesvencidas[".hideMobileList"] = array();
 //	fechaatencion
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 16;
+	$fdata["Index"] = 17;
 	$fdata["strName"] = "fechaatencion";
 	$fdata["GoodName"] = "fechaatencion";
 	$fdata["ownerTable"] = "";
@@ -2646,7 +2789,7 @@ $tdatasolicitudesvencidas[".hideMobileList"] = array();
 //	ProcesoAtencion
 //	Custom field settings
 	$fdata = array();
-	$fdata["Index"] = 17;
+	$fdata["Index"] = 18;
 	$fdata["strName"] = "ProcesoAtencion";
 	$fdata["GoodName"] = "ProcesoAtencion";
 	$fdata["ownerTable"] = "tik_interno";
@@ -2817,7 +2960,7 @@ function createSqlQuery_solicitudesvencidas()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "Solicitud,  Documento,  TipoSolicitud,  DepartamentoSolicitante,  UsuarioSolicitante,  DepartamentoSolicitar,  Asunto,  DescripcionAmplia,  FechaSolicitud,  FechaInicio,  UsuarioInicio,  FechaFinal,  Observaciones,  Evaluacion,  Estado,  IFNULL(FechaAtencion, '') AS fechaatencion,  ProcesoAtencion";
+$proto0["m_strFieldList"] = "Solicitud,  Documento,  TipoSolicitud,  DepartamentoSolicitante,  UsuarioSolicitante,  DepartamentoSolicitar,  Asunto,  DescripcionAmplia,  FechaSolicitud,  tik_sumdaysdate(FechaSolicitud, 3) AS FechaVencimiento,  FechaInicio,  UsuarioInicio,  FechaFinal,  Observaciones,  Evaluacion,  Estado,  IFNULL(FechaAtencion, '') AS fechaatencion,  ProcesoAtencion";
 $proto0["m_strFrom"] = "FROM tik_interno";
 $proto0["m_strWhere"] = "(Evaluacion =1) AND (Estado ='Evaluado') AND (IFNULL(FechaAtencion, '') ='')";
 $proto0["m_strOrderBy"] = "ORDER BY Solicitud DESC";
@@ -3048,41 +3191,37 @@ $obj = new SQLFieldListItem($proto30);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto32=array();
+			$proto33=array();
+$proto33["m_functiontype"] = "SQLF_CUSTOM";
+$proto33["m_arguments"] = array();
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "FechaSolicitud"
+));
+
+$proto33["m_arguments"][]=$obj;
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "3"
+));
+
+$proto33["m_arguments"][]=$obj;
+$proto33["m_strFunctionName"] = "tik_sumdaysdate";
+$obj = new SQLFunctionCall($proto33);
+
+$proto32["m_sql"] = "tik_sumdaysdate(FechaSolicitud, 3)";
+$proto32["m_srcTableName"] = "SolicitudesVencidas";
+$proto32["m_expr"]=$obj;
+$proto32["m_alias"] = "FechaVencimiento";
+$obj = new SQLFieldListItem($proto32);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto36=array();
 			$obj = new SQLField(array(
 	"m_strName" => "FechaInicio",
 	"m_strTable" => "tik_interno",
 	"m_srcTableName" => "SolicitudesVencidas"
 ));
 
-$proto32["m_sql"] = "FechaInicio";
-$proto32["m_srcTableName"] = "SolicitudesVencidas";
-$proto32["m_expr"]=$obj;
-$proto32["m_alias"] = "";
-$obj = new SQLFieldListItem($proto32);
-
-$proto0["m_fieldlist"][]=$obj;
-						$proto34=array();
-			$obj = new SQLField(array(
-	"m_strName" => "UsuarioInicio",
-	"m_strTable" => "tik_interno",
-	"m_srcTableName" => "SolicitudesVencidas"
-));
-
-$proto34["m_sql"] = "UsuarioInicio";
-$proto34["m_srcTableName"] = "SolicitudesVencidas";
-$proto34["m_expr"]=$obj;
-$proto34["m_alias"] = "";
-$obj = new SQLFieldListItem($proto34);
-
-$proto0["m_fieldlist"][]=$obj;
-						$proto36=array();
-			$obj = new SQLField(array(
-	"m_strName" => "FechaFinal",
-	"m_strTable" => "tik_interno",
-	"m_srcTableName" => "SolicitudesVencidas"
-));
-
-$proto36["m_sql"] = "FechaFinal";
+$proto36["m_sql"] = "FechaInicio";
 $proto36["m_srcTableName"] = "SolicitudesVencidas";
 $proto36["m_expr"]=$obj;
 $proto36["m_alias"] = "";
@@ -3091,12 +3230,12 @@ $obj = new SQLFieldListItem($proto36);
 $proto0["m_fieldlist"][]=$obj;
 						$proto38=array();
 			$obj = new SQLField(array(
-	"m_strName" => "Observaciones",
+	"m_strName" => "UsuarioInicio",
 	"m_strTable" => "tik_interno",
 	"m_srcTableName" => "SolicitudesVencidas"
 ));
 
-$proto38["m_sql"] = "Observaciones";
+$proto38["m_sql"] = "UsuarioInicio";
 $proto38["m_srcTableName"] = "SolicitudesVencidas";
 $proto38["m_expr"]=$obj;
 $proto38["m_alias"] = "";
@@ -3105,12 +3244,12 @@ $obj = new SQLFieldListItem($proto38);
 $proto0["m_fieldlist"][]=$obj;
 						$proto40=array();
 			$obj = new SQLField(array(
-	"m_strName" => "Evaluacion",
+	"m_strName" => "FechaFinal",
 	"m_strTable" => "tik_interno",
 	"m_srcTableName" => "SolicitudesVencidas"
 ));
 
-$proto40["m_sql"] = "Evaluacion";
+$proto40["m_sql"] = "FechaFinal";
 $proto40["m_srcTableName"] = "SolicitudesVencidas";
 $proto40["m_expr"]=$obj;
 $proto40["m_alias"] = "";
@@ -3119,12 +3258,12 @@ $obj = new SQLFieldListItem($proto40);
 $proto0["m_fieldlist"][]=$obj;
 						$proto42=array();
 			$obj = new SQLField(array(
-	"m_strName" => "Estado",
+	"m_strName" => "Observaciones",
 	"m_strTable" => "tik_interno",
 	"m_srcTableName" => "SolicitudesVencidas"
 ));
 
-$proto42["m_sql"] = "Estado";
+$proto42["m_sql"] = "Observaciones";
 $proto42["m_srcTableName"] = "SolicitudesVencidas";
 $proto42["m_expr"]=$obj;
 $proto42["m_alias"] = "";
@@ -3132,105 +3271,133 @@ $obj = new SQLFieldListItem($proto42);
 
 $proto0["m_fieldlist"][]=$obj;
 						$proto44=array();
-			$proto45=array();
-$proto45["m_functiontype"] = "SQLF_CUSTOM";
-$proto45["m_arguments"] = array();
+			$obj = new SQLField(array(
+	"m_strName" => "Evaluacion",
+	"m_strTable" => "tik_interno",
+	"m_srcTableName" => "SolicitudesVencidas"
+));
+
+$proto44["m_sql"] = "Evaluacion";
+$proto44["m_srcTableName"] = "SolicitudesVencidas";
+$proto44["m_expr"]=$obj;
+$proto44["m_alias"] = "";
+$obj = new SQLFieldListItem($proto44);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto46=array();
+			$obj = new SQLField(array(
+	"m_strName" => "Estado",
+	"m_strTable" => "tik_interno",
+	"m_srcTableName" => "SolicitudesVencidas"
+));
+
+$proto46["m_sql"] = "Estado";
+$proto46["m_srcTableName"] = "SolicitudesVencidas";
+$proto46["m_expr"]=$obj;
+$proto46["m_alias"] = "";
+$obj = new SQLFieldListItem($proto46);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto48=array();
+			$proto49=array();
+$proto49["m_functiontype"] = "SQLF_CUSTOM";
+$proto49["m_arguments"] = array();
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "FechaAtencion"
 ));
 
-$proto45["m_arguments"][]=$obj;
+$proto49["m_arguments"][]=$obj;
 						$obj = new SQLNonParsed(array(
 	"m_sql" => "''"
 ));
 
-$proto45["m_arguments"][]=$obj;
-$proto45["m_strFunctionName"] = "IFNULL";
-$obj = new SQLFunctionCall($proto45);
+$proto49["m_arguments"][]=$obj;
+$proto49["m_strFunctionName"] = "IFNULL";
+$obj = new SQLFunctionCall($proto49);
 
-$proto44["m_sql"] = "IFNULL(FechaAtencion, '')";
-$proto44["m_srcTableName"] = "SolicitudesVencidas";
-$proto44["m_expr"]=$obj;
-$proto44["m_alias"] = "fechaatencion";
-$obj = new SQLFieldListItem($proto44);
+$proto48["m_sql"] = "IFNULL(FechaAtencion, '')";
+$proto48["m_srcTableName"] = "SolicitudesVencidas";
+$proto48["m_expr"]=$obj;
+$proto48["m_alias"] = "fechaatencion";
+$obj = new SQLFieldListItem($proto48);
 
 $proto0["m_fieldlist"][]=$obj;
-						$proto48=array();
+						$proto52=array();
 			$obj = new SQLField(array(
 	"m_strName" => "ProcesoAtencion",
 	"m_strTable" => "tik_interno",
 	"m_srcTableName" => "SolicitudesVencidas"
 ));
 
-$proto48["m_sql"] = "ProcesoAtencion";
-$proto48["m_srcTableName"] = "SolicitudesVencidas";
-$proto48["m_expr"]=$obj;
-$proto48["m_alias"] = "";
-$obj = new SQLFieldListItem($proto48);
+$proto52["m_sql"] = "ProcesoAtencion";
+$proto52["m_srcTableName"] = "SolicitudesVencidas";
+$proto52["m_expr"]=$obj;
+$proto52["m_alias"] = "";
+$obj = new SQLFieldListItem($proto52);
 
 $proto0["m_fieldlist"][]=$obj;
 $proto0["m_fromlist"] = array();
-												$proto50=array();
-$proto50["m_link"] = "SQLL_MAIN";
-			$proto51=array();
-$proto51["m_strName"] = "tik_interno";
-$proto51["m_srcTableName"] = "SolicitudesVencidas";
-$proto51["m_columns"] = array();
-$proto51["m_columns"][] = "Solicitud";
-$proto51["m_columns"][] = "Documento";
-$proto51["m_columns"][] = "TipoSolicitud";
-$proto51["m_columns"][] = "DepartamentoSolicitante";
-$proto51["m_columns"][] = "UsuarioSolicitante";
-$proto51["m_columns"][] = "DepartamentoSolicitar";
-$proto51["m_columns"][] = "Asunto";
-$proto51["m_columns"][] = "DescripcionAmplia";
-$proto51["m_columns"][] = "FechaSolicitud";
-$proto51["m_columns"][] = "FechaInicio";
-$proto51["m_columns"][] = "UsuarioInicio";
-$proto51["m_columns"][] = "FechaFinal";
-$proto51["m_columns"][] = "Observaciones";
-$proto51["m_columns"][] = "Evaluacion";
-$proto51["m_columns"][] = "Estado";
-$proto51["m_columns"][] = "FechaAtencion";
-$proto51["m_columns"][] = "ProcesoAtencion";
-$obj = new SQLTable($proto51);
+												$proto54=array();
+$proto54["m_link"] = "SQLL_MAIN";
+			$proto55=array();
+$proto55["m_strName"] = "tik_interno";
+$proto55["m_srcTableName"] = "SolicitudesVencidas";
+$proto55["m_columns"] = array();
+$proto55["m_columns"][] = "Solicitud";
+$proto55["m_columns"][] = "Documento";
+$proto55["m_columns"][] = "TipoSolicitud";
+$proto55["m_columns"][] = "DepartamentoSolicitante";
+$proto55["m_columns"][] = "UsuarioSolicitante";
+$proto55["m_columns"][] = "DepartamentoSolicitar";
+$proto55["m_columns"][] = "Asunto";
+$proto55["m_columns"][] = "DescripcionAmplia";
+$proto55["m_columns"][] = "FechaSolicitud";
+$proto55["m_columns"][] = "FechaInicio";
+$proto55["m_columns"][] = "UsuarioInicio";
+$proto55["m_columns"][] = "FechaFinal";
+$proto55["m_columns"][] = "Observaciones";
+$proto55["m_columns"][] = "Evaluacion";
+$proto55["m_columns"][] = "Estado";
+$proto55["m_columns"][] = "FechaAtencion";
+$proto55["m_columns"][] = "ProcesoAtencion";
+$obj = new SQLTable($proto55);
 
-$proto50["m_table"] = $obj;
-$proto50["m_sql"] = "tik_interno";
-$proto50["m_alias"] = "";
-$proto50["m_srcTableName"] = "SolicitudesVencidas";
-$proto52=array();
-$proto52["m_sql"] = "";
-$proto52["m_uniontype"] = "SQLL_UNKNOWN";
+$proto54["m_table"] = $obj;
+$proto54["m_sql"] = "tik_interno";
+$proto54["m_alias"] = "";
+$proto54["m_srcTableName"] = "SolicitudesVencidas";
+$proto56=array();
+$proto56["m_sql"] = "";
+$proto56["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto52["m_column"]=$obj;
-$proto52["m_contained"] = array();
-$proto52["m_strCase"] = "";
-$proto52["m_havingmode"] = false;
-$proto52["m_inBrackets"] = false;
-$proto52["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto52);
+$proto56["m_column"]=$obj;
+$proto56["m_contained"] = array();
+$proto56["m_strCase"] = "";
+$proto56["m_havingmode"] = false;
+$proto56["m_inBrackets"] = false;
+$proto56["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto56);
 
-$proto50["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto50);
+$proto54["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto54);
 
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
 $proto0["m_orderby"] = array();
-												$proto54=array();
+												$proto58=array();
 						$obj = new SQLField(array(
 	"m_strName" => "Solicitud",
 	"m_strTable" => "tik_interno",
 	"m_srcTableName" => "SolicitudesVencidas"
 ));
 
-$proto54["m_column"]=$obj;
-$proto54["m_bAsc"] = 0;
-$proto54["m_nColumn"] = 0;
-$obj = new SQLOrderByItem($proto54);
+$proto58["m_column"]=$obj;
+$proto58["m_bAsc"] = 0;
+$proto58["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto58);
 
 $proto0["m_orderby"][]=$obj;					
 $proto0["m_srcTableName"]="SolicitudesVencidas";		
@@ -3244,7 +3411,7 @@ $queryData_solicitudesvencidas = createSqlQuery_solicitudesvencidas();
 	
 		;
 
-																	
+																		
 
 $tdatasolicitudesvencidas[".sqlquery"] = $queryData_solicitudesvencidas;
 

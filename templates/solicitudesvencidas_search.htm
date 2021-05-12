@@ -509,6 +509,31 @@
 </div>
 
 {END fechaatencion_fieldblock}
+											
+{BEGIN FechaVencimiento_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_FechaVencimiento}  r-horizontal-field form-horizontal" 
+	
+		data-fieldname="FechaVencimiento" 
+	
+	data-signal-error-for="FechaVencimiento{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field17" {$item_integrated_search_field17} data-pageid="{$pageid}" data-field="FechaVencimiento" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_FechaVencimiento}">
+		{$label SolicitudesVencidas FechaVencimiento }	</label>
+	<div class="r-search-option">
+		{$searchtype_FechaVencimiento}
+	</div>
+	<div class="r-search-field">
+		{$FechaVencimiento_editcontrol}	</div>
+	<div class="r-search-field">
+		{$FechaVencimiento_editcontrol1}
+	</div>
+	
+</div>
+
+{END FechaVencimiento_fieldblock}
 	
 								</td>
 			{END cellblock_grid_c3}

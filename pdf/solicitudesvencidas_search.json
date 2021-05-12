@@ -167,6 +167,9 @@ pdfDocument = {
 				
 			{"hidden":"{$item_hide_integrated_search_field15}","text":{$fechaatencion_pdfvalue}},
 				
+				
+			{"hidden":"{$item_hide_integrated_search_field17}","text":{$FechaVencimiento_pdfvalue}},
+				
 		  ],
   "border": [ false, false, false, false ],
               "alignment": 'left',

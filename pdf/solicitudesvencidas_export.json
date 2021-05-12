@@ -132,6 +132,9 @@ pdfDocument = {
 			{"hidden":"{$item_hide_export_field7}","text":{$FechaSolicitud_pdfvalue}},
 				
 				
+			{"hidden":"{$item_hide_export_field17}","text":{$FechaVencimiento_pdfvalue}},
+				
+				
 			{"hidden":"{$item_hide_export_field8}","text":{$FechaInicio_pdfvalue}},
 				
 				

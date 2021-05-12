@@ -79,7 +79,7 @@ if(mlang_getcurrentlang()=="Spanish")
 	$fieldLabelsvtik_interno["Spanish"]["FechaMaxima"] = "Fecha Maxima";
 	$fieldToolTipsvtik_interno["Spanish"]["FechaMaxima"] = "";
 	$placeHoldersvtik_interno["Spanish"]["FechaMaxima"] = "";
-	$fieldLabelsvtik_interno["Spanish"]["FechaExpiracion"] = "Fecha Expiracion";
+	$fieldLabelsvtik_interno["Spanish"]["FechaExpiracion"] = "Fecha/Hora Vencimiento";
 	$fieldToolTipsvtik_interno["Spanish"]["FechaExpiracion"] = "";
 	$placeHoldersvtik_interno["Spanish"]["FechaExpiracion"] = "";
 	if (count($fieldToolTipsvtik_interno["Spanish"]))
@@ -2830,7 +2830,7 @@ $tdatavtik_interno[".hideMobileList"] = array();
 //  Begin View Formats
 	$fdata["ViewFormats"] = array();
 
-	$vdata = array("ViewFormat" => "Short Date");
+	$vdata = array("ViewFormat" => "Datetime");
 
 	
 	
@@ -2857,10 +2857,10 @@ $tdatavtik_interno[".hideMobileList"] = array();
 //	Begin Edit Formats
 	$fdata["EditFormats"] = array();
 
-	$edata = array("EditFormat" => "Date");
+	$edata = array("EditFormat" => "Readonly");
 
 	
-		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
+		$edata["weekdayMessage"] = array("message" => "Invalid week day", "messageType" => "Text");
 	$edata["weekdays"] = "[]";
 
 
@@ -2881,10 +2881,7 @@ $tdatavtik_interno[".hideMobileList"] = array();
 
 	
 	
-		$edata["DateEditType"] = 13;
-	$edata["InitialYearFactor"] = 100;
-	$edata["LastYearFactor"] = 10;
-
+	
 	
 	
 	
@@ -2894,8 +2891,7 @@ $tdatavtik_interno[".hideMobileList"] = array();
 	$edata["validateAs"] = array();
 	$edata["validateAs"]["basicValidate"] = array();
 	$edata["validateAs"]["customMessages"] = array();
-						$edata["validateAs"]["basicValidate"][] = "IsRequired";
-		
+							
 	
 	//	End validation
 

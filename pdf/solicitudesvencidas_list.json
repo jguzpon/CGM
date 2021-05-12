@@ -94,6 +94,9 @@ pdfDocument = {
 										{BEGIN col_grid_11}
 					"%",
 					{END col_grid_11}
+										{BEGIN col_grid_12}
+					"%",
+					{END col_grid_12}
 															],
 											heights: [ // first height for header part
 					"%",
@@ -363,7 +366,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field1}","text":"{$jslabel SolicitudesVencidas Solicitud }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field8}","text":"{$jslabel SolicitudesVencidas Solicitud }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -415,7 +418,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field8}","text":"{$jslabel SolicitudesVencidas TipoSolicitud }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field9}","text":"{$jslabel SolicitudesVencidas TipoSolicitud }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -441,7 +444,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field9}","text":"{$jslabel SolicitudesVencidas DepartamentoSolicitante }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field10}","text":"{$jslabel SolicitudesVencidas DepartamentoSolicitante }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -467,7 +470,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field10}","text":"{$jslabel SolicitudesVencidas UsuarioSolicitante }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field11}","text":"{$jslabel SolicitudesVencidas UsuarioSolicitante }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -493,7 +496,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field11}","text":"{$jslabel SolicitudesVencidas DepartamentoSolicitar }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field12}","text":"{$jslabel SolicitudesVencidas DepartamentoSolicitar }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -519,7 +522,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field12}","text":"{$jslabel SolicitudesVencidas FechaSolicitud }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field14}","text":"{$jslabel SolicitudesVencidas FechaSolicitud }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -545,11 +548,11 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field14}","text":"{$jslabel SolicitudesVencidas Asunto }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field15}","text":"{$jslabel SolicitudesVencidas FechaVencimiento }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
-              "alignment": '{$Asunto_align}',
+              "alignment": '{$FechaVencimiento_align}',
   },
 
 {END cellblock_grid_headcell_field7}
@@ -571,14 +574,40 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field15}","text":"{$jslabel SolicitudesVencidas Estado }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field16}","text":"{$jslabel SolicitudesVencidas Asunto }","bold":true},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$Asunto_align}',
+  },
+
+{END cellblock_grid_headcell_field8}
+																			{BEGIN cellblock_grid_headcell_field9}
+{
+	cellId: 'headcell_field9',
+	col:0,
+	row:0,
+			style: 'headcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+						
+	
+	
+	
+			"text": [
+		
+				
+			{"hidden":"{$item_hide_simple_grid_field17}","text":"{$jslabel SolicitudesVencidas Estado }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
               "alignment": '{$Estado_align}',
   },
 
-{END cellblock_grid_headcell_field8}
+{END cellblock_grid_headcell_field9}
 											],
 				{END row_grid_0}
 									
@@ -871,6 +900,32 @@ pdfDocument = {
 			"text": [
 		
 				
+			{"hidden":"{$item_hide_simple_grid_field1}","text":{$FechaVencimiento_pdfvalue}},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$FechaVencimiento_align}',
+  },
+
+{END cellblock_grid_cell_field7}
+																			{BEGIN cellblock_grid_cell_field8}
+{
+	cellId: 'cell_field8',
+	col:0,
+	row:0,
+			style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+						
+	
+	
+	
+			"text": [
+		
+				
 			{"hidden":"{$item_hide_simple_grid_field5}","text":{$Asunto_pdfvalue}},
 				
 		  ],
@@ -878,10 +933,10 @@ pdfDocument = {
               "alignment": '{$Asunto_align}',
   },
 
-{END cellblock_grid_cell_field7}
-																			{BEGIN cellblock_grid_cell_field8}
+{END cellblock_grid_cell_field8}
+																			{BEGIN cellblock_grid_cell_field9}
 {
-	cellId: 'cell_field8',
+	cellId: 'cell_field9',
 	col:0,
 	row:0,
 			style: 'bodycell',
@@ -904,7 +959,7 @@ pdfDocument = {
               "alignment": '{$Estado_align}',
   },
 
-{END cellblock_grid_cell_field8}
+{END cellblock_grid_cell_field9}
 											],
 				{END row_grid_1}
 								{BEGIN row_grid_2}
@@ -1009,6 +1064,12 @@ pdfDocument = {
 				cellId: 'cell_dpreview',
 				row:  0,
 				col:  11,
+				text: ''
+			},
+														{ 
+				cellId: 'cell_dpreview',
+				row:  0,
+				col:  12,
 				text: ''
 			},
 							],
@@ -1307,6 +1368,30 @@ pdfDocument = {
   },
 
 {END cellblock_grid_footcell_field8}
+																			{BEGIN cellblock_grid_footcell_field9}
+{
+	cellId: 'footcell_field9',
+	col:0,
+	row:0,
+			style: 'footcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+						
+	
+	
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ true, true, true, true ],
+              "alignment": 'left',
+  },
+
+{END cellblock_grid_footcell_field9}
 											],
 				{END row_grid_3}
 							

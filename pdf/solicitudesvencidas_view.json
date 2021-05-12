@@ -120,9 +120,6 @@ pdfDocument = {
 			{"hidden":"{$item_hide_integrated_edit_field1}","stack":[{"text":"{$jslabel SolicitudesVencidas TipoSolicitud }","bold":true},{"text":{$TipoSolicitud_pdfvalue}}],"margin":[0,0,0,15]},
 				
 				
-			{"hidden":"{$item_hide_integrated_edit_field7}","stack":[{"text":"{$jslabel SolicitudesVencidas FechaSolicitud }","bold":true},{"text":{$FechaSolicitud_pdfvalue}}],"margin":[0,0,0,15]},
-				
-				
 			{"hidden":"{$item_hide_integrated_edit_field2}","stack":[{"text":"{$jslabel SolicitudesVencidas Documento }","bold":true},{"text":{$Documento_pdfvalue}}],"margin":[0,0,0,15]},
 				
 				
@@ -133,6 +130,12 @@ pdfDocument = {
 				
 				
 			{"hidden":"{$item_hide_integrated_edit_field4}","stack":[{"text":"{$jslabel SolicitudesVencidas DepartamentoSolicitar }","bold":true},{"text":{$DepartamentoSolicitar_pdfvalue}}],"margin":[0,0,0,15]},
+				
+				
+			{"hidden":"{$item_hide_integrated_edit_field7}","stack":[{"text":"{$jslabel SolicitudesVencidas FechaSolicitud }","bold":true},{"text":{$FechaSolicitud_pdfvalue}}],"margin":[0,0,0,15]},
+				
+				
+			{"hidden":"{$item_hide_integrated_edit_field16}","stack":[{"text":"{$jslabel SolicitudesVencidas FechaVencimiento }","bold":true},{"text":{$FechaVencimiento_pdfvalue}}],"margin":[0,0,0,15]},
 				
 				
 			{"hidden":"{$item_hide_integrated_edit_field5}","stack":[{"text":"{$jslabel SolicitudesVencidas Asunto }","bold":true},{"text":{$Asunto_pdfvalue}}],"margin":[0,0,0,15]},
