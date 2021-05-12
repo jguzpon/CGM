@@ -214,11 +214,22 @@ $tdatagr_fico_de_asistencias[".orderindexes"] = array();
 
 
 
-$tdatagr_fico_de_asistencias[".sqlHead"] = "SELECT tik_interno.DepartamentoSolicitar, zdepartamentos.Descripcion, tik_interno.TipoSolicitud, tik_interno.Evaluacion, tik_satisfaccion.Descripcion AS Valoracion, tik_interno.FechaSolicitud, tik_interno.Estado";
-$tdatagr_fico_de_asistencias[".sqlFrom"] = "FROM tik_interno INNER JOIN zdepartamentos ON tik_interno.DepartamentoSolicitar = zdepartamentos.CodigoDepto LEFT OUTER JOIN zusuarios ON zdepartamentos.CodigoDepto = zusuarios.CodigoDepto INNER JOIN tik_satisfaccion ON tik_interno.Evaluacion = tik_satisfaccion.Nivel";
+$tdatagr_fico_de_asistencias[".sqlHead"] = "SELECT tik_interno.DepartamentoSolicitar,  zdepartamentos.Descripcion,  tik_interno.TipoSolicitud,  tik_interno.Evaluacion,  tik_satisfaccion.Descripcion AS Valoracion,  tik_interno.FechaSolicitud,  tik_interno.Estado";
+$tdatagr_fico_de_asistencias[".sqlFrom"] = "FROM tik_interno  INNER JOIN zdepartamentos ON tik_interno.DepartamentoSolicitar = zdepartamentos.CodigoDepto  INNER JOIN tik_satisfaccion ON tik_interno.Evaluacion = tik_satisfaccion.Nivel";
 $tdatagr_fico_de_asistencias[".sqlWhereExpr"] = "(tik_interno.Estado = 'Evaluado')";
 $tdatagr_fico_de_asistencias[".sqlTail"] = "";
 
+//fill array of tabs for list page
+$arrGridTabs = array();
+$arrGridTabs[] = array(
+	'tabId' => "",
+	'name' => "All data",
+	'nameType' => 'Text',
+	'where' => "",
+	'showRowCount' => 0,
+	'hideEmpty' => 0,
+);
+$tdatagr_fico_de_asistencias[".arrGridTabs"] = $arrGridTabs;
 
 
 
@@ -1409,8 +1420,8 @@ function createSqlQuery_gr_fico_de_asistencias()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "tik_interno.DepartamentoSolicitar, zdepartamentos.Descripcion, tik_interno.TipoSolicitud, tik_interno.Evaluacion, tik_satisfaccion.Descripcion AS Valoracion, tik_interno.FechaSolicitud, tik_interno.Estado";
-$proto0["m_strFrom"] = "FROM tik_interno INNER JOIN zdepartamentos ON tik_interno.DepartamentoSolicitar = zdepartamentos.CodigoDepto LEFT OUTER JOIN zusuarios ON zdepartamentos.CodigoDepto = zusuarios.CodigoDepto INNER JOIN tik_satisfaccion ON tik_interno.Evaluacion = tik_satisfaccion.Nivel";
+$proto0["m_strFieldList"] = "tik_interno.DepartamentoSolicitar,  zdepartamentos.Descripcion,  tik_interno.TipoSolicitud,  tik_interno.Evaluacion,  tik_satisfaccion.Descripcion AS Valoracion,  tik_interno.FechaSolicitud,  tik_interno.Estado";
+$proto0["m_strFrom"] = "FROM tik_interno  INNER JOIN zdepartamentos ON tik_interno.DepartamentoSolicitar = zdepartamentos.CodigoDepto  INNER JOIN tik_satisfaccion ON tik_interno.Evaluacion = tik_satisfaccion.Nivel";
 $proto0["m_strWhere"] = "(tik_interno.Estado = 'Evaluado')";
 $proto0["m_strOrderBy"] = "ORDER BY tik_interno.DepartamentoSolicitar, tik_interno.TipoSolicitud";
 	
@@ -1641,41 +1652,33 @@ $obj = new SQLFromListItem($proto24);
 
 $proto0["m_fromlist"][]=$obj;
 												$proto28=array();
-$proto28["m_link"] = "SQLL_LEFTJOIN";
+$proto28["m_link"] = "SQLL_INNERJOIN";
 			$proto29=array();
-$proto29["m_strName"] = "zusuarios";
+$proto29["m_strName"] = "tik_satisfaccion";
 $proto29["m_srcTableName"] = "Gráfico de Asistencias";
 $proto29["m_columns"] = array();
+$proto29["m_columns"][] = "Nivel";
+$proto29["m_columns"][] = "Descripcion";
 $proto29["m_columns"][] = "Usuario";
-$proto29["m_columns"][] = "Clave";
-$proto29["m_columns"][] = "Nombre";
-$proto29["m_columns"][] = "CodigoDepto";
-$proto29["m_columns"][] = "Codigo_Estructura";
-$proto29["m_columns"][] = "Area";
-$proto29["m_columns"][] = "Puesto";
-$proto29["m_columns"][] = "Correo";
-$proto29["m_columns"][] = "Telefono";
-$proto29["m_columns"][] = "FechaInicio";
-$proto29["m_columns"][] = "FechaFinal";
-$proto29["m_columns"][] = "Estado";
+$proto29["m_columns"][] = "FechaSistema";
 $obj = new SQLTable($proto29);
 
 $proto28["m_table"] = $obj;
-$proto28["m_sql"] = "LEFT OUTER JOIN zusuarios ON zdepartamentos.CodigoDepto = zusuarios.CodigoDepto";
+$proto28["m_sql"] = "INNER JOIN tik_satisfaccion ON tik_interno.Evaluacion = tik_satisfaccion.Nivel";
 $proto28["m_alias"] = "";
 $proto28["m_srcTableName"] = "Gráfico de Asistencias";
 $proto30=array();
-$proto30["m_sql"] = "zdepartamentos.CodigoDepto = zusuarios.CodigoDepto";
+$proto30["m_sql"] = "tik_interno.Evaluacion = tik_satisfaccion.Nivel";
 $proto30["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
-	"m_strName" => "CodigoDepto",
-	"m_strTable" => "zdepartamentos",
+	"m_strName" => "Evaluacion",
+	"m_strTable" => "tik_interno",
 	"m_srcTableName" => "Gráfico de Asistencias"
 ));
 
 $proto30["m_column"]=$obj;
 $proto30["m_contained"] = array();
-$proto30["m_strCase"] = "= zusuarios.CodigoDepto";
+$proto30["m_strCase"] = "= tik_satisfaccion.Nivel";
 $proto30["m_havingmode"] = false;
 $proto30["m_inBrackets"] = false;
 $proto30["m_useAlias"] = false;
@@ -1685,44 +1688,30 @@ $proto28["m_joinon"] = $obj;
 $obj = new SQLFromListItem($proto28);
 
 $proto0["m_fromlist"][]=$obj;
+$proto0["m_groupby"] = array();
 												$proto32=array();
-$proto32["m_link"] = "SQLL_INNERJOIN";
-			$proto33=array();
-$proto33["m_strName"] = "tik_satisfaccion";
-$proto33["m_srcTableName"] = "Gráfico de Asistencias";
-$proto33["m_columns"] = array();
-$proto33["m_columns"][] = "Nivel";
-$proto33["m_columns"][] = "Descripcion";
-$proto33["m_columns"][] = "Usuario";
-$proto33["m_columns"][] = "FechaSistema";
-$obj = new SQLTable($proto33);
-
-$proto32["m_table"] = $obj;
-$proto32["m_sql"] = "INNER JOIN tik_satisfaccion ON tik_interno.Evaluacion = tik_satisfaccion.Nivel";
-$proto32["m_alias"] = "";
-$proto32["m_srcTableName"] = "Gráfico de Asistencias";
-$proto34=array();
-$proto34["m_sql"] = "tik_interno.Evaluacion = tik_satisfaccion.Nivel";
-$proto34["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
-	"m_strName" => "Evaluacion",
+	"m_strName" => "DepartamentoSolicitar",
+	"m_strTable" => "tik_interno",
+	"m_srcTableName" => "Gráfico de Asistencias"
+));
+
+$proto32["m_column"]=$obj;
+$obj = new SQLGroupByItem($proto32);
+
+$proto0["m_groupby"][]=$obj;
+												$proto34=array();
+						$obj = new SQLField(array(
+	"m_strName" => "TipoSolicitud",
 	"m_strTable" => "tik_interno",
 	"m_srcTableName" => "Gráfico de Asistencias"
 ));
 
 $proto34["m_column"]=$obj;
-$proto34["m_contained"] = array();
-$proto34["m_strCase"] = "= tik_satisfaccion.Nivel";
-$proto34["m_havingmode"] = false;
-$proto34["m_inBrackets"] = false;
-$proto34["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto34);
+$obj = new SQLGroupByItem($proto34);
 
-$proto32["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto32);
-
-$proto0["m_fromlist"][]=$obj;
-$proto0["m_groupby"] = array();
+$proto0["m_groupby"][]=$obj;
+$proto0["m_orderby"] = array();
 												$proto36=array();
 						$obj = new SQLField(array(
 	"m_strName" => "DepartamentoSolicitar",
@@ -1731,9 +1720,11 @@ $proto0["m_groupby"] = array();
 ));
 
 $proto36["m_column"]=$obj;
-$obj = new SQLGroupByItem($proto36);
+$proto36["m_bAsc"] = 1;
+$proto36["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto36);
 
-$proto0["m_groupby"][]=$obj;
+$proto0["m_orderby"][]=$obj;					
 												$proto38=array();
 						$obj = new SQLField(array(
 	"m_strName" => "TipoSolicitud",
@@ -1742,34 +1733,9 @@ $proto0["m_groupby"][]=$obj;
 ));
 
 $proto38["m_column"]=$obj;
-$obj = new SQLGroupByItem($proto38);
-
-$proto0["m_groupby"][]=$obj;
-$proto0["m_orderby"] = array();
-												$proto40=array();
-						$obj = new SQLField(array(
-	"m_strName" => "DepartamentoSolicitar",
-	"m_strTable" => "tik_interno",
-	"m_srcTableName" => "Gráfico de Asistencias"
-));
-
-$proto40["m_column"]=$obj;
-$proto40["m_bAsc"] = 1;
-$proto40["m_nColumn"] = 0;
-$obj = new SQLOrderByItem($proto40);
-
-$proto0["m_orderby"][]=$obj;					
-												$proto42=array();
-						$obj = new SQLField(array(
-	"m_strName" => "TipoSolicitud",
-	"m_strTable" => "tik_interno",
-	"m_srcTableName" => "Gráfico de Asistencias"
-));
-
-$proto42["m_column"]=$obj;
-$proto42["m_bAsc"] = 1;
-$proto42["m_nColumn"] = 0;
-$obj = new SQLOrderByItem($proto42);
+$proto38["m_bAsc"] = 1;
+$proto38["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto38);
 
 $proto0["m_orderby"][]=$obj;					
 $proto0["m_srcTableName"]="Gráfico de Asistencias";		
