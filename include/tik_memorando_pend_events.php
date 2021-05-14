@@ -131,7 +131,7 @@ function BeforeQueryList(&$strSQL, &$strWhereClause, &$strOrderBy, &$pageObject)
 
 // Place event code here.
 // Use "Add Action" button to add code snippets.
-$strWhereClause = "Todos=1 or FIND_IN_SET('".$_SESSION["UserID"]."',A) or FIND_IN_SET('".$_SESSION["CodigoDepto"]."',ADepartamento)";
+$strWhereClause = "(Todos=1 or FIND_IN_SET('".$_SESSION["UserID"]."',A) or FIND_IN_SET('".$_SESSION["CodigoDepto"]."',ADepartamento))";
 
 ;		
 } // function BeforeQueryList
