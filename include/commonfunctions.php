@@ -197,8 +197,6 @@ function checkTableName($shortTName )
 		return true;
 	if ("tik_memorando_aut" == $shortTName )
 		return true;
-	if ("tik_memorando_adjunto" == $shortTName )
-		return true;
 	if ("tik_memorando_pend" == $shortTName )
 		return true;
 	if ("tik_memorando_l" == $shortTName )
@@ -358,15 +356,6 @@ function GetTablesList($pdfMode = false)
 	}
 	if( $tableAvailable ) {
 		$arr[]="tik_memorando_aut";
-	}
-	$tableAvailable = true;
-	if( $checkPermissions ) {
-		$strPerm = GetUserPermissions("tik_memorando_adjunto");
-		$tableAvailable = ( strpos($strPerm, "P") !== false
-			|| $pdfMode && strpos($strPerm, "S") !== false );
-	}
-	if( $tableAvailable ) {
-		$arr[]="tik_memorando_adjunto";
 	}
 	$tableAvailable = true;
 	if( $checkPermissions ) {
@@ -635,7 +624,6 @@ function GetTablesListWithoutSecurity()
 	$arr[]="tik_firmash";
 	$arr[]="tik_chat";
 	$arr[]="tik_memorando_aut";
-	$arr[]="tik_memorando_adjunto";
 	$arr[]="tik_memorando_pend";
 	$arr[]="tik_memorando_l";
 	$arr[]="tik_firmas";
@@ -1407,11 +1395,6 @@ function GetUserPermissionsStatic( $table )
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="tik_memorando_aut" )
-	{
-//	default permissions
-		return "ADESPI".$extraPerm;
-	}
-	if( $table=="tik_memorando_adjunto" )
 	{
 //	default permissions
 		return "ADESPI".$extraPerm;

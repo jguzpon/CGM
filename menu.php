@@ -30,8 +30,6 @@ require_once(getabspath("classes/cipherer.php"));
 
 include_once(getabspath("include/tik_memorando_aut_events.php"));
 $tableEvents["tik_memorando_aut"] = new eventclass_tik_memorando_aut;
-include_once(getabspath("include/tik_memorando_adjunto_events.php"));
-$tableEvents["tik_memorando_adjunto"] = new eventclass_tik_memorando_adjunto;
 include_once(getabspath("include/tik_memorando_pend_events.php"));
 $tableEvents["tik_memorando_pend"] = new eventclass_tik_memorando_pend;
 include_once(getabspath("include/tik_firmas_events.php"));

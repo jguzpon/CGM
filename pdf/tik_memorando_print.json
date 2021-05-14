@@ -1102,11 +1102,6 @@ pdfDocument = {
 			{$displayDetailTable_tik_memorando_l }
 		{END details_tik_memorando_l},
 				
-				
-			 {BEGIN details_tik_memorando_adjunto}
-			{$displayDetailTable_tik_memorando_adjunto }
-		{END details_tik_memorando_adjunto},
-				
 		  ],
   "border": [ true, true, true, true ],
               "alignment": 'left',

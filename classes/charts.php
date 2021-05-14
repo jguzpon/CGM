@@ -492,8 +492,6 @@ class Chart
 			return true;
 		if("tik_memorando_aut" == $this->chrt_array['tables'][0])
 			return true;
-		if("tik_memorando_adjunto" == $this->chrt_array['tables'][0])
-			return true;
 		if("tik_memorando_pend" == $this->chrt_array['tables'][0])
 			return true;
 		if("tik_memorando_l" == $this->chrt_array['tables'][0])

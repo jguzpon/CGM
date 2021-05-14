@@ -978,14 +978,6 @@ function GetDefaultValue($field, $ptype, $table="")
 	{
 		return Pendiente;
 	}
-				if($table=="tik_memorando_adjunto" && $field=="Usuario")
-	{
-		return $_SESSION["UserID"];
-	}
-				if($table=="tik_memorando_adjunto" && $field=="FechaHora")
-	{
-		return strftime("%Y-%m-%d %H:%M:%S");
-	}
 				if($table=="tik_memorando" && $field=="Fecha")
 	{
 		return strftime("%Y-%m-%d");

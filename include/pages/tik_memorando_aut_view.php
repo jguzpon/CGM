@@ -1,7 +1,5 @@
 <?php
 			$optionsArray = array( 'pdf' => array( 'pdfView' => false ),
-'details' => array( 'tik_memorando_adjunto' => array( 'displayPreview' => 2,
-'previewPageId' => '' ) ),
 'fields' => array( 'gridFields' => array( 'NoMemorando',
 'Fecha',
 'De',

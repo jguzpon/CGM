@@ -21,7 +21,6 @@ $nonAdminTablesArr[] = "tik_autorizadores";
 $nonAdminTablesArr[] = "tik_firmash";
 $nonAdminTablesArr[] = "tik_chat";
 $nonAdminTablesArr[] = "tik_memorando_aut";
-$nonAdminTablesArr[] = "tik_memorando_adjunto";
 $nonAdminTablesArr[] = "tik_memorando_pend";
 $nonAdminTablesArr[] = "tik_memorando_l";
 $nonAdminTablesArr[] = "tik_firmas";

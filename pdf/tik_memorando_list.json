@@ -695,9 +695,6 @@ pdfDocument = {
 			{"text":"","hidden":"{$item_hide_grid_alldetails_link}"},
 				
 				
-			{"text":"","hidden":"{$item_hide_grid_details_link2}"},
-				
-				
 			{"text":"","hidden":"{$item_hide_grid_details_link}"},
 				
 		  ],
@@ -1042,11 +1039,6 @@ pdfDocument = {
 	
 			"stack": [
 		
-				
-			 {BEGIN details_tik_memorando_adjunto}
-			{$displayDetailTable_tik_memorando_adjunto }
-		{END details_tik_memorando_adjunto},
-				
 				
 			 {BEGIN details_tik_memorando_l}
 			{$displayDetailTable_tik_memorando_l }

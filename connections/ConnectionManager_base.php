@@ -216,7 +216,6 @@ class ConnectionManager_Base
 		$connectionsIds["tik_firmash"] = "mpc_at_localhost";
 		$connectionsIds["tik_chat"] = "mpc_at_localhost";
 		$connectionsIds["tik_memorando_aut"] = "mpc_at_localhost";
-		$connectionsIds["tik_memorando_adjunto"] = "mpc_at_localhost";
 		$connectionsIds["tik_memorando_pend"] = "mpc_at_localhost";
 		$connectionsIds["tik_memorando_l"] = "mpc_at_localhost";
 		$connectionsIds["tik_firmas"] = "mpc_at_localhost";

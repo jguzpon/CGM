@@ -378,10 +378,6 @@ class AuditTrailTable
 		{
 			return true;
 		}
-		if($table=="tik_memorando_adjunto")
-		{
-			return true;
-		}
 		if($table=="tik_memorando_pend")
 		{
 			return true;
@@ -877,10 +873,6 @@ class AuditTrailFile
 			return true;
 		}
 		if($table=="tik_memorando_aut")
-		{
-			return true;
-		}
-		if($table=="tik_memorando_adjunto")
 		{
 			return true;
 		}

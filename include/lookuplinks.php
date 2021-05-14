@@ -99,13 +99,6 @@ function InitLookupLinks()
 		if( !isset( $lookupTableLinks["zusuarios"] ) ) {
 			$lookupTableLinks["zusuarios"] = array();
 		}
-		if( !isset( $lookupTableLinks["zusuarios"]["tik_memorando_adjunto.Usuario"] )) {
-			$lookupTableLinks["zusuarios"]["tik_memorando_adjunto.Usuario"] = array();
-		}
-		$lookupTableLinks["zusuarios"]["tik_memorando_adjunto.Usuario"]["edit"] = array("table" => "tik_memorando_adjunto", "field" => "Usuario", "page" => "edit");
-		if( !isset( $lookupTableLinks["zusuarios"] ) ) {
-			$lookupTableLinks["zusuarios"] = array();
-		}
 		if( !isset( $lookupTableLinks["zusuarios"]["tik_memorando_pend.De"] )) {
 			$lookupTableLinks["zusuarios"]["tik_memorando_pend.De"] = array();
 		}

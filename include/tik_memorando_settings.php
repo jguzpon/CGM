@@ -91,6 +91,15 @@ if(mlang_getcurrentlang()=="Spanish")
 	$fieldLabelstik_memorando["Spanish"]["AutorizadoPor"] = "Autorizado Por";
 	$fieldToolTipstik_memorando["Spanish"]["AutorizadoPor"] = "";
 	$placeHolderstik_memorando["Spanish"]["AutorizadoPor"] = "";
+	$fieldLabelstik_memorando["Spanish"]["DocumentoAdjunto1"] = "Documento Adjunto 1 (Opcional)";
+	$fieldToolTipstik_memorando["Spanish"]["DocumentoAdjunto1"] = "";
+	$placeHolderstik_memorando["Spanish"]["DocumentoAdjunto1"] = "";
+	$fieldLabelstik_memorando["Spanish"]["DocumentoAdjunto2"] = "Documento Adjunto 2 (Opcional)";
+	$fieldToolTipstik_memorando["Spanish"]["DocumentoAdjunto2"] = "";
+	$placeHolderstik_memorando["Spanish"]["DocumentoAdjunto2"] = "";
+	$fieldLabelstik_memorando["Spanish"]["DocumentoAdjunto3"] = "Documento Adjunto 3 (Opcional)";
+	$fieldToolTipstik_memorando["Spanish"]["DocumentoAdjunto3"] = "";
+	$placeHolderstik_memorando["Spanish"]["DocumentoAdjunto3"] = "";
 	if (count($fieldToolTipstik_memorando["Spanish"]))
 		$tdatatik_memorando[".isUseToolTips"] = true;
 }
@@ -237,6 +246,9 @@ $tdatatik_memorando[".googleLikeFields"][] = "Autorizador";
 $tdatatik_memorando[".googleLikeFields"][] = "CodigoDepto";
 $tdatatik_memorando[".googleLikeFields"][] = "Categoria";
 $tdatatik_memorando[".googleLikeFields"][] = "AutorizadoPor";
+$tdatatik_memorando[".googleLikeFields"][] = "DocumentoAdjunto1";
+$tdatatik_memorando[".googleLikeFields"][] = "DocumentoAdjunto2";
+$tdatatik_memorando[".googleLikeFields"][] = "DocumentoAdjunto3";
 
 
 
@@ -274,7 +286,7 @@ $tdatatik_memorando[".orderindexes"] = array();
 
 
 
-$tdatatik_memorando[".sqlHead"] = "SELECT NoMemorando,  Fecha,  De,  A,  ADepartamento,  Todos,  Descripcion,  Texto,  FirmaDigital,  Estado,  TipoPapel,  FirmaDigitalA,  Usuario,  FechaHora,  Documento,  TipoDocumento,  VoBo,  RequiereAutorizacion,  Autorizador,  CodigoDepto,  Categoria,  AutorizadoPor";
+$tdatatik_memorando[".sqlHead"] = "SELECT NoMemorando,  Fecha,  De,  A,  ADepartamento,  Todos,  Descripcion,  Texto,  FirmaDigital,  Estado,  TipoPapel,  FirmaDigitalA,  Usuario,  FechaHora,  Documento,  TipoDocumento,  VoBo,  RequiereAutorizacion,  Autorizador,  CodigoDepto,  Categoria,  AutorizadoPor,  DocumentoAdjunto1,  DocumentoAdjunto2,  DocumentoAdjunto3";
 $tdatatik_memorando[".sqlFrom"] = "FROM tik_memorando";
 $tdatatik_memorando[".sqlWhereExpr"] = "";
 $tdatatik_memorando[".sqlTail"] = "";
@@ -3536,6 +3548,471 @@ $tdatatik_memorando[".hideMobileList"] = array();
 
 	$tdatatik_memorando["AutorizadoPor"] = $fdata;
 		$tdatatik_memorando[".searchableFields"][] = "AutorizadoPor";
+//	DocumentoAdjunto1
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 23;
+	$fdata["strName"] = "DocumentoAdjunto1";
+	$fdata["GoodName"] = "DocumentoAdjunto1";
+	$fdata["ownerTable"] = "tik_memorando";
+	$fdata["Label"] = GetFieldLabel("tik_memorando","DocumentoAdjunto1");
+	$fdata["FieldType"] = 201;
+
+	
+	
+	
+			
+
+		$fdata["strField"] = "DocumentoAdjunto1";
+
+	
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "DocumentoAdjunto1";
+
+		$fdata["DeleteAssociatedFile"] = true;
+
+		$fdata["CompatibilityMode"] = true;
+
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "File-based Image");
+
+	
+	
+				$vdata["ShowThumbnail"] = true;
+	$vdata["ThumbWidth"] = 200;
+	$vdata["ThumbHeight"] = 150;
+	$vdata["ImageWidth"] = 600;
+	$vdata["ImageHeight"] = 400;
+
+			$vdata["multipleImgMode"] = 1;
+	$vdata["maxImages"] = 0;
+
+			$vdata["showGallery"] = true;
+	$vdata["galleryMode"] = 2;
+	$vdata["captionMode"] = 2;
+	$vdata["captionField"] = "";
+
+	$vdata["imageBorder"] = 1;
+	$vdata["imageFullWidth"] = 1;
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	
+	
+	
+		$vdata["truncateText"] = true;
+	$vdata["NumberOfChars"] = 80;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Document upload");
+
+	
+		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
+	$edata["weekdays"] = "[]";
+
+
+	
+	
+
+
+
+	
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+		$edata["acceptFileTypesHtml"] = "";
+
+		$edata["maxNumberOfFiles"] = 0;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+	
+	
+	//	End validation
+
+		$edata["CreateThumbnail"] = true;
+	$edata["StrThumbnail"] = "th";
+			$edata["ThumbnailSize"] = 600;
+
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Contains";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+//Filters settings
+	$fdata["filterTotals"] = 0;
+		$fdata["filterMultiSelect"] = 0;
+			$fdata["filterFormat"] = "Values list";
+		$fdata["showCollapsed"] = false;
+
+		$fdata["sortValueType"] = 0;
+		$fdata["numberOfVisibleItems"] = 10;
+
+		$fdata["filterBy"] = 0;
+
+	
+
+	
+	
+//end of Filters settings
+
+
+	$tdatatik_memorando["DocumentoAdjunto1"] = $fdata;
+		$tdatatik_memorando[".searchableFields"][] = "DocumentoAdjunto1";
+//	DocumentoAdjunto2
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 24;
+	$fdata["strName"] = "DocumentoAdjunto2";
+	$fdata["GoodName"] = "DocumentoAdjunto2";
+	$fdata["ownerTable"] = "tik_memorando";
+	$fdata["Label"] = GetFieldLabel("tik_memorando","DocumentoAdjunto2");
+	$fdata["FieldType"] = 201;
+
+	
+	
+	
+			
+
+		$fdata["strField"] = "DocumentoAdjunto2";
+
+	
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "DocumentoAdjunto2";
+
+		$fdata["DeleteAssociatedFile"] = true;
+
+		$fdata["CompatibilityMode"] = true;
+
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "File-based Image");
+
+	
+	
+				$vdata["ShowThumbnail"] = true;
+	$vdata["ThumbWidth"] = 200;
+	$vdata["ThumbHeight"] = 150;
+	$vdata["ImageWidth"] = 600;
+	$vdata["ImageHeight"] = 400;
+
+			$vdata["multipleImgMode"] = 1;
+	$vdata["maxImages"] = 0;
+
+			$vdata["showGallery"] = true;
+	$vdata["galleryMode"] = 2;
+	$vdata["captionMode"] = 2;
+	$vdata["captionField"] = "";
+
+	$vdata["imageBorder"] = 1;
+	$vdata["imageFullWidth"] = 1;
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	
+	
+	
+		$vdata["truncateText"] = true;
+	$vdata["NumberOfChars"] = 80;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Document upload");
+
+	
+		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
+	$edata["weekdays"] = "[]";
+
+
+	
+	
+
+
+
+	
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+		$edata["acceptFileTypesHtml"] = "";
+
+		$edata["maxNumberOfFiles"] = 0;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+	
+	
+	//	End validation
+
+		$edata["CreateThumbnail"] = true;
+	$edata["StrThumbnail"] = "th";
+			$edata["ThumbnailSize"] = 600;
+
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Contains";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+//Filters settings
+	$fdata["filterTotals"] = 0;
+		$fdata["filterMultiSelect"] = 0;
+			$fdata["filterFormat"] = "Values list";
+		$fdata["showCollapsed"] = false;
+
+		$fdata["sortValueType"] = 0;
+		$fdata["numberOfVisibleItems"] = 10;
+
+		$fdata["filterBy"] = 0;
+
+	
+
+	
+	
+//end of Filters settings
+
+
+	$tdatatik_memorando["DocumentoAdjunto2"] = $fdata;
+		$tdatatik_memorando[".searchableFields"][] = "DocumentoAdjunto2";
+//	DocumentoAdjunto3
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 25;
+	$fdata["strName"] = "DocumentoAdjunto3";
+	$fdata["GoodName"] = "DocumentoAdjunto3";
+	$fdata["ownerTable"] = "tik_memorando";
+	$fdata["Label"] = GetFieldLabel("tik_memorando","DocumentoAdjunto3");
+	$fdata["FieldType"] = 201;
+
+	
+	
+	
+			
+
+		$fdata["strField"] = "DocumentoAdjunto3";
+
+	
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "DocumentoAdjunto3";
+
+		$fdata["DeleteAssociatedFile"] = true;
+
+		$fdata["CompatibilityMode"] = true;
+
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "File-based Image");
+
+	
+	
+				$vdata["ShowThumbnail"] = true;
+	$vdata["ThumbWidth"] = 200;
+	$vdata["ThumbHeight"] = 150;
+	$vdata["ImageWidth"] = 600;
+	$vdata["ImageHeight"] = 400;
+
+			$vdata["multipleImgMode"] = 1;
+	$vdata["maxImages"] = 0;
+
+			$vdata["showGallery"] = true;
+	$vdata["galleryMode"] = 2;
+	$vdata["captionMode"] = 2;
+	$vdata["captionField"] = "";
+
+	$vdata["imageBorder"] = 1;
+	$vdata["imageFullWidth"] = 1;
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	
+	
+	
+		$vdata["truncateText"] = true;
+	$vdata["NumberOfChars"] = 80;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Document upload");
+
+	
+		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
+	$edata["weekdays"] = "[]";
+
+
+	
+	
+
+
+
+	
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+		$edata["acceptFileTypesHtml"] = "";
+
+		$edata["maxNumberOfFiles"] = 0;
+
+	
+	
+	
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+	
+	
+	//	End validation
+
+		$edata["CreateThumbnail"] = true;
+	$edata["StrThumbnail"] = "th";
+			$edata["ThumbnailSize"] = 600;
+
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Contains";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty", NOT_EMPTY);
+// the end of search options settings
+
+
+//Filters settings
+	$fdata["filterTotals"] = 0;
+		$fdata["filterMultiSelect"] = 0;
+			$fdata["filterFormat"] = "Values list";
+		$fdata["showCollapsed"] = false;
+
+		$fdata["sortValueType"] = 0;
+		$fdata["numberOfVisibleItems"] = 10;
+
+		$fdata["filterBy"] = 0;
+
+	
+
+	
+	
+//end of Filters settings
+
+
+	$tdatatik_memorando["DocumentoAdjunto3"] = $fdata;
+		$tdatatik_memorando[".searchableFields"][] = "DocumentoAdjunto3";
 
 
 $tables_data["tik_memorando"]=&$tdatatik_memorando;
@@ -3577,36 +4054,6 @@ $detailsTablesData["tik_memorando"] = array();
 				$detailsTablesData["tik_memorando"][$dIndex]["detailKeys"] = array();
 
 	$detailsTablesData["tik_memorando"][$dIndex]["detailKeys"][]="NoMemorando";
-//	tik_memorando_adjunto
-	
-	
-
-		$dIndex = 1;
-	$detailsParam = array();
-	$detailsParam["dDataSourceTable"]="tik_memorando_adjunto";
-		$detailsParam["dOriginalTable"] = "tik_memorando_adjunto";
-
-
-
-		
-		$detailsParam["dType"]=PAGE_LIST;
-	$detailsParam["dShortTable"] = "tik_memorando_adjunto";
-	$detailsParam["dCaptionTable"] = GetTableCaption("tik_memorando_adjunto");
-	$detailsParam["masterKeys"] =array();
-	$detailsParam["detailKeys"] =array();
-
-
-		
-	$detailsTablesData["tik_memorando"][$dIndex] = $detailsParam;
-
-	
-		$detailsTablesData["tik_memorando"][$dIndex]["masterKeys"] = array();
-
-	$detailsTablesData["tik_memorando"][$dIndex]["masterKeys"][]="NoMemorando";
-
-				$detailsTablesData["tik_memorando"][$dIndex]["detailKeys"] = array();
-
-	$detailsTablesData["tik_memorando"][$dIndex]["detailKeys"][]="NoMemorando";
 
 // tables which are master tables for current table (detail)
 $masterTablesData["tik_memorando"] = array();
@@ -3633,7 +4080,7 @@ function createSqlQuery_tik_memorando()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "NoMemorando,  Fecha,  De,  A,  ADepartamento,  Todos,  Descripcion,  Texto,  FirmaDigital,  Estado,  TipoPapel,  FirmaDigitalA,  Usuario,  FechaHora,  Documento,  TipoDocumento,  VoBo,  RequiereAutorizacion,  Autorizador,  CodigoDepto,  Categoria,  AutorizadoPor";
+$proto0["m_strFieldList"] = "NoMemorando,  Fecha,  De,  A,  ADepartamento,  Todos,  Descripcion,  Texto,  FirmaDigital,  Estado,  TipoPapel,  FirmaDigitalA,  Usuario,  FechaHora,  Documento,  TipoDocumento,  VoBo,  RequiereAutorizacion,  Autorizador,  CodigoDepto,  Categoria,  AutorizadoPor,  DocumentoAdjunto1,  DocumentoAdjunto2,  DocumentoAdjunto3";
 $proto0["m_strFrom"] = "FROM tik_memorando";
 $proto0["m_strWhere"] = "";
 $proto0["m_strOrderBy"] = "ORDER BY NoMemorando DESC";
@@ -3981,73 +4428,118 @@ $proto48["m_alias"] = "";
 $obj = new SQLFieldListItem($proto48);
 
 $proto0["m_fieldlist"][]=$obj;
-$proto0["m_fromlist"] = array();
-												$proto50=array();
-$proto50["m_link"] = "SQLL_MAIN";
-			$proto51=array();
-$proto51["m_strName"] = "tik_memorando";
-$proto51["m_srcTableName"] = "tik_memorando";
-$proto51["m_columns"] = array();
-$proto51["m_columns"][] = "NoMemorando";
-$proto51["m_columns"][] = "Fecha";
-$proto51["m_columns"][] = "De";
-$proto51["m_columns"][] = "CodigoDepto";
-$proto51["m_columns"][] = "A";
-$proto51["m_columns"][] = "ADepartamento";
-$proto51["m_columns"][] = "Todos";
-$proto51["m_columns"][] = "Descripcion";
-$proto51["m_columns"][] = "Texto";
-$proto51["m_columns"][] = "FirmaDigital";
-$proto51["m_columns"][] = "TipoPapel";
-$proto51["m_columns"][] = "Estado";
-$proto51["m_columns"][] = "FirmaDigitalA";
-$proto51["m_columns"][] = "Usuario";
-$proto51["m_columns"][] = "FechaHora";
-$proto51["m_columns"][] = "Documento";
-$proto51["m_columns"][] = "TipoDocumento";
-$proto51["m_columns"][] = "VoBo";
-$proto51["m_columns"][] = "RequiereAutorizacion";
-$proto51["m_columns"][] = "Autorizador";
-$proto51["m_columns"][] = "Categoria";
-$proto51["m_columns"][] = "AutorizadoPor";
-$obj = new SQLTable($proto51);
+						$proto50=array();
+			$obj = new SQLField(array(
+	"m_strName" => "DocumentoAdjunto1",
+	"m_strTable" => "tik_memorando",
+	"m_srcTableName" => "tik_memorando"
+));
 
-$proto50["m_table"] = $obj;
-$proto50["m_sql"] = "tik_memorando";
-$proto50["m_alias"] = "";
+$proto50["m_sql"] = "DocumentoAdjunto1";
 $proto50["m_srcTableName"] = "tik_memorando";
-$proto52=array();
-$proto52["m_sql"] = "";
-$proto52["m_uniontype"] = "SQLL_UNKNOWN";
+$proto50["m_expr"]=$obj;
+$proto50["m_alias"] = "";
+$obj = new SQLFieldListItem($proto50);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto52=array();
+			$obj = new SQLField(array(
+	"m_strName" => "DocumentoAdjunto2",
+	"m_strTable" => "tik_memorando",
+	"m_srcTableName" => "tik_memorando"
+));
+
+$proto52["m_sql"] = "DocumentoAdjunto2";
+$proto52["m_srcTableName"] = "tik_memorando";
+$proto52["m_expr"]=$obj;
+$proto52["m_alias"] = "";
+$obj = new SQLFieldListItem($proto52);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto54=array();
+			$obj = new SQLField(array(
+	"m_strName" => "DocumentoAdjunto3",
+	"m_strTable" => "tik_memorando",
+	"m_srcTableName" => "tik_memorando"
+));
+
+$proto54["m_sql"] = "DocumentoAdjunto3";
+$proto54["m_srcTableName"] = "tik_memorando";
+$proto54["m_expr"]=$obj;
+$proto54["m_alias"] = "";
+$obj = new SQLFieldListItem($proto54);
+
+$proto0["m_fieldlist"][]=$obj;
+$proto0["m_fromlist"] = array();
+												$proto56=array();
+$proto56["m_link"] = "SQLL_MAIN";
+			$proto57=array();
+$proto57["m_strName"] = "tik_memorando";
+$proto57["m_srcTableName"] = "tik_memorando";
+$proto57["m_columns"] = array();
+$proto57["m_columns"][] = "NoMemorando";
+$proto57["m_columns"][] = "Fecha";
+$proto57["m_columns"][] = "De";
+$proto57["m_columns"][] = "CodigoDepto";
+$proto57["m_columns"][] = "A";
+$proto57["m_columns"][] = "ADepartamento";
+$proto57["m_columns"][] = "Todos";
+$proto57["m_columns"][] = "Descripcion";
+$proto57["m_columns"][] = "Texto";
+$proto57["m_columns"][] = "FirmaDigital";
+$proto57["m_columns"][] = "TipoPapel";
+$proto57["m_columns"][] = "Estado";
+$proto57["m_columns"][] = "FirmaDigitalA";
+$proto57["m_columns"][] = "Usuario";
+$proto57["m_columns"][] = "FechaHora";
+$proto57["m_columns"][] = "Documento";
+$proto57["m_columns"][] = "TipoDocumento";
+$proto57["m_columns"][] = "VoBo";
+$proto57["m_columns"][] = "RequiereAutorizacion";
+$proto57["m_columns"][] = "Autorizador";
+$proto57["m_columns"][] = "Categoria";
+$proto57["m_columns"][] = "AutorizadoPor";
+$proto57["m_columns"][] = "DocumentoAdjunto1";
+$proto57["m_columns"][] = "DocumentoAdjunto2";
+$proto57["m_columns"][] = "DocumentoAdjunto3";
+$obj = new SQLTable($proto57);
+
+$proto56["m_table"] = $obj;
+$proto56["m_sql"] = "tik_memorando";
+$proto56["m_alias"] = "";
+$proto56["m_srcTableName"] = "tik_memorando";
+$proto58=array();
+$proto58["m_sql"] = "";
+$proto58["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto52["m_column"]=$obj;
-$proto52["m_contained"] = array();
-$proto52["m_strCase"] = "";
-$proto52["m_havingmode"] = false;
-$proto52["m_inBrackets"] = false;
-$proto52["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto52);
+$proto58["m_column"]=$obj;
+$proto58["m_contained"] = array();
+$proto58["m_strCase"] = "";
+$proto58["m_havingmode"] = false;
+$proto58["m_inBrackets"] = false;
+$proto58["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto58);
 
-$proto50["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto50);
+$proto56["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto56);
 
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
 $proto0["m_orderby"] = array();
-												$proto54=array();
+												$proto60=array();
 						$obj = new SQLField(array(
 	"m_strName" => "NoMemorando",
 	"m_strTable" => "tik_memorando",
 	"m_srcTableName" => "tik_memorando"
 ));
 
-$proto54["m_column"]=$obj;
-$proto54["m_bAsc"] = 0;
-$proto54["m_nColumn"] = 0;
-$obj = new SQLOrderByItem($proto54);
+$proto60["m_column"]=$obj;
+$proto60["m_bAsc"] = 0;
+$proto60["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto60);
 
 $proto0["m_orderby"][]=$obj;					
 $proto0["m_srcTableName"]="tik_memorando";		
@@ -4061,7 +4553,7 @@ $queryData_tik_memorando = createSqlQuery_tik_memorando();
 	
 		;
 
-																						
+																									
 
 $tdatatik_memorando[".sqlquery"] = $queryData_tik_memorando;
 

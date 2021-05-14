@@ -2944,36 +2944,6 @@ $page_titles["tik_memorando_aut"] = &$pageTitlestik_memorando_aut;
 // -----------------start  prepare master-details data arrays ------------------------------//
 // tables which are detail tables for current table (master)
 $detailsTablesData["tik_memorando_aut"] = array();
-//	tik_memorando_adjunto
-	
-	
-
-		$dIndex = 0;
-	$detailsParam = array();
-	$detailsParam["dDataSourceTable"]="tik_memorando_adjunto";
-		$detailsParam["dOriginalTable"] = "tik_memorando_adjunto";
-
-
-
-		
-		$detailsParam["dType"]=PAGE_LIST;
-	$detailsParam["dShortTable"] = "tik_memorando_adjunto";
-	$detailsParam["dCaptionTable"] = GetTableCaption("tik_memorando_adjunto");
-	$detailsParam["masterKeys"] =array();
-	$detailsParam["detailKeys"] =array();
-
-
-		
-	$detailsTablesData["tik_memorando_aut"][$dIndex] = $detailsParam;
-
-	
-		$detailsTablesData["tik_memorando_aut"][$dIndex]["masterKeys"] = array();
-
-	$detailsTablesData["tik_memorando_aut"][$dIndex]["masterKeys"][]="NoMemorando";
-
-				$detailsTablesData["tik_memorando_aut"][$dIndex]["detailKeys"] = array();
-
-	$detailsTablesData["tik_memorando_aut"][$dIndex]["detailKeys"][]="NoMemorando";
 
 // tables which are master tables for current table (detail)
 $masterTablesData["tik_memorando_aut"] = array();

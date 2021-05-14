@@ -22,6 +22,9 @@ $dalTabletik_memorando["RequiereAutorizacion"] = array("type"=>16,"varname"=>"Re
 $dalTabletik_memorando["Autorizador"] = array("type"=>200,"varname"=>"Autorizador", "name" => "Autorizador");
 $dalTabletik_memorando["Categoria"] = array("type"=>129,"varname"=>"Categoria", "name" => "Categoria");
 $dalTabletik_memorando["AutorizadoPor"] = array("type"=>200,"varname"=>"AutorizadoPor", "name" => "AutorizadoPor");
+$dalTabletik_memorando["DocumentoAdjunto1"] = array("type"=>201,"varname"=>"DocumentoAdjunto1", "name" => "DocumentoAdjunto1");
+$dalTabletik_memorando["DocumentoAdjunto2"] = array("type"=>201,"varname"=>"DocumentoAdjunto2", "name" => "DocumentoAdjunto2");
+$dalTabletik_memorando["DocumentoAdjunto3"] = array("type"=>201,"varname"=>"DocumentoAdjunto3", "name" => "DocumentoAdjunto3");
 	$dalTabletik_memorando["NoMemorando"]["key"]=true;
 
 $dal_info["mpc_at_localhost__tik_memorando"] = &$dalTabletik_memorando;

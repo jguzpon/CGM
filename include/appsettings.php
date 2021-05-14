@@ -660,7 +660,7 @@ $suggestAllContent = true;
 $strLastSQL = "";
 $showCustomMarkerOnPrint = false;
 
-$projectBuildKey = "349_1620631239";
+$projectBuildKey = "349_1621011904";
 $wizardBuildKey = "35214";
 $projectBuildNumber = "349";
 
@@ -688,7 +688,6 @@ $tableCaptions["Spanish"]["tik_autorizadores"] = "Autorizadores Digitales";
 $tableCaptions["Spanish"]["tik_firmash"] = "Historico de Firmas";
 $tableCaptions["Spanish"]["tik_chat"] = "Chat";
 $tableCaptions["Spanish"]["tik_memorando_aut"] = "Autorizacion de Memorando";
-$tableCaptions["Spanish"]["tik_memorando_adjunto"] = "Documentos Adjunto Memorando";
 $tableCaptions["Spanish"]["tik_memorando_pend"] = "Memorando Pendientes";
 $tableCaptions["Spanish"]["tik_memorando_l"] = "Memorando Leidos";
 $tableCaptions["Spanish"]["tik_firmas"] = "Firmas";

@@ -3230,8 +3230,6 @@ function fillProjectEntites()
 	$projectEntitiesReverse[ "tik_chat" ] = "tik_chat";
 	$projectEntities[ "tik_memorando_aut" ] = array( "url" => "tik_memorando_aut", "type" => 0 );
 	$projectEntitiesReverse[ "tik_memorando_aut" ] = "tik_memorando_aut";
-	$projectEntities[ "tik_memorando_adjunto" ] = array( "url" => "tik_memorando_adjunto", "type" => 0 );
-	$projectEntitiesReverse[ "tik_memorando_adjunto" ] = "tik_memorando_adjunto";
 	$projectEntities[ "tik_memorando_pend" ] = array( "url" => "tik_memorando_pend", "type" => 0 );
 	$projectEntitiesReverse[ "tik_memorando_pend" ] = "tik_memorando_pend";
 	$projectEntities[ "tik_memorando_l" ] = array( "url" => "tik_memorando_l", "type" => 0 );

@@ -156,6 +156,15 @@ pdfDocument = {
 			{"hidden":"{$item_hide_integrated_edit_field5}","stack":[{"text":"{$jslabel tik_memorando Texto }","bold":true},{"text":{$Texto_pdfvalue}}],"margin":[0,0,0,15]},
 				
 				
+			{"hidden":"{$item_hide_integrated_edit_field16}","stack":[{"text":"{$jslabel tik_memorando DocumentoAdjunto1 }","bold":true},{"text":{$DocumentoAdjunto1_pdfvalue}}],"margin":[0,0,0,15]},
+				
+				
+			{"hidden":"{$item_hide_integrated_edit_field17}","stack":[{"text":"{$jslabel tik_memorando DocumentoAdjunto2 }","bold":true},{"text":{$DocumentoAdjunto2_pdfvalue}}],"margin":[0,0,0,15]},
+				
+				
+			{"hidden":"{$item_hide_integrated_edit_field18}","stack":[{"text":"{$jslabel tik_memorando DocumentoAdjunto3 }","bold":true},{"text":{$DocumentoAdjunto3_pdfvalue}}],"margin":[0,0,0,15]},
+				
+				
 			{"hidden":"{$item_hide_integrated_edit_field}","stack":[{"text":"{$jslabel tik_memorando Estado }","bold":true},{"text":{$Estado_pdfvalue}}],"margin":[0,0,0,15]},
 				
 				

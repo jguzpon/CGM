@@ -532,13 +532,6 @@
 					Memorando Leidos				</label>
 			</div>
 			{END print_details_tik_memorando_l}
-														{BEGIN print_details_tik_memorando_adjunto}
-			<div>
-				<label for="printDetailstik_memorando_adjunto{$id}">
-					<input type="checkbox" value="tik_memorando_adjunto" id="printDetailstik_memorando_adjunto{$id}" checked>
-					Documentos Adjunto Memorando				</label>
-			</div>
-			{END print_details_tik_memorando_adjunto}
 						</div>
 </div>
 {END print_details}
@@ -623,7 +616,7 @@
 								[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="Categoria"]:before {
 		content: "{$label tik_memorando Categoria}";
 	}
-		}
+					}
 </style>
 <table data-location="grid" id="form_grid_{$pageid}" data-makeup="leftbar" {$form_grid} data-pageid="{$pageid}" class=" table {$grid_classes}  r-flexgrid rnr-b-grid rnr-gridtable" 
 	cellpadding="0" 
@@ -1123,53 +1116,22 @@
 	>
 
 	 
-		{BEGIN dtables_link}
-	<a 
-		data-itemtype="grid_alldetails_link" data-itemid="grid_alldetails_link" {$item_grid_alldetails_link} data-pageid="{$pageid}" data-record-id="{$recId}" 
-		{$dtables_link_attrs} 
-		class="{$dtables_link_class}" 
-		title="Mostrar detalles"
-	>
-					<span class="glyphicon glyphicon-th-list"></span>
-					</a>
-{END dtables_link}
-	 
+			 
 		
-		
-	{BEGIN tik_memorando_adjunto_dtable_link}
-	<span data-itemtype="grid_details_link" data-itemid="grid_details_link2" {$item_grid_details_link2} data-pageid="{$pageid}" data-record-id="{$recId}">
-	<a  {$tik_memorando_adjunto_link_attrs} data-short-details="tik_memorando_adjunto"
-		class="{$tik_memorando_adjunto_dlink_class}" 
-		title="{$caption tik_memorando_adjunto }"	>
-								
-									{BEGIN tik_memorando_adjunto_childcount}
-				<span class="details-badge badge tik_memorando_adjunto_badge" {$tik_memorando_adjunto_childnumber_attr}>
-					{$tik_memorando_adjunto_childnumber}				
-				</span>
-				{END tik_memorando_adjunto_childcount}
-						</a>
-	</span>
-	{END tik_memorando_adjunto_dtable_link}
-
-
-	 
-		
-		
-	{BEGIN tik_memorando_l_dtable_link}
-	<span data-itemtype="grid_details_link" data-itemid="grid_details_link" {$item_grid_details_link} data-pageid="{$pageid}" data-record-id="{$recId}">
-	<a  {$tik_memorando_l_link_attrs} data-short-details="tik_memorando_l"
-		class="{$tik_memorando_l_dlink_class}" 
-		title="{$caption tik_memorando_l }"	>
-								
-									{BEGIN tik_memorando_l_childcount}
-				<span class="details-badge badge tik_memorando_l_badge" {$tik_memorando_l_childnumber_attr}>
-					{$tik_memorando_l_childnumber}				
-				</span>
-				{END tik_memorando_l_childcount}
-						</a>
-	</span>
-	{END tik_memorando_l_dtable_link}
-
+	{BEGIN dtables_link}
+				<span data-itemtype="grid_details_link" data-itemid="grid_details_link" {$item_grid_details_link} data-pageid="{$pageid}" data-record-id="{$recId}">
+		<a 
+			{$tik_memorando_l_link_attrs} 
+			class="{$dtables_link_class} details-badge badge tik_memorando_l_badge" 
+			title="Mostrar detalles"
+		>
+							<span class="glyphicon glyphicon-th-list"></span>
+									<span class="{$tik_memorando_l_cntspan_class}" {$tik_memorando_l_childnumber_attr}>
+				{$tik_memorando_l_childnumber}				
+			</span>
+		</a>
+		</span>
+	{END dtables_link}
 
 	
 	</td>
@@ -1462,25 +1424,22 @@
 	{$cell_grid_cell_dpreview}
 	{$recordattrs}
 	class="
-					"
+		 r-ori-vert			"
 
 	
 	data-cellId="grid_cell_dpreview" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
-				<div data-itemtype="details_preview" data-itemid="details_preview" {$item_details_preview} data-pageid="{$pageid}" data-record-id="{$recId}" 
-	data-orders="tik_memorando_adjunto,tik_memorando_l"
-			data-details-tik_memorando_adjunto			data-details-tik_memorando_l	>
-		<span data-details-inside data-short-table="tik_memorando_adjunto">
-			</span>
+			<div data-itemtype="details_preview" data-itemid="details_preview2" {$item_details_preview2} data-pageid="{$pageid}" data-record-id="{$recId}" 
+	data-orders="tik_memorando_l"
+			data-details-tik_memorando_l	>
 		<span data-details-inside data-short-table="tik_memorando_l">
 			</span>
 		<div data-details-preview>
 	</div>
 </div>
-	 
-			
+	
 	</td>
 	{END cellblock_grid_cell_dpreview}
 							</tr>
