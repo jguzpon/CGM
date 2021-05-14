@@ -59,7 +59,6 @@ class tDAL
 	var $tblmpc_at_localhost__tik_firmash;
 	var $tblmpc_at_localhost__tik_interno;
 	var $tblmpc_at_localhost__tik_memorando;
-	var $tblmpc_at_localhost__tik_memorando_adjunto;
 	var $tblmpc_at_localhost__tik_memorando_aut;
 	var $tblmpc_at_localhost__tik_memorando_aut_otrdep;
 	var $tblmpc_at_localhost__tik_memorando_l;
@@ -94,7 +93,6 @@ class tDAL
 		$this->lstTables[] = array("name" => "tik_firmash", "varname" => "mpc_at_localhost__tik_firmash", "altvarname" => "tik_firmash", "connId" => "mpc_at_localhost", "schema" => "", "connName" => "mpc at localhost");
 		$this->lstTables[] = array("name" => "tik_interno", "varname" => "mpc_at_localhost__tik_interno", "altvarname" => "tik_interno", "connId" => "mpc_at_localhost", "schema" => "", "connName" => "mpc at localhost");
 		$this->lstTables[] = array("name" => "tik_memorando", "varname" => "mpc_at_localhost__tik_memorando", "altvarname" => "tik_memorando", "connId" => "mpc_at_localhost", "schema" => "", "connName" => "mpc at localhost");
-		$this->lstTables[] = array("name" => "tik_memorando_adjunto", "varname" => "mpc_at_localhost__tik_memorando_adjunto", "altvarname" => "tik_memorando_adjunto", "connId" => "mpc_at_localhost", "schema" => "", "connName" => "mpc at localhost");
 		$this->lstTables[] = array("name" => "tik_memorando_aut", "varname" => "mpc_at_localhost__tik_memorando_aut", "altvarname" => "tik_memorando_aut", "connId" => "mpc_at_localhost", "schema" => "", "connName" => "mpc at localhost");
 		$this->lstTables[] = array("name" => "tik_memorando_aut_otrdep", "varname" => "mpc_at_localhost__tik_memorando_aut_otrdep", "altvarname" => "tik_memorando_aut_otrdep", "connId" => "mpc_at_localhost", "schema" => "", "connName" => "mpc at localhost");
 		$this->lstTables[] = array("name" => "tik_memorando_l", "varname" => "mpc_at_localhost__tik_memorando_l", "altvarname" => "tik_memorando_l", "connId" => "mpc_at_localhost", "schema" => "", "connName" => "mpc at localhost");

@@ -156,6 +156,9 @@ pdfDocument = {
 			{"hidden":"{$item_hide_integrated_edit_field14}","stack":[{"text":"{$jslabel vtik_interno FechaAtencion }","bold":true},{"text":{$FechaAtencion_pdfvalue}}],"margin":[0,0,0,15]},
 				
 				
+			{"hidden":"{$item_hide_integrated_edit_field16}","stack":[{"text":"{$jslabel vtik_interno FechaAtencionFinal }","bold":true},{"text":{$FechaAtencionFinal_pdfvalue}}],"margin":[0,0,0,15]},
+				
+				
 			{"hidden":"{$item_hide_integrated_edit_field15}","stack":[{"text":"{$jslabel vtik_interno ProcesoAtencion }","bold":true},{"text":{$ProcesoAtencion_pdfvalue}}],"margin":[0,0,0,15]},
 				
 				

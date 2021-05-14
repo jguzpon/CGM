@@ -1122,6 +1122,10 @@ function GetDefaultValue($field, $ptype, $table="")
 	{
 		return strftime("%Y-%m-%d %H:%M:%S");
 	}
+				if($table=="vtik_interno" && $field=="FechaAtencionFinal")
+	{
+		return strftime("%Y-%m-%d %H:%M:%S");
+	}
 				if($table=="Control de Asistencias" && $field=="FechaSolicitud")
 	{
 		return strftime("%Y-%m-%d %H:%M:%S");

@@ -164,6 +164,9 @@ pdfDocument = {
 				
 			{"hidden":"{$item_hide_integrated_edit_field12}","stack":[{"text":"{$jslabel tik_interno Evaluacion }","bold":true},{"text":{$Evaluacion_pdfvalue}}],"margin":[0,0,0,15]},
 				
+				
+			{"hidden":"{$item_hide_integrated_edit_field16}","stack":[{"text":"{$jslabel tik_interno FechaAtencionFinal }","bold":true},{"text":{$FechaAtencionFinal_pdfvalue}}],"margin":[0,0,0,15]},
+				
 		  ],
   "border": [ false, false, false, false ],
               "alignment": 'left',

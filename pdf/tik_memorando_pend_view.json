@@ -140,6 +140,15 @@ pdfDocument = {
 				
 			{"hidden":"{$item_hide_integrated_edit_field7}","stack":[{"text":"{$jslabel tik_memorando_pend ADepartamento }","bold":true},{"text":{$ADepartamento_pdfvalue}}],"margin":[0,0,0,15]},
 				
+				
+			{"hidden":"{$item_hide_integrated_edit_field8}","stack":[{"text":"{$jslabel tik_memorando_pend DocumentoAdjunto1 }","bold":true},{"text":{$DocumentoAdjunto1_pdfvalue}}],"margin":[0,0,0,15]},
+				
+				
+			{"hidden":"{$item_hide_integrated_edit_field9}","stack":[{"text":"{$jslabel tik_memorando_pend DocumentoAdjunto2 }","bold":true},{"text":{$DocumentoAdjunto2_pdfvalue}}],"margin":[0,0,0,15]},
+				
+				
+			{"hidden":"{$item_hide_integrated_edit_field10}","stack":[{"text":"{$jslabel tik_memorando_pend DocumentoAdjunto3 }","bold":true},{"text":{$DocumentoAdjunto3_pdfvalue}}],"margin":[0,0,0,15]},
+				
 		  ],
   "border": [ false, false, false, false ],
               "alignment": 'left',

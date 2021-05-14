@@ -156,6 +156,9 @@ pdfDocument = {
 			{"hidden":"{$item_hide_integrated_search_field16}","text":{$ProcesoAtencion_pdfvalue}},
 				
 				
+			{"hidden":"{$item_hide_integrated_search_field19}","text":{$FechaAtencionFinal_pdfvalue}},
+				
+				
 			{"hidden":"{$item_hide_integrated_search_field10}","text":{$FechaFinal_pdfvalue}},
 				
 				

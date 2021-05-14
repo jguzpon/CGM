@@ -2491,6 +2491,7 @@ $proto33["m_columns"][] = "Observaciones";
 $proto33["m_columns"][] = "Evaluacion";
 $proto33["m_columns"][] = "Estado";
 $proto33["m_columns"][] = "FechaAtencion";
+$proto33["m_columns"][] = "FechaAtencionFinal";
 $proto33["m_columns"][] = "ProcesoAtencion";
 $obj = new SQLTable($proto33);
 

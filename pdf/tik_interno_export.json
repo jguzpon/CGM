@@ -155,6 +155,9 @@ pdfDocument = {
 				
 			{"hidden":"{$item_hide_export_field16}","text":{$ProcesoAtencion_pdfvalue}},
 				
+				
+			{"hidden":"{$item_hide_export_field17}","text":{$FechaAtencionFinal_pdfvalue}},
+				
 		  ],
   "border": [ false, false, false, false ],
               "alignment": 'left',

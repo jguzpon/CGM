@@ -1874,6 +1874,7 @@ $proto25["m_columns"][] = "Observaciones";
 $proto25["m_columns"][] = "Evaluacion";
 $proto25["m_columns"][] = "Estado";
 $proto25["m_columns"][] = "FechaAtencion";
+$proto25["m_columns"][] = "FechaAtencionFinal";
 $proto25["m_columns"][] = "ProcesoAtencion";
 $obj = new SQLTable($proto25);
 

@@ -1583,6 +1583,7 @@ $proto21["m_columns"][] = "Observaciones";
 $proto21["m_columns"][] = "Evaluacion";
 $proto21["m_columns"][] = "Estado";
 $proto21["m_columns"][] = "FechaAtencion";
+$proto21["m_columns"][] = "FechaAtencionFinal";
 $proto21["m_columns"][] = "ProcesoAtencion";
 $obj = new SQLTable($proto21);
 

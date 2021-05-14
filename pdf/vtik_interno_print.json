@@ -1389,10 +1389,12 @@ pdfDocument = {
 	
 			"text": [
 		
-				'',
-	  ],
+				
+			{"hidden":"{$item_hide_grid_field_label3}","text":"{$jslabel vtik_interno FechaAtencionFinal }","bold":true},
+				
+		  ],
   "border": [ true, true, true, true ],
-              "alignment": 'left',
+              "alignment": '{$FechaAtencionFinal_align}',
   },
 
 {END cellblock_grid_cell_field104}
@@ -1413,10 +1415,12 @@ pdfDocument = {
 	
 			"text": [
 		
-				'',
-	  ],
+				
+			{"hidden":"{$item_hide_grid_field3}","text":{$FechaAtencionFinal_pdfvalue}},
+				
+		  ],
   "border": [ true, true, true, true ],
-              "alignment": 'left',
+              "alignment": '{$FechaAtencionFinal_align}',
   },
 
 {END cellblock_grid_cell_field105}

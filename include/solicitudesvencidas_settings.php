@@ -3359,6 +3359,7 @@ $proto55["m_columns"][] = "Observaciones";
 $proto55["m_columns"][] = "Evaluacion";
 $proto55["m_columns"][] = "Estado";
 $proto55["m_columns"][] = "FechaAtencion";
+$proto55["m_columns"][] = "FechaAtencionFinal";
 $proto55["m_columns"][] = "ProcesoAtencion";
 $obj = new SQLTable($proto55);
 

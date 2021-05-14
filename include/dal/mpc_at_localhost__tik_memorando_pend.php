@@ -21,6 +21,9 @@ $dalTabletik_memorando_pend["VoBo"] = array("type"=>200,"varname"=>"VoBo", "name
 $dalTabletik_memorando_pend["RequiereAutorizacion"] = array("type"=>16,"varname"=>"RequiereAutorizacion", "name" => "RequiereAutorizacion");
 $dalTabletik_memorando_pend["Autorizador"] = array("type"=>200,"varname"=>"Autorizador", "name" => "Autorizador");
 $dalTabletik_memorando_pend["Categoria"] = array("type"=>129,"varname"=>"Categoria", "name" => "Categoria");
+$dalTabletik_memorando_pend["DocumentoAdjunto1"] = array("type"=>201,"varname"=>"DocumentoAdjunto1", "name" => "DocumentoAdjunto1");
+$dalTabletik_memorando_pend["DocumentoAdjunto2"] = array("type"=>201,"varname"=>"DocumentoAdjunto2", "name" => "DocumentoAdjunto2");
+$dalTabletik_memorando_pend["DocumentoAdjunto3"] = array("type"=>201,"varname"=>"DocumentoAdjunto3", "name" => "DocumentoAdjunto3");
 
 $dal_info["mpc_at_localhost__tik_memorando_pend"] = &$dalTabletik_memorando_pend;
 ?>

@@ -1029,11 +1029,20 @@
 	{$cell_grid_cell_field104}
 	{$recordattrs}
 	class="
-		 r-ori-vert			"
+		 r-ori-vert				{$FechaAtencionFinal_class}
+			"
 
+			data-field="FechaAtencionFinal"
 	
 	data-cellId="grid_cell_field104" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
+
+	 
+		{BEGIN FechaAtencionFinal_fieldheadercolumn}
+ 
+	<span data-itemtype="grid_field_label" data-itemid="grid_field_label3" {$item_grid_field_label3} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="FechaAtencionFinal">
+	{$label vtik_interno FechaAtencionFinal }	</span>
+{END FechaAtencionFinal_fieldheadercolumn}
 
 	
 	</td>
@@ -1045,13 +1054,20 @@
 	{$cell_grid_cell_field105}
 	{$recordattrs}
 	class="
-		 r-ori-vert			"
+		 r-ori-vert				{$FechaAtencionFinal_class}
+			"
 
+			data-field="FechaAtencionFinal"
 	
 	data-cellId="grid_cell_field105" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
-	
+	 
+		{BEGIN FechaAtencionFinal_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field3" {$item_grid_field3} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="FechaAtencionFinal" data-default-width >
+{$FechaAtencionFinal_value}
+</span>
+{END FechaAtencionFinal_fieldcolumn}	
 	</td>
 	{END cellblock_grid_cell_field105}
 							</tr>

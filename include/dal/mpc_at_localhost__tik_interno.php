@@ -16,6 +16,7 @@ $dalTabletik_interno["Observaciones"] = array("type"=>201,"varname"=>"Observacio
 $dalTabletik_interno["Evaluacion"] = array("type"=>2,"varname"=>"Evaluacion", "name" => "Evaluacion");
 $dalTabletik_interno["Estado"] = array("type"=>129,"varname"=>"Estado", "name" => "Estado");
 $dalTabletik_interno["FechaAtencion"] = array("type"=>135,"varname"=>"FechaAtencion", "name" => "FechaAtencion");
+$dalTabletik_interno["FechaAtencionFinal"] = array("type"=>135,"varname"=>"FechaAtencionFinal", "name" => "FechaAtencionFinal");
 $dalTabletik_interno["ProcesoAtencion"] = array("type"=>201,"varname"=>"ProcesoAtencion", "name" => "ProcesoAtencion");
 	$dalTabletik_interno["Solicitud"]["key"]=true;
 

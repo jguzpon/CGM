@@ -268,6 +268,19 @@
 								<span class="rnr-searchcontrol">{$searchcontrol1_Asunto}</span>
 						</div>
 		{END searchCtrlBlock_Asunto}
+																{BEGIN searchCtrlBlock_FechaAtencionFinal}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_FechaAtencionFinal}" {$filterRow_attrs_FechaAtencionFinal}>
+			<label>{$label vtik_interno FechaAtencionFinal }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_FechaAtencionFinal}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_FechaAtencionFinal}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_FechaAtencionFinal}</span>
+						</div>
+		{END searchCtrlBlock_FechaAtencionFinal}
 																{BEGIN searchCtrlBlock_ProcesoAtencion}
 
 
@@ -667,7 +680,10 @@
 				[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="FechaExpiracion"]:before {
 		content: "{$label vtik_interno FechaExpiracion}";
 	}
-		}
+				[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="FechaAtencionFinal"]:before {
+		content: "{$label vtik_interno FechaAtencionFinal}";
+	}
+	}
 </style>
 <table data-location="grid" id="form_grid_{$pageid}" data-makeup="topbar" {$form_grid} data-pageid="{$pageid}" class=" table {$grid_classes}  r-flexgrid rnr-b-grid rnr-gridtable" 
 	cellpadding="0" 
@@ -756,7 +772,7 @@
 	 
 		{BEGIN Solicitud_fieldheadercolumn}
 	{BEGIN Solicitud_fieldheader}
-	<SPAN {$Solicitud_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field8" {$item_simple_grid_field8} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Solicitud">
+	<SPAN {$Solicitud_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field9" {$item_simple_grid_field9} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Solicitud">
 	{$label vtik_interno Solicitud }	{$arrow_icon_Solicitud}
 	</SPAN>
 	{END Solicitud_fieldheader}
@@ -810,7 +826,7 @@
 	 
 		{BEGIN TipoSolicitud_fieldheadercolumn}
 	{BEGIN TipoSolicitud_fieldheader}
-	<SPAN {$TipoSolicitud_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field9" {$item_simple_grid_field9} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="TipoSolicitud">
+	<SPAN {$TipoSolicitud_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field10" {$item_simple_grid_field10} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="TipoSolicitud">
 	{$label vtik_interno TipoSolicitud }	{$arrow_icon_TipoSolicitud}
 	</SPAN>
 	{END TipoSolicitud_fieldheader}
@@ -837,7 +853,7 @@
 	 
 		{BEGIN DepartamentoSolicitante_fieldheadercolumn}
 	{BEGIN DepartamentoSolicitante_fieldheader}
-	<SPAN {$DepartamentoSolicitante_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field10" {$item_simple_grid_field10} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="DepartamentoSolicitante">
+	<SPAN {$DepartamentoSolicitante_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field11" {$item_simple_grid_field11} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="DepartamentoSolicitante">
 	{$label vtik_interno DepartamentoSolicitante }	{$arrow_icon_DepartamentoSolicitante}
 	</SPAN>
 	{END DepartamentoSolicitante_fieldheader}
@@ -864,7 +880,7 @@
 	 
 		{BEGIN UsuarioSolicitante_fieldheadercolumn}
 	{BEGIN UsuarioSolicitante_fieldheader}
-	<SPAN {$UsuarioSolicitante_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field11" {$item_simple_grid_field11} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="UsuarioSolicitante">
+	<SPAN {$UsuarioSolicitante_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field12" {$item_simple_grid_field12} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="UsuarioSolicitante">
 	{$label vtik_interno UsuarioSolicitante }	{$arrow_icon_UsuarioSolicitante}
 	</SPAN>
 	{END UsuarioSolicitante_fieldheader}
@@ -891,7 +907,7 @@
 	 
 		{BEGIN DepartamentoSolicitar_fieldheadercolumn}
 	{BEGIN DepartamentoSolicitar_fieldheader}
-	<SPAN {$DepartamentoSolicitar_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field12" {$item_simple_grid_field12} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="DepartamentoSolicitar">
+	<SPAN {$DepartamentoSolicitar_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field14" {$item_simple_grid_field14} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="DepartamentoSolicitar">
 	{$label vtik_interno DepartamentoSolicitar }	{$arrow_icon_DepartamentoSolicitar}
 	</SPAN>
 	{END DepartamentoSolicitar_fieldheader}
@@ -918,7 +934,7 @@
 	 
 		{BEGIN FechaSolicitud_fieldheadercolumn}
 	{BEGIN FechaSolicitud_fieldheader}
-	<SPAN {$FechaSolicitud_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field14" {$item_simple_grid_field14} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="FechaSolicitud">
+	<SPAN {$FechaSolicitud_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field15" {$item_simple_grid_field15} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="FechaSolicitud">
 	{$label vtik_interno FechaSolicitud }	{$arrow_icon_FechaSolicitud}
 	</SPAN>
 	{END FechaSolicitud_fieldheader}
@@ -945,7 +961,7 @@
 	 
 		{BEGIN FechaExpiracion_fieldheadercolumn}
 	{BEGIN FechaExpiracion_fieldheader}
-	<SPAN {$FechaExpiracion_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field15" {$item_simple_grid_field15} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="FechaExpiracion">
+	<SPAN {$FechaExpiracion_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field16" {$item_simple_grid_field16} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="FechaExpiracion">
 	{$label vtik_interno FechaExpiracion }	{$arrow_icon_FechaExpiracion}
 	</SPAN>
 	{END FechaExpiracion_fieldheader}
@@ -972,7 +988,7 @@
 	 
 		{BEGIN Estado_fieldheadercolumn}
 	{BEGIN Estado_fieldheader}
-	<SPAN {$Estado_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field16" {$item_simple_grid_field16} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Estado">
+	<SPAN {$Estado_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field17" {$item_simple_grid_field17} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Estado">
 	{$label vtik_interno Estado }	{$arrow_icon_Estado}
 	</SPAN>
 	{END Estado_fieldheader}
@@ -999,7 +1015,7 @@
 	 
 		{BEGIN Asunto_fieldheadercolumn}
 	{BEGIN Asunto_fieldheader}
-	<SPAN {$Asunto_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field17" {$item_simple_grid_field17} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Asunto">
+	<SPAN {$Asunto_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field18" {$item_simple_grid_field18} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="Asunto">
 	{$label vtik_interno Asunto }	{$arrow_icon_Asunto}
 	</SPAN>
 	{END Asunto_fieldheader}
@@ -1096,12 +1112,39 @@
 	{$cell_grid_headcell_field13}
 	{$recordattrs}
 	class="
+		 r-ori-vert				{$FechaAtencionFinal_class}
+			"
+
+			data-field="FechaAtencionFinal"
+	
+	data-cellId="grid_headcell_field13" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN FechaAtencionFinal_fieldheadercolumn}
+	{BEGIN FechaAtencionFinal_fieldheader}
+	<SPAN {$FechaAtencionFinal_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="simple_grid_field19" {$item_simple_grid_field19} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="FechaAtencionFinal">
+	{$label vtik_interno FechaAtencionFinal }	{$arrow_icon_FechaAtencionFinal}
+	</SPAN>
+	{END FechaAtencionFinal_fieldheader}
+{END FechaAtencionFinal_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field13}
+				 
+					{BEGIN cellblock_grid_headcell_field14}
+	<th
+	
+	{$cell_grid_headcell_field14}
+	{$recordattrs}
+	class="
 		 r-ori-vert				{$FechaFinal_class}
 			"
 
 			data-field="FechaFinal"
 	
-	data-cellId="grid_headcell_field13" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_headcell_field14" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1115,7 +1158,7 @@
 
 	
 	</th>
-	{END cellblock_grid_headcell_field13}
+	{END cellblock_grid_headcell_field14}
 							</tr>
 					 
 					 
@@ -1567,12 +1610,35 @@
 	{$cell_grid_cell_field13}
 	{$recordattrs}
 	class="
+		 r-ori-vert				{$FechaAtencionFinal_class}
+			"
+
+			data-field="FechaAtencionFinal"
+	
+	data-cellId="grid_cell_field13" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN FechaAtencionFinal_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="simple_grid_field8" {$item_simple_grid_field8} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="FechaAtencionFinal" data-default-width >
+{$FechaAtencionFinal_value}
+</span>
+{END FechaAtencionFinal_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field13}
+				 
+					{BEGIN cellblock_grid_cell_field14}
+	<td
+	
+	{$cell_grid_cell_field14}
+	{$recordattrs}
+	class="
 		 r-ori-vert				{$FechaFinal_class}
 			"
 
 			data-field="FechaFinal"
 	
-	data-cellId="grid_cell_field13" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	data-cellId="grid_cell_field14" data-pageid="{$pageid}" data-record-id="{$recId}"	
 	>
 
 	 
@@ -1582,7 +1648,7 @@
 </span>
 {END FechaFinal_fieldcolumn}	
 	</td>
-	{END cellblock_grid_cell_field13}
+	{END cellblock_grid_cell_field14}
 							</tr>
 					 
 						<tr {$rowattrs} {$row_grid_2} class="{$rowclass} 
@@ -1904,6 +1970,22 @@
 	
 	</td>
 	{END cellblock_grid_footcell_field13}
+				 
+					{BEGIN cellblock_grid_footcell_field14}
+	<td
+	
+	{$cell_grid_footcell_field14}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_footcell_field14" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="vtik_interno_list"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field14}
 							</tr>
 					
 					</tfoot>

@@ -112,6 +112,9 @@ pdfDocument = {
 										{BEGIN col_grid_17}
 					"%",
 					{END col_grid_17}
+										{BEGIN col_grid_18}
+					"%",
+					{END col_grid_18}
 															],
 											heights: [ // first height for header part
 					"%",
@@ -211,7 +214,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field18}","text":"{$jslabel vtik_interno Solicitud }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field19}","text":"{$jslabel vtik_interno Solicitud }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -237,7 +240,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field19}","text":"{$jslabel vtik_interno Documento }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field20}","text":"{$jslabel vtik_interno Documento }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -263,7 +266,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field20}","text":"{$jslabel vtik_interno DepartamentoSolicitante }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field21}","text":"{$jslabel vtik_interno DepartamentoSolicitante }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -289,7 +292,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field21}","text":"{$jslabel vtik_interno UsuarioSolicitante }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field22}","text":"{$jslabel vtik_interno UsuarioSolicitante }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -315,7 +318,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field22}","text":"{$jslabel vtik_interno DepartamentoSolicitar }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field23}","text":"{$jslabel vtik_interno DepartamentoSolicitar }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -341,7 +344,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field23}","text":"{$jslabel vtik_interno Asunto }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field24}","text":"{$jslabel vtik_interno Asunto }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -367,7 +370,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field24}","text":"{$jslabel vtik_interno DescripcionAmplia }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field25}","text":"{$jslabel vtik_interno DescripcionAmplia }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -393,7 +396,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field25}","text":"{$jslabel vtik_interno FechaSolicitud }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field26}","text":"{$jslabel vtik_interno FechaSolicitud }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -419,7 +422,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field26}","text":"{$jslabel vtik_interno FechaInicio }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field27}","text":"{$jslabel vtik_interno FechaInicio }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -445,7 +448,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field27}","text":"{$jslabel vtik_interno UsuarioInicio }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field28}","text":"{$jslabel vtik_interno UsuarioInicio }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -471,7 +474,7 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field28}","text":"{$jslabel vtik_interno FechaAtencion }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field29}","text":"{$jslabel vtik_interno FechaAtencion }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
@@ -497,11 +500,11 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field29}","text":"{$jslabel vtik_interno ProcesoAtencion }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field30}","text":"{$jslabel vtik_interno FechaAtencionFinal }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
-              "alignment": '{$ProcesoAtencion_align}',
+              "alignment": '{$FechaAtencionFinal_align}',
   },
 
 {END cellblock_grid_headcell_field11}
@@ -523,11 +526,11 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field30}","text":"{$jslabel vtik_interno FechaFinal }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field31}","text":"{$jslabel vtik_interno ProcesoAtencion }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
-              "alignment": '{$FechaFinal_align}',
+              "alignment": '{$ProcesoAtencion_align}',
   },
 
 {END cellblock_grid_headcell_field12}
@@ -549,11 +552,11 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field31}","text":"{$jslabel vtik_interno Observaciones }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field32}","text":"{$jslabel vtik_interno FechaFinal }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
-              "alignment": '{$Observaciones_align}',
+              "alignment": '{$FechaFinal_align}',
   },
 
 {END cellblock_grid_headcell_field13}
@@ -575,11 +578,11 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field32}","text":"{$jslabel vtik_interno Evaluacion }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field33}","text":"{$jslabel vtik_interno Observaciones }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
-              "alignment": '{$Evaluacion_align}',
+              "alignment": '{$Observaciones_align}',
   },
 
 {END cellblock_grid_headcell_field14}
@@ -601,11 +604,11 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field33}","text":"{$jslabel vtik_interno Estado }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field34}","text":"{$jslabel vtik_interno Evaluacion }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
-              "alignment": '{$Estado_align}',
+              "alignment": '{$Evaluacion_align}',
   },
 
 {END cellblock_grid_headcell_field15}
@@ -627,11 +630,11 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field34}","text":"{$jslabel vtik_interno TipoSolicitud }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field35}","text":"{$jslabel vtik_interno Estado }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
-              "alignment": '{$TipoSolicitud_align}',
+              "alignment": '{$Estado_align}',
   },
 
 {END cellblock_grid_headcell_field16}
@@ -653,14 +656,40 @@ pdfDocument = {
 			"text": [
 		
 				
-			{"hidden":"{$item_hide_simple_grid_field35}","text":"{$jslabel vtik_interno FechaExpiracion }","bold":true},
+			{"hidden":"{$item_hide_simple_grid_field36}","text":"{$jslabel vtik_interno TipoSolicitud }","bold":true},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$TipoSolicitud_align}',
+  },
+
+{END cellblock_grid_headcell_field17}
+																			{BEGIN cellblock_grid_headcell_field18}
+{
+	cellId: 'headcell_field18',
+	col:0,
+	row:0,
+			style: 'headcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+						
+	
+	
+	
+			"text": [
+		
+				
+			{"hidden":"{$item_hide_simple_grid_field37}","text":"{$jslabel vtik_interno FechaExpiracion }","bold":true},
 				
 		  ],
   "border": [ true, true, true, true ],
               "alignment": '{$FechaExpiracion_align}',
   },
 
-{END cellblock_grid_headcell_field17}
+{END cellblock_grid_headcell_field18}
 											],
 				{END row_grid_0}
 								
@@ -973,6 +1002,32 @@ pdfDocument = {
 			"text": [
 		
 				
+			{"hidden":"{$item_hide_simple_grid_field18}","text":{$FechaAtencionFinal_pdfvalue}},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$FechaAtencionFinal_align}',
+  },
+
+{END cellblock_grid_cell_field11}
+																			{BEGIN cellblock_grid_cell_field12}
+{
+	cellId: 'cell_field12',
+	col:0,
+	row:0,
+			style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+						
+	
+	
+	
+			"text": [
+		
+				
 			{"hidden":"{$item_hide_simple_grid_field16}","text":{$ProcesoAtencion_pdfvalue}},
 				
 		  ],
@@ -980,10 +1035,10 @@ pdfDocument = {
               "alignment": '{$ProcesoAtencion_align}',
   },
 
-{END cellblock_grid_cell_field11}
-																			{BEGIN cellblock_grid_cell_field12}
+{END cellblock_grid_cell_field12}
+																			{BEGIN cellblock_grid_cell_field13}
 {
-	cellId: 'cell_field12',
+	cellId: 'cell_field13',
 	col:0,
 	row:0,
 			style: 'bodycell',
@@ -1006,10 +1061,10 @@ pdfDocument = {
               "alignment": '{$FechaFinal_align}',
   },
 
-{END cellblock_grid_cell_field12}
-																			{BEGIN cellblock_grid_cell_field13}
+{END cellblock_grid_cell_field13}
+																			{BEGIN cellblock_grid_cell_field14}
 {
-	cellId: 'cell_field13',
+	cellId: 'cell_field14',
 	col:0,
 	row:0,
 			style: 'bodycell',
@@ -1032,10 +1087,10 @@ pdfDocument = {
               "alignment": '{$Observaciones_align}',
   },
 
-{END cellblock_grid_cell_field13}
-																			{BEGIN cellblock_grid_cell_field14}
+{END cellblock_grid_cell_field14}
+																			{BEGIN cellblock_grid_cell_field15}
 {
-	cellId: 'cell_field14',
+	cellId: 'cell_field15',
 	col:0,
 	row:0,
 			style: 'bodycell',
@@ -1058,10 +1113,10 @@ pdfDocument = {
               "alignment": '{$Evaluacion_align}',
   },
 
-{END cellblock_grid_cell_field14}
-																			{BEGIN cellblock_grid_cell_field15}
+{END cellblock_grid_cell_field15}
+																			{BEGIN cellblock_grid_cell_field16}
 {
-	cellId: 'cell_field15',
+	cellId: 'cell_field16',
 	col:0,
 	row:0,
 			style: 'bodycell',
@@ -1084,10 +1139,10 @@ pdfDocument = {
               "alignment": '{$Estado_align}',
   },
 
-{END cellblock_grid_cell_field15}
-																			{BEGIN cellblock_grid_cell_field16}
+{END cellblock_grid_cell_field16}
+																			{BEGIN cellblock_grid_cell_field17}
 {
-	cellId: 'cell_field16',
+	cellId: 'cell_field17',
 	col:0,
 	row:0,
 			style: 'bodycell',
@@ -1110,10 +1165,10 @@ pdfDocument = {
               "alignment": '{$TipoSolicitud_align}',
   },
 
-{END cellblock_grid_cell_field16}
-																			{BEGIN cellblock_grid_cell_field17}
+{END cellblock_grid_cell_field17}
+																			{BEGIN cellblock_grid_cell_field18}
 {
-	cellId: 'cell_field17',
+	cellId: 'cell_field18',
 	col:0,
 	row:0,
 			style: 'bodycell',
@@ -1136,7 +1191,7 @@ pdfDocument = {
               "alignment": '{$FechaExpiracion_align}',
   },
 
-{END cellblock_grid_cell_field17}
+{END cellblock_grid_cell_field18}
 											],
 				{END row_grid_1}
 						{END grid_record}
@@ -1577,6 +1632,30 @@ pdfDocument = {
   },
 
 {END cellblock_grid_footcell_field17}
+																			{BEGIN cellblock_grid_footcell_field18}
+{
+	cellId: 'footcell_field18',
+	col:0,
+	row:0,
+			style: 'footcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+						
+	
+	
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ true, true, true, true ],
+              "alignment": 'left',
+  },
+
+{END cellblock_grid_footcell_field18}
 											],
 				{END row_grid_2}
 							
