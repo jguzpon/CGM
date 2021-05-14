@@ -757,7 +757,7 @@ function BeforeProcessRowList(&$data, &$pageObject)
 
 // Place event code here.
 // Use "Add Action" button to add code snippets.
-if( $data['Categoria'] == 'Privado' && $data['De'] != $_SESSION["UserID"] ) {
+if( $data['Categoria'] == 'Privado' && $data['Usuario'] != $_SESSION["UserID"] ) {
 	return false;
 }
 
