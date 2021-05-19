@@ -308,7 +308,7 @@ while($dataa = $button->getNextSelectedRecord()) {
 						$msg = "Su PIN ha vencido, verificar";
 						$sts = "R";
 					} else {
-	//echo "<script>alert('Firma Digital ".$db["FirmaDigital"]." pin ".$pin."')</script>";
+	echo "<script>alert('Firma Digital ".$dc["FirmaDigital"]." pin ".$pin."')</script>";
 						if( $dc["FirmaDigital"] == $pin ) {
 							$sqla = "update tik_memorando set FirmaDigital = '".$pin."', Estado = 'Firmado',";
 							$sqla .= " AutorizadoPor = '".$dc["Usuario"]."'";
