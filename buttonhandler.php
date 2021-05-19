@@ -282,59 +282,51 @@ function buttonHandler_Autorizar_Memo($params)
 // Put your code here.
 $hoy = strftime('%Y-%m-%d');
 $pin = $params["pin"];
-echo "<script>alert('pin ".$pin."')</script>";
+//echo "<script>alert('pin ".$pin."')</script>";
 
-$msg = "";
-$sts = "";
 while($dataa = $button->getNextSelectedRecord()) {
 	if( $dataa["Estado"] == 'Pendiente' || $dataa["Estado"] == 'Autorizado' ) {
 		//  Obtener informacion del memorando
 		$sqlb = "select * from tik_memorando a where a.NoMemorando=".$dataa["NoMemorando"];
-echo "<script>alert('sqlb ".$sqlb." pin ".$pin."')</script>";
 		$rsb = CustomQuery($sqlb);
 		if( $db = db_fetch_array($rsb) ) {
 			if( $db["RequiereAutorizacion"] == 1 && empty($db["VoBo"]) ) {
-				$msg = "Memorando no está autorizado";
-				$sts = "R";
+				$result["txt"] = "Memorando no está autorizado";
+				$result["accion"] = "R";
 			} else {
 				// Obtener firma digital del solicitante
 				// Verificar quien está autorizando
-				if( $db["De"] <> $_SESSION["UserID"] ) {
-					$sqc = "select * from tik_firmas where Usuario = '".$_SESSION["UserID"]."' and FIND_IN_SET('".$_SESSION["CodigoDepto"]."',Departamentos)";
-				} else {
-					$sqc = "select * from tik_firmas where Usuario = '".$db["De"]."' and FIND_IN_SET('".$_SESSION["CodigoDepto"]."',Departamentos)";
-				}
-echo "<script>alert('sqc ".$sqc." pin ".$pin."')</script>";
+				//$sqc = "select * from tik_firmas where Usuario = '".$db["De"]."' and FIND_IN_SET('".$_SESSION["CodigoDepto"]."',Departamentos)";
+				$sqc = "select * from tik_firmas where Usuario = '".$db["De"]."'";
 				$rsc = CustomQuery($sqc);
 				if( $dc = db_fetch_array($rsc) ) {
 					if( !empty($dc["ValidoHasta"]) && $hoy > $dc["ValidoHasta"] ) {
-						$msg = "Su PIN ha vencido, verificar";
-						$sts = "R";
+						$result["txt"] = "Su PIN ha vencido, verificar";
+						$result["accion"] = "R";
 					} else {
-echo "<script>alert('Firma Digital ".$dc["FirmaDigital"]." pin ".$pin."')</script>";
+//echo "<script>alert('Firma Digital ".$dc["FirmaDigital"]." pin ".$pin."')</script>";
 						if( $dc["FirmaDigital"] == $pin ) {
 							$sqla = "update tik_memorando set FirmaDigital = '".$pin."', Estado = 'Firmado',";
 							$sqla .= " AutorizadoPor = '".$dc["Usuario"]."'";
 							$sqla .= " where NoMemorando = ".$dataa["NoMemorando"];
+echo "<script>alert('sqla ".$sqla." pin ".$pin."')</script>";
 	//fwrite($salida,"sqla ".$sqla.PHP_EOL);
 							CustomQuery($sqla);
-							$msg = "Memorando(s) Aprobado(s)!";
-							$sts = "A";
+							$result["txt"] = "Memorando(s) Aprobado(s)!";
+							$result["accion"] = "A";
 						} else {
-							$msg = "PIN incorrecto!";
-							$sts = "R";
+							$result["txt"] = "PIN incorrecto!";
+							$result["accion"] = "R";
 						}
 					}
 				}
 			}
 		} else {
-			$msg = "Error en captura de Memorando";
-			$sts = "R";
+			$result["txt"] = "Error en captura de Memorando";
+			$result["accion"] = "R";
 		}
 	}
 }
-$result["txt"] = $msg;
-$result["sts"] = $sts;
 //fclose($salida)
 ;
 	RunnerContext::pop();
