@@ -244,6 +244,7 @@ class ConnectionManager_Base
 		$connectionsIds["tik_tipomemo"] = "mpc_at_localhost";
 		$connectionsIds["tik_memorando_aut_otrdep"] = "mpc_at_localhost";
 		$connectionsIds["SolicitudesVencidas"] = "mpc_at_localhost";
+		$connectionsIds["vtik_memorando_hist"] = "mpc_at_localhost";
 
 		$this->_tablesConnectionIds = &$connectionsIds;
 	}

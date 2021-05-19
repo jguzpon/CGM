@@ -79,6 +79,9 @@ pdfDocument = {
 										{BEGIN col_grid_6}
 					"%",
 					{END col_grid_6}
+										{BEGIN col_grid_7}
+					"%",
+					{END col_grid_7}
 															],
 											heights: [ // first height for header part
 					"%",
@@ -363,6 +366,32 @@ pdfDocument = {
   },
 
 {END cellblock_grid_headcell_field3}
+																			{BEGIN cellblock_grid_headcell_field4}
+{
+	cellId: 'headcell_field4',
+	col:0,
+	row:0,
+			style: 'headcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+						
+	
+	
+	
+			"text": [
+		
+				
+			{"hidden":"{$item_hide_grid_field_label}","text":"{$jslabel tik_memorando_pend FechaExpiracion }","bold":true},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$FechaExpiracion_align}',
+  },
+
+{END cellblock_grid_headcell_field4}
 											],
 				{END row_grid_0}
 								
@@ -553,6 +582,32 @@ pdfDocument = {
   },
 
 {END cellblock_grid_cell_field3}
+																			{BEGIN cellblock_grid_cell_field7}
+{
+	cellId: 'cell_field7',
+	col:0,
+	row:0,
+			style: 'bodycell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+						
+	
+	
+	
+			"text": [
+		
+				
+			{"hidden":"{$item_hide_grid_field}","text":{$FechaExpiracion_pdfvalue}},
+				
+		  ],
+  "border": [ true, true, true, true ],
+              "alignment": '{$FechaExpiracion_align}',
+  },
+
+{END cellblock_grid_cell_field7}
 											],
 				{END row_grid_1}
 						{END grid_record}
@@ -729,6 +784,30 @@ pdfDocument = {
   },
 
 {END cellblock_grid_footcell_field3}
+																			{BEGIN cellblock_grid_footcell_field4}
+{
+	cellId: 'footcell_field4',
+	col:0,
+	row:0,
+			style: 'footcell',
+		
+		
+	//	dynamic colspan/rowspan
+
+		
+						
+	
+	
+	
+			"text": [
+		
+				'',
+	  ],
+  "border": [ true, true, true, true ],
+              "alignment": 'left',
+  },
+
+{END cellblock_grid_footcell_field4}
 											],
 				{END row_grid_2}
 							

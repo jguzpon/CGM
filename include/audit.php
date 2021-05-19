@@ -490,6 +490,10 @@ class AuditTrailTable
 		{
 			return true;
 		}
+		if($table=="vtik_memorando_hist")
+		{
+			return true;
+		}
 	}
 
 	protected function insert($datetime, $ip, $user, $table, $action, $description)
@@ -985,6 +989,10 @@ class AuditTrailFile
 			return false;
 		}
 		if($table=="SolicitudesVencidas")
+		{
+			return true;
+		}
+		if($table=="vtik_memorando_hist")
 		{
 			return true;
 		}

@@ -495,6 +495,27 @@ function InitLookupLinks()
 			$lookupTableLinks["tik_satisfaccion"]["solicitudesvencidas.Evaluacion"] = array();
 		}
 		$lookupTableLinks["tik_satisfaccion"]["solicitudesvencidas.Evaluacion"]["edit"] = array("table" => "SolicitudesVencidas", "field" => "Evaluacion", "page" => "edit");
+		if( !isset( $lookupTableLinks["zusuarios"] ) ) {
+			$lookupTableLinks["zusuarios"] = array();
+		}
+		if( !isset( $lookupTableLinks["zusuarios"]["vtik_memorando_hist.De"] )) {
+			$lookupTableLinks["zusuarios"]["vtik_memorando_hist.De"] = array();
+		}
+		$lookupTableLinks["zusuarios"]["vtik_memorando_hist.De"]["edit"] = array("table" => "vtik_memorando_hist", "field" => "De", "page" => "edit");
+		if( !isset( $lookupTableLinks["zusuarios"] ) ) {
+			$lookupTableLinks["zusuarios"] = array();
+		}
+		if( !isset( $lookupTableLinks["zusuarios"]["vtik_memorando_hist.A"] )) {
+			$lookupTableLinks["zusuarios"]["vtik_memorando_hist.A"] = array();
+		}
+		$lookupTableLinks["zusuarios"]["vtik_memorando_hist.A"]["edit"] = array("table" => "vtik_memorando_hist", "field" => "A", "page" => "edit");
+		if( !isset( $lookupTableLinks["zdepartamentos"] ) ) {
+			$lookupTableLinks["zdepartamentos"] = array();
+		}
+		if( !isset( $lookupTableLinks["zdepartamentos"]["vtik_memorando_hist.ADepartamento"] )) {
+			$lookupTableLinks["zdepartamentos"]["vtik_memorando_hist.ADepartamento"] = array();
+		}
+		$lookupTableLinks["zdepartamentos"]["vtik_memorando_hist.ADepartamento"]["edit"] = array("table" => "vtik_memorando_hist", "field" => "ADepartamento", "page" => "edit");
 }
 
 ?>

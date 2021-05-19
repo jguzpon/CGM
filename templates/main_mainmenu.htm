@@ -199,29 +199,29 @@
 
 			</li>
 			{END item20_menulink}
-	{END item12_menulink}
-
-	{BEGIN item21_menulink}
-	<li id="item21" class="{$item21_groupclass} {$item21_current} menuGroup" level=1>
-			<div>
-{BEGIN item21_groupimage}
-<span class="groupbox">
-<img alt="*" src="images/plus.gif" class="groupImg">
-</span>
-{END item21_groupimage}
+	
+			{BEGIN item21_menulink}
+			<li id="item21" style="display:none" class="subitem level2 {$item21_groupclass} {$item21_current} menuLeaf" level=2>
+					<div>
 <a {$item21_menulink_attrs} class="{$item21_current}">{$item21_title}</a>
 </div>
 
-	</li>
-	
-			{BEGIN item22_menulink}
-			<li id="item22" style="display:none" class="subitem level2 {$item22_groupclass} {$item22_current} menuLeaf" level=2>
-					<div>
+			</li>
+			{END item21_menulink}
+	{END item12_menulink}
+
+	{BEGIN item22_menulink}
+	<li id="item22" class="{$item22_groupclass} {$item22_current} menuGroup" level=1>
+			<div>
+{BEGIN item22_groupimage}
+<span class="groupbox">
+<img alt="*" src="images/plus.gif" class="groupImg">
+</span>
+{END item22_groupimage}
 <a {$item22_menulink_attrs} class="{$item22_current}">{$item22_title}</a>
 </div>
 
-			</li>
-			{END item22_menulink}
+	</li>
 	
 			{BEGIN item23_menulink}
 			<li id="item23" style="display:none" class="subitem level2 {$item23_groupclass} {$item23_current} menuLeaf" level=2>
@@ -267,16 +267,25 @@
 
 			</li>
 			{END item27_menulink}
-	{END item21_menulink}
-
-	{BEGIN item28_menulink}
-	<li id="item28" class="{$item28_groupclass} {$item28_current} menuLeaf" level=1>
-			<div>
+	
+			{BEGIN item28_menulink}
+			<li id="item28" style="display:none" class="subitem level2 {$item28_groupclass} {$item28_current} menuLeaf" level=2>
+					<div>
 <a {$item28_menulink_attrs} class="{$item28_current}">{$item28_title}</a>
 </div>
 
+			</li>
+			{END item28_menulink}
+	{END item22_menulink}
+
+	{BEGIN item29_menulink}
+	<li id="item29" class="{$item29_groupclass} {$item29_current} menuLeaf" level=1>
+			<div>
+<a {$item29_menulink_attrs} class="{$item29_current}">{$item29_title}</a>
+</div>
+
 	</li>
-	{END item28_menulink}
+	{END item29_menulink}
 </ul>
 {END mainmenu_block}
 

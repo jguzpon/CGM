@@ -3286,6 +3286,8 @@ function fillProjectEntites()
 	$projectEntitiesReverse[ "tik_memorando_aut_otrdep" ] = "tik_memorando_aut_otrdep";
 	$projectEntities[ "SolicitudesVencidas" ] = array( "url" => "solicitudesvencidas", "type" => 1 );
 	$projectEntitiesReverse[ "solicitudesvencidas" ] = "SolicitudesVencidas";
+	$projectEntities[ "vtik_memorando_hist" ] = array( "url" => "vtik_memorando_hist", "type" => 1 );
+	$projectEntitiesReverse[ "vtik_memorando_hist" ] = "vtik_memorando_hist";
 }
 
 function findTable( $table ) {

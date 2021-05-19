@@ -70,6 +70,9 @@ if(mlang_getcurrentlang()=="Spanish")
 	$fieldLabelstik_memorando_pend["Spanish"]["DocumentoAdjunto3"] = "Documento Adjunto3";
 	$fieldToolTipstik_memorando_pend["Spanish"]["DocumentoAdjunto3"] = "";
 	$placeHolderstik_memorando_pend["Spanish"]["DocumentoAdjunto3"] = "";
+	$fieldLabelstik_memorando_pend["Spanish"]["FechaExpiracion"] = "Fecha Expiracion";
+	$fieldToolTipstik_memorando_pend["Spanish"]["FechaExpiracion"] = "";
+	$placeHolderstik_memorando_pend["Spanish"]["FechaExpiracion"] = "";
 	if (count($fieldToolTipstik_memorando_pend["Spanish"]))
 		$tdatatik_memorando_pend[".isUseToolTips"] = true;
 }
@@ -209,6 +212,7 @@ $tdatatik_memorando_pend[".googleLikeFields"][] = "FirmaDigitalA";
 $tdatatik_memorando_pend[".googleLikeFields"][] = "DocumentoAdjunto1";
 $tdatatik_memorando_pend[".googleLikeFields"][] = "DocumentoAdjunto2";
 $tdatatik_memorando_pend[".googleLikeFields"][] = "DocumentoAdjunto3";
+$tdatatik_memorando_pend[".googleLikeFields"][] = "FechaExpiracion";
 
 
 
@@ -246,9 +250,9 @@ $tdatatik_memorando_pend[".orderindexes"] = array();
 
 
 
-$tdatatik_memorando_pend[".sqlHead"] = "SELECT NoMemorando,  Fecha,  De,  A,  ADepartamento,  Todos,  Descripcion,  Texto,  FirmaDigital,  TipoPapel,  Estado,  FirmaDigitalA,  DocumentoAdjunto1,  DocumentoAdjunto2,  DocumentoAdjunto3";
+$tdatatik_memorando_pend[".sqlHead"] = "SELECT NoMemorando,  Fecha,  De,  A,  ADepartamento,  Todos,  Descripcion,  Texto,  FirmaDigital,  TipoPapel,  Estado,  FirmaDigitalA,  DocumentoAdjunto1,  DocumentoAdjunto2,  DocumentoAdjunto3,  tik_sumdaysdate(Fecha, 56) AS FechaExpiracion";
 $tdatatik_memorando_pend[".sqlFrom"] = "FROM tik_memorando_pend";
-$tdatatik_memorando_pend[".sqlWhereExpr"] = "(Estado =\"Firmado\")";
+$tdatatik_memorando_pend[".sqlWhereExpr"] = "(Estado =\"Firmado\") AND (tik_sumdaysdate(Fecha, 56) >=curdate())";
 $tdatatik_memorando_pend[".sqlTail"] = "";
 
 
@@ -2507,6 +2511,145 @@ $tdatatik_memorando_pend[".hideMobileList"] = array();
 
 	$tdatatik_memorando_pend["DocumentoAdjunto3"] = $fdata;
 		$tdatatik_memorando_pend[".searchableFields"][] = "DocumentoAdjunto3";
+//	FechaExpiracion
+//	Custom field settings
+	$fdata = array();
+	$fdata["Index"] = 16;
+	$fdata["strName"] = "FechaExpiracion";
+	$fdata["GoodName"] = "FechaExpiracion";
+	$fdata["ownerTable"] = "";
+	$fdata["Label"] = GetFieldLabel("tik_memorando_pend","FechaExpiracion");
+	$fdata["FieldType"] = 135;
+
+	
+	
+	
+			
+
+		$fdata["strField"] = "FechaExpiracion";
+
+	
+		$fdata["isSQLExpression"] = true;
+	$fdata["FullName"] = "tik_sumdaysdate(Fecha, 56)";
+
+	
+	
+				$fdata["UploadFolder"] = "files";
+
+//  Begin View Formats
+	$fdata["ViewFormats"] = array();
+
+	$vdata = array("ViewFormat" => "Short Date");
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	
+		$vdata["NeedEncode"] = true;
+
+	
+		$vdata["truncateText"] = true;
+	$vdata["NumberOfChars"] = 80;
+
+	$fdata["ViewFormats"]["view"] = $vdata;
+//  End View Formats
+
+//	Begin Edit Formats
+	$fdata["EditFormats"] = array();
+
+	$edata = array("EditFormat" => "Date");
+
+	
+		$edata["weekdayMessage"] = array("message" => "", "messageType" => "Text");
+	$edata["weekdays"] = "[]";
+
+
+	
+	
+
+
+
+		$edata["IsRequired"] = true;
+
+	
+	
+	
+			$edata["acceptFileTypes"] = ".+$";
+		$edata["acceptFileTypesHtml"] = "";
+
+		$edata["maxNumberOfFiles"] = 1;
+
+	
+	
+		$edata["DateEditType"] = 13;
+	$edata["InitialYearFactor"] = 100;
+	$edata["LastYearFactor"] = 10;
+
+	
+	
+	
+		$edata["controlWidth"] = 200;
+
+//	Begin validation
+	$edata["validateAs"] = array();
+	$edata["validateAs"]["basicValidate"] = array();
+	$edata["validateAs"]["customMessages"] = array();
+						$edata["validateAs"]["basicValidate"][] = "IsRequired";
+		
+	
+	//	End validation
+
+	
+			
+	
+	
+	
+	$fdata["EditFormats"]["edit"] = $edata;
+//	End Edit Formats
+
+
+	$fdata["isSeparate"] = false;
+
+
+
+
+// the field's search options settings
+		$fdata["defaultSearchOption"] = "Equals";
+
+			// the default search options list
+				$fdata["searchOptionsList"] = array("Equals", "More than", "Less than", "Between", EMPTY_SEARCH, NOT_EMPTY );
+// the end of search options settings
+
+
+//Filters settings
+	$fdata["filterTotals"] = 0;
+		$fdata["filterMultiSelect"] = 0;
+			$fdata["filterFormat"] = "Values list";
+		$fdata["showCollapsed"] = false;
+
+		$fdata["sortValueType"] = 0;
+		$fdata["numberOfVisibleItems"] = 10;
+
+		$fdata["filterBy"] = 0;
+
+	
+
+	
+	
+//end of Filters settings
+
+
+	$tdatatik_memorando_pend["FechaExpiracion"] = $fdata;
+		$tdatatik_memorando_pend[".searchableFields"][] = "FechaExpiracion";
 
 
 $tables_data["tik_memorando_pend"]=&$tdatatik_memorando_pend;
@@ -2544,98 +2687,100 @@ function createSqlQuery_tik_memorando_pend()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "NoMemorando,  Fecha,  De,  A,  ADepartamento,  Todos,  Descripcion,  Texto,  FirmaDigital,  TipoPapel,  Estado,  FirmaDigitalA,  DocumentoAdjunto1,  DocumentoAdjunto2,  DocumentoAdjunto3";
+$proto0["m_strFieldList"] = "NoMemorando,  Fecha,  De,  A,  ADepartamento,  Todos,  Descripcion,  Texto,  FirmaDigital,  TipoPapel,  Estado,  FirmaDigitalA,  DocumentoAdjunto1,  DocumentoAdjunto2,  DocumentoAdjunto3,  tik_sumdaysdate(Fecha, 56) AS FechaExpiracion";
 $proto0["m_strFrom"] = "FROM tik_memorando_pend";
-$proto0["m_strWhere"] = "(Estado =\"Firmado\")";
+$proto0["m_strWhere"] = "(Estado =\"Firmado\") AND (tik_sumdaysdate(Fecha, 56) >=curdate())";
 $proto0["m_strOrderBy"] = "ORDER BY NoMemorando DESC";
 	
 		;
 			$proto0["cipherer"] = null;
 $proto2=array();
-$proto2["m_sql"] = "Estado =\"Firmado\"";
-$proto2["m_uniontype"] = "SQLL_UNKNOWN";
+$proto2["m_sql"] = "(Estado =\"Firmado\") AND (tik_sumdaysdate(Fecha, 56) >=curdate())";
+$proto2["m_uniontype"] = "SQLL_AND";
+	$obj = new SQLNonParsed(array(
+	"m_sql" => "(Estado =\"Firmado\") AND (tik_sumdaysdate(Fecha, 56) >=curdate())"
+));
+
+$proto2["m_column"]=$obj;
+$proto2["m_contained"] = array();
+						$proto4=array();
+$proto4["m_sql"] = "Estado =\"Firmado\"";
+$proto4["m_uniontype"] = "SQLL_UNKNOWN";
 						$obj = new SQLField(array(
 	"m_strName" => "Estado",
 	"m_strTable" => "tik_memorando_pend",
 	"m_srcTableName" => "tik_memorando_pend"
 ));
 
-$proto2["m_column"]=$obj;
-$proto2["m_contained"] = array();
-$proto2["m_strCase"] = "=\"Firmado\"";
+$proto4["m_column"]=$obj;
+$proto4["m_contained"] = array();
+$proto4["m_strCase"] = "=\"Firmado\"";
+$proto4["m_havingmode"] = false;
+$proto4["m_inBrackets"] = true;
+$proto4["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto4);
+
+			$proto2["m_contained"][]=$obj;
+						$proto6=array();
+$proto6["m_sql"] = "tik_sumdaysdate(Fecha, 56) >=curdate()";
+$proto6["m_uniontype"] = "SQLL_UNKNOWN";
+						$proto7=array();
+$proto7["m_functiontype"] = "SQLF_CUSTOM";
+$proto7["m_arguments"] = array();
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "Fecha"
+));
+
+$proto7["m_arguments"][]=$obj;
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "56"
+));
+
+$proto7["m_arguments"][]=$obj;
+$proto7["m_strFunctionName"] = "tik_sumdaysdate";
+$obj = new SQLFunctionCall($proto7);
+
+$proto6["m_column"]=$obj;
+$proto6["m_contained"] = array();
+$proto6["m_strCase"] = ">=curdate()";
+$proto6["m_havingmode"] = false;
+$proto6["m_inBrackets"] = true;
+$proto6["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto6);
+
+			$proto2["m_contained"][]=$obj;
+$proto2["m_strCase"] = "";
 $proto2["m_havingmode"] = false;
 $proto2["m_inBrackets"] = false;
 $proto2["m_useAlias"] = false;
 $obj = new SQLLogicalExpr($proto2);
 
 $proto0["m_where"] = $obj;
-$proto4=array();
-$proto4["m_sql"] = "";
-$proto4["m_uniontype"] = "SQLL_UNKNOWN";
+$proto10=array();
+$proto10["m_sql"] = "";
+$proto10["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto4["m_column"]=$obj;
-$proto4["m_contained"] = array();
-$proto4["m_strCase"] = "";
-$proto4["m_havingmode"] = false;
-$proto4["m_inBrackets"] = false;
-$proto4["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto4);
+$proto10["m_column"]=$obj;
+$proto10["m_contained"] = array();
+$proto10["m_strCase"] = "";
+$proto10["m_havingmode"] = false;
+$proto10["m_inBrackets"] = false;
+$proto10["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto10);
 
 $proto0["m_having"] = $obj;
 $proto0["m_fieldlist"] = array();
-						$proto6=array();
+						$proto12=array();
 			$obj = new SQLField(array(
 	"m_strName" => "NoMemorando",
 	"m_strTable" => "tik_memorando_pend",
 	"m_srcTableName" => "tik_memorando_pend"
 ));
 
-$proto6["m_sql"] = "NoMemorando";
-$proto6["m_srcTableName"] = "tik_memorando_pend";
-$proto6["m_expr"]=$obj;
-$proto6["m_alias"] = "";
-$obj = new SQLFieldListItem($proto6);
-
-$proto0["m_fieldlist"][]=$obj;
-						$proto8=array();
-			$obj = new SQLField(array(
-	"m_strName" => "Fecha",
-	"m_strTable" => "tik_memorando_pend",
-	"m_srcTableName" => "tik_memorando_pend"
-));
-
-$proto8["m_sql"] = "Fecha";
-$proto8["m_srcTableName"] = "tik_memorando_pend";
-$proto8["m_expr"]=$obj;
-$proto8["m_alias"] = "";
-$obj = new SQLFieldListItem($proto8);
-
-$proto0["m_fieldlist"][]=$obj;
-						$proto10=array();
-			$obj = new SQLField(array(
-	"m_strName" => "De",
-	"m_strTable" => "tik_memorando_pend",
-	"m_srcTableName" => "tik_memorando_pend"
-));
-
-$proto10["m_sql"] = "De";
-$proto10["m_srcTableName"] = "tik_memorando_pend";
-$proto10["m_expr"]=$obj;
-$proto10["m_alias"] = "";
-$obj = new SQLFieldListItem($proto10);
-
-$proto0["m_fieldlist"][]=$obj;
-						$proto12=array();
-			$obj = new SQLField(array(
-	"m_strName" => "A",
-	"m_strTable" => "tik_memorando_pend",
-	"m_srcTableName" => "tik_memorando_pend"
-));
-
-$proto12["m_sql"] = "A";
+$proto12["m_sql"] = "NoMemorando";
 $proto12["m_srcTableName"] = "tik_memorando_pend";
 $proto12["m_expr"]=$obj;
 $proto12["m_alias"] = "";
@@ -2644,12 +2789,12 @@ $obj = new SQLFieldListItem($proto12);
 $proto0["m_fieldlist"][]=$obj;
 						$proto14=array();
 			$obj = new SQLField(array(
-	"m_strName" => "ADepartamento",
+	"m_strName" => "Fecha",
 	"m_strTable" => "tik_memorando_pend",
 	"m_srcTableName" => "tik_memorando_pend"
 ));
 
-$proto14["m_sql"] = "ADepartamento";
+$proto14["m_sql"] = "Fecha";
 $proto14["m_srcTableName"] = "tik_memorando_pend";
 $proto14["m_expr"]=$obj;
 $proto14["m_alias"] = "";
@@ -2658,12 +2803,12 @@ $obj = new SQLFieldListItem($proto14);
 $proto0["m_fieldlist"][]=$obj;
 						$proto16=array();
 			$obj = new SQLField(array(
-	"m_strName" => "Todos",
+	"m_strName" => "De",
 	"m_strTable" => "tik_memorando_pend",
 	"m_srcTableName" => "tik_memorando_pend"
 ));
 
-$proto16["m_sql"] = "Todos";
+$proto16["m_sql"] = "De";
 $proto16["m_srcTableName"] = "tik_memorando_pend";
 $proto16["m_expr"]=$obj;
 $proto16["m_alias"] = "";
@@ -2672,12 +2817,12 @@ $obj = new SQLFieldListItem($proto16);
 $proto0["m_fieldlist"][]=$obj;
 						$proto18=array();
 			$obj = new SQLField(array(
-	"m_strName" => "Descripcion",
+	"m_strName" => "A",
 	"m_strTable" => "tik_memorando_pend",
 	"m_srcTableName" => "tik_memorando_pend"
 ));
 
-$proto18["m_sql"] = "Descripcion";
+$proto18["m_sql"] = "A";
 $proto18["m_srcTableName"] = "tik_memorando_pend";
 $proto18["m_expr"]=$obj;
 $proto18["m_alias"] = "";
@@ -2686,12 +2831,12 @@ $obj = new SQLFieldListItem($proto18);
 $proto0["m_fieldlist"][]=$obj;
 						$proto20=array();
 			$obj = new SQLField(array(
-	"m_strName" => "Texto",
+	"m_strName" => "ADepartamento",
 	"m_strTable" => "tik_memorando_pend",
 	"m_srcTableName" => "tik_memorando_pend"
 ));
 
-$proto20["m_sql"] = "Texto";
+$proto20["m_sql"] = "ADepartamento";
 $proto20["m_srcTableName"] = "tik_memorando_pend";
 $proto20["m_expr"]=$obj;
 $proto20["m_alias"] = "";
@@ -2700,12 +2845,12 @@ $obj = new SQLFieldListItem($proto20);
 $proto0["m_fieldlist"][]=$obj;
 						$proto22=array();
 			$obj = new SQLField(array(
-	"m_strName" => "FirmaDigital",
+	"m_strName" => "Todos",
 	"m_strTable" => "tik_memorando_pend",
 	"m_srcTableName" => "tik_memorando_pend"
 ));
 
-$proto22["m_sql"] = "FirmaDigital";
+$proto22["m_sql"] = "Todos";
 $proto22["m_srcTableName"] = "tik_memorando_pend";
 $proto22["m_expr"]=$obj;
 $proto22["m_alias"] = "";
@@ -2714,12 +2859,12 @@ $obj = new SQLFieldListItem($proto22);
 $proto0["m_fieldlist"][]=$obj;
 						$proto24=array();
 			$obj = new SQLField(array(
-	"m_strName" => "TipoPapel",
+	"m_strName" => "Descripcion",
 	"m_strTable" => "tik_memorando_pend",
 	"m_srcTableName" => "tik_memorando_pend"
 ));
 
-$proto24["m_sql"] = "TipoPapel";
+$proto24["m_sql"] = "Descripcion";
 $proto24["m_srcTableName"] = "tik_memorando_pend";
 $proto24["m_expr"]=$obj;
 $proto24["m_alias"] = "";
@@ -2728,12 +2873,12 @@ $obj = new SQLFieldListItem($proto24);
 $proto0["m_fieldlist"][]=$obj;
 						$proto26=array();
 			$obj = new SQLField(array(
-	"m_strName" => "Estado",
+	"m_strName" => "Texto",
 	"m_strTable" => "tik_memorando_pend",
 	"m_srcTableName" => "tik_memorando_pend"
 ));
 
-$proto26["m_sql"] = "Estado";
+$proto26["m_sql"] = "Texto";
 $proto26["m_srcTableName"] = "tik_memorando_pend";
 $proto26["m_expr"]=$obj;
 $proto26["m_alias"] = "";
@@ -2742,12 +2887,12 @@ $obj = new SQLFieldListItem($proto26);
 $proto0["m_fieldlist"][]=$obj;
 						$proto28=array();
 			$obj = new SQLField(array(
-	"m_strName" => "FirmaDigitalA",
+	"m_strName" => "FirmaDigital",
 	"m_strTable" => "tik_memorando_pend",
 	"m_srcTableName" => "tik_memorando_pend"
 ));
 
-$proto28["m_sql"] = "FirmaDigitalA";
+$proto28["m_sql"] = "FirmaDigital";
 $proto28["m_srcTableName"] = "tik_memorando_pend";
 $proto28["m_expr"]=$obj;
 $proto28["m_alias"] = "";
@@ -2756,12 +2901,12 @@ $obj = new SQLFieldListItem($proto28);
 $proto0["m_fieldlist"][]=$obj;
 						$proto30=array();
 			$obj = new SQLField(array(
-	"m_strName" => "DocumentoAdjunto1",
+	"m_strName" => "TipoPapel",
 	"m_strTable" => "tik_memorando_pend",
 	"m_srcTableName" => "tik_memorando_pend"
 ));
 
-$proto30["m_sql"] = "DocumentoAdjunto1";
+$proto30["m_sql"] = "TipoPapel";
 $proto30["m_srcTableName"] = "tik_memorando_pend";
 $proto30["m_expr"]=$obj;
 $proto30["m_alias"] = "";
@@ -2770,12 +2915,12 @@ $obj = new SQLFieldListItem($proto30);
 $proto0["m_fieldlist"][]=$obj;
 						$proto32=array();
 			$obj = new SQLField(array(
-	"m_strName" => "DocumentoAdjunto2",
+	"m_strName" => "Estado",
 	"m_strTable" => "tik_memorando_pend",
 	"m_srcTableName" => "tik_memorando_pend"
 ));
 
-$proto32["m_sql"] = "DocumentoAdjunto2";
+$proto32["m_sql"] = "Estado";
 $proto32["m_srcTableName"] = "tik_memorando_pend";
 $proto32["m_expr"]=$obj;
 $proto32["m_alias"] = "";
@@ -2784,87 +2929,153 @@ $obj = new SQLFieldListItem($proto32);
 $proto0["m_fieldlist"][]=$obj;
 						$proto34=array();
 			$obj = new SQLField(array(
-	"m_strName" => "DocumentoAdjunto3",
+	"m_strName" => "FirmaDigitalA",
 	"m_strTable" => "tik_memorando_pend",
 	"m_srcTableName" => "tik_memorando_pend"
 ));
 
-$proto34["m_sql"] = "DocumentoAdjunto3";
+$proto34["m_sql"] = "FirmaDigitalA";
 $proto34["m_srcTableName"] = "tik_memorando_pend";
 $proto34["m_expr"]=$obj;
 $proto34["m_alias"] = "";
 $obj = new SQLFieldListItem($proto34);
 
 $proto0["m_fieldlist"][]=$obj;
-$proto0["m_fromlist"] = array();
-												$proto36=array();
-$proto36["m_link"] = "SQLL_MAIN";
-			$proto37=array();
-$proto37["m_strName"] = "tik_memorando_pend";
-$proto37["m_srcTableName"] = "tik_memorando_pend";
-$proto37["m_columns"] = array();
-$proto37["m_columns"][] = "NoMemorando";
-$proto37["m_columns"][] = "Fecha";
-$proto37["m_columns"][] = "De";
-$proto37["m_columns"][] = "CodigoDepto";
-$proto37["m_columns"][] = "A";
-$proto37["m_columns"][] = "ADepartamento";
-$proto37["m_columns"][] = "Todos";
-$proto37["m_columns"][] = "Descripcion";
-$proto37["m_columns"][] = "Texto";
-$proto37["m_columns"][] = "FirmaDigital";
-$proto37["m_columns"][] = "TipoPapel";
-$proto37["m_columns"][] = "Estado";
-$proto37["m_columns"][] = "FirmaDigitalA";
-$proto37["m_columns"][] = "Usuario";
-$proto37["m_columns"][] = "FechaHora";
-$proto37["m_columns"][] = "Documento";
-$proto37["m_columns"][] = "TipoDocumento";
-$proto37["m_columns"][] = "VoBo";
-$proto37["m_columns"][] = "RequiereAutorizacion";
-$proto37["m_columns"][] = "Autorizador";
-$proto37["m_columns"][] = "Categoria";
-$proto37["m_columns"][] = "DocumentoAdjunto1";
-$proto37["m_columns"][] = "DocumentoAdjunto2";
-$proto37["m_columns"][] = "DocumentoAdjunto3";
-$obj = new SQLTable($proto37);
+						$proto36=array();
+			$obj = new SQLField(array(
+	"m_strName" => "DocumentoAdjunto1",
+	"m_strTable" => "tik_memorando_pend",
+	"m_srcTableName" => "tik_memorando_pend"
+));
 
-$proto36["m_table"] = $obj;
-$proto36["m_sql"] = "tik_memorando_pend";
-$proto36["m_alias"] = "";
+$proto36["m_sql"] = "DocumentoAdjunto1";
 $proto36["m_srcTableName"] = "tik_memorando_pend";
-$proto38=array();
-$proto38["m_sql"] = "";
-$proto38["m_uniontype"] = "SQLL_UNKNOWN";
+$proto36["m_expr"]=$obj;
+$proto36["m_alias"] = "";
+$obj = new SQLFieldListItem($proto36);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto38=array();
+			$obj = new SQLField(array(
+	"m_strName" => "DocumentoAdjunto2",
+	"m_strTable" => "tik_memorando_pend",
+	"m_srcTableName" => "tik_memorando_pend"
+));
+
+$proto38["m_sql"] = "DocumentoAdjunto2";
+$proto38["m_srcTableName"] = "tik_memorando_pend";
+$proto38["m_expr"]=$obj;
+$proto38["m_alias"] = "";
+$obj = new SQLFieldListItem($proto38);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto40=array();
+			$obj = new SQLField(array(
+	"m_strName" => "DocumentoAdjunto3",
+	"m_strTable" => "tik_memorando_pend",
+	"m_srcTableName" => "tik_memorando_pend"
+));
+
+$proto40["m_sql"] = "DocumentoAdjunto3";
+$proto40["m_srcTableName"] = "tik_memorando_pend";
+$proto40["m_expr"]=$obj;
+$proto40["m_alias"] = "";
+$obj = new SQLFieldListItem($proto40);
+
+$proto0["m_fieldlist"][]=$obj;
+						$proto42=array();
+			$proto43=array();
+$proto43["m_functiontype"] = "SQLF_CUSTOM";
+$proto43["m_arguments"] = array();
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "Fecha"
+));
+
+$proto43["m_arguments"][]=$obj;
+						$obj = new SQLNonParsed(array(
+	"m_sql" => "56"
+));
+
+$proto43["m_arguments"][]=$obj;
+$proto43["m_strFunctionName"] = "tik_sumdaysdate";
+$obj = new SQLFunctionCall($proto43);
+
+$proto42["m_sql"] = "tik_sumdaysdate(Fecha, 56)";
+$proto42["m_srcTableName"] = "tik_memorando_pend";
+$proto42["m_expr"]=$obj;
+$proto42["m_alias"] = "FechaExpiracion";
+$obj = new SQLFieldListItem($proto42);
+
+$proto0["m_fieldlist"][]=$obj;
+$proto0["m_fromlist"] = array();
+												$proto46=array();
+$proto46["m_link"] = "SQLL_MAIN";
+			$proto47=array();
+$proto47["m_strName"] = "tik_memorando_pend";
+$proto47["m_srcTableName"] = "tik_memorando_pend";
+$proto47["m_columns"] = array();
+$proto47["m_columns"][] = "NoMemorando";
+$proto47["m_columns"][] = "Fecha";
+$proto47["m_columns"][] = "De";
+$proto47["m_columns"][] = "CodigoDepto";
+$proto47["m_columns"][] = "A";
+$proto47["m_columns"][] = "ADepartamento";
+$proto47["m_columns"][] = "Todos";
+$proto47["m_columns"][] = "Descripcion";
+$proto47["m_columns"][] = "Texto";
+$proto47["m_columns"][] = "FirmaDigital";
+$proto47["m_columns"][] = "TipoPapel";
+$proto47["m_columns"][] = "Estado";
+$proto47["m_columns"][] = "FirmaDigitalA";
+$proto47["m_columns"][] = "Usuario";
+$proto47["m_columns"][] = "FechaHora";
+$proto47["m_columns"][] = "Documento";
+$proto47["m_columns"][] = "TipoDocumento";
+$proto47["m_columns"][] = "VoBo";
+$proto47["m_columns"][] = "RequiereAutorizacion";
+$proto47["m_columns"][] = "Autorizador";
+$proto47["m_columns"][] = "Categoria";
+$proto47["m_columns"][] = "DocumentoAdjunto1";
+$proto47["m_columns"][] = "DocumentoAdjunto2";
+$proto47["m_columns"][] = "DocumentoAdjunto3";
+$obj = new SQLTable($proto47);
+
+$proto46["m_table"] = $obj;
+$proto46["m_sql"] = "tik_memorando_pend";
+$proto46["m_alias"] = "";
+$proto46["m_srcTableName"] = "tik_memorando_pend";
+$proto48=array();
+$proto48["m_sql"] = "";
+$proto48["m_uniontype"] = "SQLL_UNKNOWN";
 	$obj = new SQLNonParsed(array(
 	"m_sql" => ""
 ));
 
-$proto38["m_column"]=$obj;
-$proto38["m_contained"] = array();
-$proto38["m_strCase"] = "";
-$proto38["m_havingmode"] = false;
-$proto38["m_inBrackets"] = false;
-$proto38["m_useAlias"] = false;
-$obj = new SQLLogicalExpr($proto38);
+$proto48["m_column"]=$obj;
+$proto48["m_contained"] = array();
+$proto48["m_strCase"] = "";
+$proto48["m_havingmode"] = false;
+$proto48["m_inBrackets"] = false;
+$proto48["m_useAlias"] = false;
+$obj = new SQLLogicalExpr($proto48);
 
-$proto36["m_joinon"] = $obj;
-$obj = new SQLFromListItem($proto36);
+$proto46["m_joinon"] = $obj;
+$obj = new SQLFromListItem($proto46);
 
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
 $proto0["m_orderby"] = array();
-												$proto40=array();
+												$proto50=array();
 						$obj = new SQLField(array(
 	"m_strName" => "NoMemorando",
 	"m_strTable" => "tik_memorando_pend",
 	"m_srcTableName" => "tik_memorando_pend"
 ));
 
-$proto40["m_column"]=$obj;
-$proto40["m_bAsc"] = 0;
-$proto40["m_nColumn"] = 0;
-$obj = new SQLOrderByItem($proto40);
+$proto50["m_column"]=$obj;
+$proto50["m_bAsc"] = 0;
+$proto50["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto50);
 
 $proto0["m_orderby"][]=$obj;					
 $proto0["m_srcTableName"]="tik_memorando_pend";		
@@ -2878,7 +3089,7 @@ $queryData_tik_memorando_pend = createSqlQuery_tik_memorando_pend();
 	
 		;
 
-															
+																
 
 $tdatatik_memorando_pend[".sqlquery"] = $queryData_tik_memorando_pend;
 

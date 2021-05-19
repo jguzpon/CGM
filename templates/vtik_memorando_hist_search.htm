@@ -1,0 +1,316 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+				<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{$pagetitle}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<base href="{$projectPath}">
+		<link REL="stylesheet" href="styles/default.css?{$wizardBuildKey}" type="text/css">
+	{BEGIN rtlCSS}
+	<link REL="stylesheet" href="styles/defaultRTL.css?{$wizardBuildKey}" type="text/css">
+	{END rtlCSS}
+	{BEGIN styleCSSFiles}
+	<link REL="stylesheet" href="{$stylepath}" type="text/css">
+	{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-search" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		{$locking}
+		<div class="r-small-page" 
+			data-body-align="center"
+			data-body-width="standard"
+		>
+							{BEGIN top_block}
+<div class="r-form" data-location="top" id="form_top_{$pageid}" data-makeup="small" {$form_top} data-pageid="{$pageid}"
+		data-v-width="6"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="top_c1" data-pageid="{$pageid}"	{$cell_top_c1}
+	class=" r-ori-vert			col-md-12
+	">
+	 
+		<h2 data-itemtype="search_header" data-itemid="search_header" {$item_search_header} data-pageid="{$pageid}" >{$pagetitlelabel vtik_memorando_hist search}</h2>
+	</div>					</div>
+	</div>		
+{END top_block}
+									{BEGIN above-grid_block}
+<div class="r-form" data-location="above-grid" id="form_above-grid_{$pageid}" data-makeup="small" {$form_above-grid} data-pageid="{$pageid}"
+		data-v-width="6"
+	data-v-margin="1"
+	
+>		
+	</div>		
+{END above-grid_block}
+									{BEGIN grid_block}
+
+
+
+
+ 
+	 
+												<table 
+	data-body-align="center"
+	data-location="grid" id="form_grid_{$pageid}" data-makeup="small" {$form_grid} data-pageid="{$pageid}" 
+	class="r-edit-form" cellpadding="0" cellspacing="0" 
+	{$grid_hiddenattr} 
+		data-form-width="1"
+		
+		data-v-width="6"
+	>
+	<tbody>
+										<tr>
+										
+
+{BEGIN cellblock_grid_c3}
+<td
+	{$cell_grid_c3}
+	class=" r-ori-vert"
+	
+				data-fullwidth
+		
+			data-cellId="grid_c3" data-pageid="{$pageid}"
+		data-v-cell="6"
+		
+>
+	<div edit-form-cell class="clearfix">
+				
+{BEGIN NoMemorando_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_NoMemorando}  r-horizontal-field form-horizontal" 
+	
+		data-fieldname="NoMemorando" 
+	
+	data-signal-error-for="NoMemorando{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field" {$item_integrated_search_field} data-pageid="{$pageid}" data-field="NoMemorando" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_NoMemorando}">
+		{$label vtik_memorando_hist NoMemorando }	</label>
+	<div class="r-search-option">
+		{$searchtype_NoMemorando}
+	</div>
+	<div class="r-search-field">
+		{$NoMemorando_editcontrol}	</div>
+	<div class="r-search-field">
+		{$NoMemorando_editcontrol1}
+	</div>
+	
+</div>
+
+{END NoMemorando_fieldblock}
+											
+{BEGIN FirmaDigitalA_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_FirmaDigitalA}  r-horizontal-field form-horizontal" 
+	
+		data-fieldname="FirmaDigitalA" 
+	
+	data-signal-error-for="FirmaDigitalA{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field2" {$item_integrated_search_field2} data-pageid="{$pageid}" data-field="FirmaDigitalA" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_FirmaDigitalA}">
+		{$label vtik_memorando_hist FirmaDigitalA }	</label>
+	<div class="r-search-option">
+		{$searchtype_FirmaDigitalA}
+	</div>
+	<div class="r-search-field">
+		{$FirmaDigitalA_editcontrol}	</div>
+	<div class="r-search-field">
+		{$FirmaDigitalA_editcontrol1}
+	</div>
+	
+</div>
+
+{END FirmaDigitalA_fieldblock}
+											
+{BEGIN ADepartamento_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_ADepartamento}  r-horizontal-field form-horizontal" 
+	
+		data-fieldname="ADepartamento" 
+	
+	data-signal-error-for="ADepartamento{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field4" {$item_integrated_search_field4} data-pageid="{$pageid}" data-field="ADepartamento" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_ADepartamento}">
+		{$label vtik_memorando_hist ADepartamento }	</label>
+	<div class="r-search-option">
+		{$searchtype_ADepartamento}
+	</div>
+	<div class="r-search-field">
+		{$ADepartamento_editcontrol}	</div>
+	<div class="r-search-field">
+		{$ADepartamento_editcontrol1}
+	</div>
+	
+</div>
+
+{END ADepartamento_fieldblock}
+											
+{BEGIN DocumentoAdjunto1_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_DocumentoAdjunto1}  r-horizontal-field form-horizontal" 
+	
+		data-fieldname="DocumentoAdjunto1" 
+	
+	data-signal-error-for="DocumentoAdjunto1{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field1" {$item_integrated_search_field1} data-pageid="{$pageid}" data-field="DocumentoAdjunto1" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_DocumentoAdjunto1}">
+		{$label vtik_memorando_hist DocumentoAdjunto1 }	</label>
+	<div class="r-search-option">
+		{$searchtype_DocumentoAdjunto1}
+	</div>
+	<div class="r-search-field">
+		{$DocumentoAdjunto1_editcontrol}	</div>
+	<div class="r-search-field">
+		{$DocumentoAdjunto1_editcontrol1}
+	</div>
+	
+</div>
+
+{END DocumentoAdjunto1_fieldblock}
+											
+{BEGIN DocumentoAdjunto2_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_DocumentoAdjunto2}  r-horizontal-field form-horizontal" 
+	
+		data-fieldname="DocumentoAdjunto2" 
+	
+	data-signal-error-for="DocumentoAdjunto2{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field3" {$item_integrated_search_field3} data-pageid="{$pageid}" data-field="DocumentoAdjunto2" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_DocumentoAdjunto2}">
+		{$label vtik_memorando_hist DocumentoAdjunto2 }	</label>
+	<div class="r-search-option">
+		{$searchtype_DocumentoAdjunto2}
+	</div>
+	<div class="r-search-field">
+		{$DocumentoAdjunto2_editcontrol}	</div>
+	<div class="r-search-field">
+		{$DocumentoAdjunto2_editcontrol1}
+	</div>
+	
+</div>
+
+{END DocumentoAdjunto2_fieldblock}
+											
+{BEGIN DocumentoAdjunto3_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_DocumentoAdjunto3}  r-horizontal-field form-horizontal" 
+	
+		data-fieldname="DocumentoAdjunto3" 
+	
+	data-signal-error-for="DocumentoAdjunto3{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field5" {$item_integrated_search_field5} data-pageid="{$pageid}" data-field="DocumentoAdjunto3" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_DocumentoAdjunto3}">
+		{$label vtik_memorando_hist DocumentoAdjunto3 }	</label>
+	<div class="r-search-option">
+		{$searchtype_DocumentoAdjunto3}
+	</div>
+	<div class="r-search-field">
+		{$DocumentoAdjunto3_editcontrol}	</div>
+	<div class="r-search-field">
+		{$DocumentoAdjunto3_editcontrol1}
+	</div>
+	
+</div>
+
+{END DocumentoAdjunto3_fieldblock}
+											
+{BEGIN FechaExpiracion_fieldblock}
+
+<div class="r-integrated-field form-group clearfix {$fielddispclass_FechaExpiracion}  r-horizontal-field form-horizontal" 
+	
+		data-fieldname="FechaExpiracion" 
+	
+	data-signal-error-for="FechaExpiracion{$id}" 
+	data-itemtype="integrated_search_field" data-itemid="integrated_search_field6" {$item_integrated_search_field6} data-pageid="{$pageid}" data-field="FechaExpiracion" >
+
+
+	<label class="r-search-label control-label" for="{$labelfor_FechaExpiracion}">
+		{$label vtik_memorando_hist FechaExpiracion }	</label>
+	<div class="r-search-option">
+		{$searchtype_FechaExpiracion}
+	</div>
+	<div class="r-search-field">
+		{$FechaExpiracion_editcontrol}	</div>
+	<div class="r-search-field">
+		{$FechaExpiracion_editcontrol1}
+	</div>
+	
+</div>
+
+{END FechaExpiracion_fieldblock}
+	
+								</td>
+			{END cellblock_grid_c3}
+								</tr>
+			</tbody></table>
+{END grid_block}
+									{BEGIN below-grid_block}
+<div class="r-form" data-location="below-grid" id="form_below-grid_{$pageid}" data-makeup="small" {$form_below-grid} data-pageid="{$pageid}"
+		data-v-width="6"
+	data-v-margin="1"
+	
+>		
+	 
+		<div class="row">
+			 
+				<div 
+	data-cellId="below-grid_c1" data-pageid="{$pageid}"	{$cell_below-grid_c1}
+	class="			col-md-12
+	">
+	 
+		<span data-itemtype="search_search" data-itemid="search_search" {$item_search_search} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-primary   
+	" {$searchbutton_attrs} >
+							Buscar			</a>
+</span>
+	 
+		<span data-itemtype="search_reset" data-itemid="search_reset" {$item_search_reset} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" {$resetbutton_attrs} >
+							Reiniciar			</a>
+</span>
+	 
+		{BEGIN back_button}
+<span data-itemtype="search_back_list" data-itemid="search_back_list" {$item_search_back_list} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" {$backbutton_attrs} >
+							Volver a la lista			</a>
+</span>
+{END back_button}
+	 
+		{BEGIN cancel_button}
+<span data-itemtype="search_cancel" data-itemid="search_cancel" {$item_search_cancel} data-pageid="{$pageid}" data-small data-button-item>
+	<a type="button" title="" class="btn btn-default   
+	" id="cancelButton{$id}" >
+							Cancelar			</a>
+</span>
+{END cancel_button}
+	</div>					</div>
+	</div>		
+{END below-grid_block}
+			</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

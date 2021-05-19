@@ -149,6 +149,9 @@ pdfDocument = {
 				
 			{"hidden":"{$item_hide_integrated_edit_field10}","stack":[{"text":"{$jslabel tik_memorando_pend DocumentoAdjunto3 }","bold":true},{"text":{$DocumentoAdjunto3_pdfvalue}}],"margin":[0,0,0,15]},
 				
+				
+			{"hidden":"{$item_hide_integrated_edit_field11}","stack":[{"text":"{$jslabel tik_memorando_pend FechaExpiracion }","bold":true},{"text":{$FechaExpiracion_pdfvalue}}],"margin":[0,0,0,15]},
+				
 		  ],
   "border": [ false, false, false, false ],
               "alignment": 'left',

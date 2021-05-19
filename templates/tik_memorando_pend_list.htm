@@ -113,6 +113,19 @@
 								<span class="rnr-searchcontrol">{$searchcontrol1_DocumentoAdjunto1}</span>
 						</div>
 		{END searchCtrlBlock_DocumentoAdjunto1}
+																{BEGIN searchCtrlBlock_FechaExpiracion}
+
+
+		<div class="form-group srchPanelRow {$filterRow_class_FechaExpiracion}" {$filterRow_attrs_FechaExpiracion}>
+			<label>{$label tik_memorando_pend FechaExpiracion }</label>
+
+							{$delCtrlButt}
+			
+								<span class="rnr-searchtype">{$searchtype_FechaExpiracion}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol_FechaExpiracion}</span>
+								<span class="rnr-searchcontrol">{$searchcontrol1_FechaExpiracion}</span>
+						</div>
+		{END searchCtrlBlock_FechaExpiracion}
 																{BEGIN searchCtrlBlock_DocumentoAdjunto3}
 
 
@@ -369,7 +382,10 @@
 						[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="Descripcion"]:before {
 		content: "{$label tik_memorando_pend Descripcion}";
 	}
-									}
+											[data-pageid="{$pageid}"][data-itemtype="grid_field"][data-field="FechaExpiracion"]:before {
+		content: "{$label tik_memorando_pend FechaExpiracion}";
+	}
+	}
 </style>
 <table data-location="grid" id="form_grid_{$pageid}" data-makeup="leftbar" {$form_grid} data-pageid="{$pageid}" class=" table {$grid_classes}  r-flexgrid rnr-b-grid rnr-gridtable" 
 	cellpadding="0" 
@@ -543,6 +559,33 @@
 	
 	</th>
 	{END cellblock_grid_headcell_field3}
+				 
+					{BEGIN cellblock_grid_headcell_field4}
+	<th
+	
+	{$cell_grid_headcell_field4}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$FechaExpiracion_class}
+			"
+
+			data-field="FechaExpiracion"
+	
+	data-cellId="grid_headcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN FechaExpiracion_fieldheadercolumn}
+	{BEGIN FechaExpiracion_fieldheader}
+	<SPAN {$FechaExpiracion_orderlinkattrs} data-itemtype="grid_field_label" data-itemid="grid_field_label" {$item_grid_field_label} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="FechaExpiracion">
+	{$label tik_memorando_pend FechaExpiracion }	{$arrow_icon_FechaExpiracion}
+	</SPAN>
+	{END FechaExpiracion_fieldheader}
+{END FechaExpiracion_fieldheadercolumn}
+
+	
+	</th>
+	{END cellblock_grid_headcell_field4}
 							</tr>
 					 
 					 
@@ -727,6 +770,29 @@
 {END Descripcion_fieldcolumn}	
 	</td>
 	{END cellblock_grid_cell_field3}
+				 
+					{BEGIN cellblock_grid_cell_field7}
+	<td
+	
+	{$cell_grid_cell_field7}
+	{$recordattrs}
+	class="
+		 r-ori-vert				{$FechaExpiracion_class}
+			"
+
+			data-field="FechaExpiracion"
+	
+	data-cellId="grid_cell_field7" data-pageid="{$pageid}" data-record-id="{$recId}"	
+	>
+
+	 
+		{BEGIN FechaExpiracion_fieldcolumn}
+<span data-itemtype="grid_field" data-itemid="grid_field" {$item_grid_field} data-pageid="{$pageid}" data-record-id="{$recId}" data-field="FechaExpiracion" data-default-width >
+{$FechaExpiracion_value}
+</span>
+{END FechaExpiracion_fieldcolumn}	
+	</td>
+	{END cellblock_grid_cell_field7}
 							</tr>
 					 
 					
@@ -854,6 +920,22 @@
 	
 	</td>
 	{END cellblock_grid_footcell_field3}
+				 
+					{BEGIN cellblock_grid_footcell_field4}
+	<td
+	
+	{$cell_grid_footcell_field4}
+	{$recordattrs}
+	class="
+		 r-ori-vert			"
+
+	
+	data-cellId="grid_footcell_field4" data-pageid="{$pageid}" data-record-id="{$recId}" data-page="tik_memorando_pend_list"	
+	>
+
+	
+	</td>
+	{END cellblock_grid_footcell_field4}
 							</tr>
 					
 					</tfoot>

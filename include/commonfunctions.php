@@ -253,6 +253,8 @@ function checkTableName($shortTName )
 		return true;
 	if ("solicitudesvencidas" == $shortTName )
 		return true;
+	if ("vtik_memorando_hist" == $shortTName )
+		return true;
 	return false;
 }
 
@@ -609,6 +611,15 @@ function GetTablesList($pdfMode = false)
 	if( $tableAvailable ) {
 		$arr[]="SolicitudesVencidas";
 	}
+	$tableAvailable = true;
+	if( $checkPermissions ) {
+		$strPerm = GetUserPermissions("vtik_memorando_hist");
+		$tableAvailable = ( strpos($strPerm, "P") !== false
+			|| $pdfMode && strpos($strPerm, "S") !== false );
+	}
+	if( $tableAvailable ) {
+		$arr[]="vtik_memorando_hist";
+	}
 	return $arr;
 }
 
@@ -652,6 +663,7 @@ function GetTablesListWithoutSecurity()
 	$arr[]="tik_tipomemo";
 	$arr[]="tik_memorando_aut_otrdep";
 	$arr[]="SolicitudesVencidas";
+	$arr[]="vtik_memorando_hist";
 	return $arr;
 }
 
@@ -1535,6 +1547,11 @@ function GetUserPermissionsStatic( $table )
 		return "ADESPI".$extraPerm;
 	}
 	if( $table=="SolicitudesVencidas" )
+	{
+//	default permissions
+		return "ADESPI".$extraPerm;
+	}
+	if( $table=="vtik_memorando_hist" )
 	{
 //	default permissions
 		return "ADESPI".$extraPerm;
