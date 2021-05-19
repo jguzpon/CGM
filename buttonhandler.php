@@ -298,9 +298,9 @@ while($dataa = $button->getNextSelectedRecord()) {
 				// Obtener firma digital del solicitante
 				// Verificar quien está autorizando
 				if( $db["De"] <> $_SESSION["UserID"] ) {
-					$sqc = "select * from tik_firmas where Usuario = '".$_SESSION["UserID"]."' and Departamentos IN (".$_SESSION["CodigoDepto"].")";
+					$sqc = "select * from tik_firmas where Usuario = '".$_SESSION["UserID"]."' and FIND_IN_SET('".$_SESSION["CodigoDepto"]."',Departamentos)";
 				} else {
-					$sqc = "select * from tik_firmas where Usuario = '".$db["De"]."' and Departamentos IN (".$_SESSION["CodigoDepto"].")";
+					$sqc = "select * from tik_firmas where Usuario = '".$db["De"]."' and FIND_IN_SET('".$_SESSION["CodigoDepto"]."',Departamentos)";
 				}
 				$rsc = CustomQuery($sqc);
 				if( $dc = db_fetch_array($rsc) ) {
