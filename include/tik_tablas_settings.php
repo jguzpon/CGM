@@ -147,7 +147,7 @@ $tdatatik_tablas[".rowHighlite"] = true;
 
 
 
-																								
+																		
 
 $tdatatik_tablas[".ajaxCodeSnippetAdded"] = false;
 

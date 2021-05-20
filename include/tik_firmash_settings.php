@@ -141,7 +141,7 @@ $tdatatik_firmash[".rowHighlite"] = true;
 
 
 
-																								
+																		
 
 $tdatatik_firmash[".ajaxCodeSnippetAdded"] = false;
 

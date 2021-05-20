@@ -147,7 +147,7 @@ $tdatatik_chat[".rowHighlite"] = true;
 
 
 
-																																																
+																																				
 
 $tdatatik_chat[".ajaxCodeSnippetAdded"] = false;
 

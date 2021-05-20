@@ -141,7 +141,7 @@ $tdataadmin_rights[".rowHighlite"] = true;
 
 
 
-																								
+																		
 
 $tdataadmin_rights[".ajaxCodeSnippetAdded"] = false;
 

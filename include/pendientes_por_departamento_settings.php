@@ -167,7 +167,7 @@ $tdatapendientes_por_departamento[".isUseAjaxSuggest"] = true;
 
 
 
-																								
+																		
 
 $tdatapendientes_por_departamento[".ajaxCodeSnippetAdded"] = false;
 

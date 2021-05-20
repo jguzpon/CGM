@@ -129,7 +129,7 @@ $tdatampcchat[".hasEvents"] = false;
 $tdatampcchat[".tableType"] = "dashboard";
 
 
-								
+						
 $tdatampcchat[".addPageEvents"] = false;
 
 $tdatampcchat[".isUseAjaxSuggest"] = true;

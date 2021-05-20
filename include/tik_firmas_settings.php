@@ -144,7 +144,7 @@ $tdatatik_firmas[".rowHighlite"] = true;
 
 
 
-																								
+																		
 
 $tdatatik_firmas[".ajaxCodeSnippetAdded"] = false;
 

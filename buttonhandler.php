@@ -52,16 +52,6 @@ if($buttId=='Iniciar_Proceso')
 	}
 	buttonHandler_Iniciar_Proceso($params);
 }
-if($buttId=='Autorizar_Memo')
-{
-	//  for login page users table can be turned off
-	if( $table != GLOBAL_PAGES )
-	{
-		require_once("include/". GetTableURL( $table ) ."_variables.php");
-		$cipherer = new RunnerCipherer( $table );
-	}
-	buttonHandler_Autorizar_Memo($params);
-}
 if($buttId=='VoBo_Memo')
 {
 	//  for login page users table can be turned off
@@ -92,26 +82,6 @@ if($buttId=='Print_Memo')
 	}
 	buttonHandler_Print_Memo($params);
 }
-if($buttId=='IniciarPA')
-{
-	//  for login page users table can be turned off
-	if( $table != GLOBAL_PAGES )
-	{
-		require_once("include/". GetTableURL( $table ) ."_variables.php");
-		$cipherer = new RunnerCipherer( $table );
-	}
-	buttonHandler_IniciarPA($params);
-}
-if($buttId=='FinlizarPA')
-{
-	//  for login page users table can be turned off
-	if( $table != GLOBAL_PAGES )
-	{
-		require_once("include/". GetTableURL( $table ) ."_variables.php");
-		$cipherer = new RunnerCipherer( $table );
-	}
-	buttonHandler_FinlizarPA($params);
-}
 if($buttId=='Aut_otr_Memo')
 {
 	//  for login page users table can be turned off
@@ -121,6 +91,16 @@ if($buttId=='Aut_otr_Memo')
 		$cipherer = new RunnerCipherer( $table );
 	}
 	buttonHandler_Aut_otr_Memo($params);
+}
+if($buttId=='AutorizarMemo')
+{
+	//  for login page users table can be turned off
+	if( $table != GLOBAL_PAGES )
+	{
+		require_once("include/". GetTableURL( $table ) ."_variables.php");
+		$cipherer = new RunnerCipherer( $table );
+	}
+	buttonHandler_AutorizarMemo($params);
 }
 
 
@@ -219,115 +199,6 @@ while( $data = $button->getNextSelectedRecord() ) {
 	}
 }
 //fclose($salida);
-;
-	RunnerContext::pop();
-	echo my_json_encode($result);
-	$button->deleteTempFiles();
-}
-function buttonHandler_Autorizar_Memo($params)
-{
-	global $strTableName;
-	$result = array();
-
-	// create new button object for get record data
-	$params["keys"] = (array)my_json_decode(postvalue('keys'));
-	$params["isManyKeys"] = postvalue('isManyKeys');
-	$params["location"] = postvalue('location');
-
-	$button = new Button($params);
-	$ajax = $button; // for examle from HELP
-	$keys = $button->getKeys();
-
-	$masterData = false;
-	if ( isset($params['masterData']) && count($params['masterData']) > 0 )
-	{
-		$masterData = $params['masterData'];
-	}
-	else if ( isset($params["masterTable"]) )
-	{
-		$masterData = $button->getMasterData($params["masterTable"]);
-	}
-	
-	$contextParams = array();
-	if ( $params["location"] == PAGE_VIEW )
-	{
-		$contextParams["data"] = $button->getRecordData();
-		$contextParams["masterData"] = $masterData;
-	}
-	else if ( $params["location"] == PAGE_EDIT )
-	{
-		$contextParams["data"] = $button->getRecordData();
-		$contextParams["newData"] = $params['fieldsData'];
-		$contextParams["masterData"] = $masterData;
-	}
-	else if ( $params["location"] == "grid" )
-	{	
-		$params["location"] = "list";
-		$contextParams["data"] = $button->getRecordData();
-		$contextParams["newData"] = $params['fieldsData'];
-		$contextParams["masterData"] = $masterData;
-	}
-	else 
-	{
-		$contextParams["masterData"] = $masterData;
-	}
-
-	RunnerContext::push( new RunnerContextItem( $params["location"], $contextParams));
-	
-
-// Place event code here.
-// Use "Add Action" button to add code snippets.
-//$salida = @fopen("d:\\salida.txt", "w+") or die ("No se pudo crear archivo temporal");
-//fwrite($salida,"Inicio".PHP_EOL);
-// Put your code here.
-$hoy = strftime('%Y-%m-%d');
-$pin = $params["pin"];
-//echo "<script>alert('pin ".$pin."')</script>";
-
-while($dataa = $button->getNextSelectedRecord()) {
-	if( $dataa["Estado"] == 'Pendiente' || $dataa["Estado"] == 'Autorizado' ) {
-		//  Obtener informacion del memorando
-		$sqlb = "select * from tik_memorando a where a.NoMemorando=".$dataa["NoMemorando"];
-		$rsb = CustomQuery($sqlb);
-		if( $db = db_fetch_array($rsb) ) {
-			if( $db["RequiereAutorizacion"] == 1 && empty($db["VoBo"]) ) {
-				$result["txt"] = "Memorando no está autorizado";
-				$result["accion"] = "R";
-			} else {
-				// Obtener firma digital del solicitante
-				// Verificar quien está autorizando
-				//$sqc = "select * from tik_firmas where Usuario = '".$db["De"]."' and FIND_IN_SET('".$_SESSION["CodigoDepto"]."',Departamentos)";
-				$sqc = "select * from tik_firmas where Usuario = '".$db["De"]."'";
-				$rsc = CustomQuery($sqc);
-				if( $dc = db_fetch_array($rsc) ) {
-					if( !empty($dc["ValidoHasta"]) && $hoy > $dc["ValidoHasta"] ) {
-						$result["txt"] = "Su PIN ha vencido, verificar";
-						$result["accion"] = "R";
-					} else {
-//echo "<script>alert('Firma Digital ".$dc["FirmaDigital"]." pin ".$pin."')</script>";
-						if( $dc["FirmaDigital"] == $pin ) {
-							$sqla = "update tik_memorando set FirmaDigital = '".$pin."', Estado = 'Firmado',";
-							$sqla .= " AutorizadoPor = '".$dc["Usuario"]."'";
-							$sqla .= " where NoMemorando = ".$dataa["NoMemorando"];
-echo "<script>alert('sqla ".$sqla." pin ".$pin."')</script>";
-	//fwrite($salida,"sqla ".$sqla.PHP_EOL);
-							CustomQuery($sqla);
-							$result["txt"] = "Memorando(s) Aprobado(s)!";
-							$result["accion"] = "A";
-						} else {
-							$result["txt"] = "PIN incorrecto!";
-							$result["accion"] = "R";
-						}
-					}
-				}
-			}
-		} else {
-			$result["txt"] = "Error en captura de Memorando";
-			$result["accion"] = "R";
-		}
-	}
-}
-//fclose($salida)
 ;
 	RunnerContext::pop();
 	echo my_json_encode($result);
@@ -702,139 +573,6 @@ if( $da = $button->getCurrentRecord() ) {
 	echo my_json_encode($result);
 	$button->deleteTempFiles();
 }
-function buttonHandler_IniciarPA($params)
-{
-	global $strTableName;
-	$result = array();
-
-	// create new button object for get record data
-	$params["keys"] = (array)my_json_decode(postvalue('keys'));
-	$params["isManyKeys"] = postvalue('isManyKeys');
-	$params["location"] = postvalue('location');
-
-	$button = new Button($params);
-	$ajax = $button; // for examle from HELP
-	$keys = $button->getKeys();
-
-	$masterData = false;
-	if ( isset($params['masterData']) && count($params['masterData']) > 0 )
-	{
-		$masterData = $params['masterData'];
-	}
-	else if ( isset($params["masterTable"]) )
-	{
-		$masterData = $button->getMasterData($params["masterTable"]);
-	}
-	
-	$contextParams = array();
-	if ( $params["location"] == PAGE_VIEW )
-	{
-		$contextParams["data"] = $button->getRecordData();
-		$contextParams["masterData"] = $masterData;
-	}
-	else if ( $params["location"] == PAGE_EDIT )
-	{
-		$contextParams["data"] = $button->getRecordData();
-		$contextParams["newData"] = $params['fieldsData'];
-		$contextParams["masterData"] = $masterData;
-	}
-	else if ( $params["location"] == "grid" )
-	{	
-		$params["location"] = "list";
-		$contextParams["data"] = $button->getRecordData();
-		$contextParams["newData"] = $params['fieldsData'];
-		$contextParams["masterData"] = $masterData;
-	}
-	else 
-	{
-		$contextParams["masterData"] = $masterData;
-	}
-
-	RunnerContext::push( new RunnerContextItem( $params["location"], $contextParams));
-	
-
-// Place event code here.
-// Use "Add Action" button to add code snippets.
-
-// Put your code here.
-while( $data = $button->getNextSelectedRecord() ) {
-	if( $data['Estado'] == 'Pendiente' ) {
-		$sql = "update tik_registroacciond_pa set Estado = 'En Proceso', Usuario = '".$_SESSION["UserID"];
-		$sql = ", FechaSistema = '".strftime("%Y-%m-%d %H:%M:%S")."'";
-		$sql .= "' where Tipo = '".$data['Tipo']."' and Solicitud = ".$data['Solicitud']." and No = ".$data['No'];
-		CustomQuery($sql);
-		$result["txt"] = $params["txt"]."En Proceso!";
-	}
-}
-;
-	RunnerContext::pop();
-	echo my_json_encode($result);
-	$button->deleteTempFiles();
-}
-function buttonHandler_FinlizarPA($params)
-{
-	global $strTableName;
-	$result = array();
-
-	// create new button object for get record data
-	$params["keys"] = (array)my_json_decode(postvalue('keys'));
-	$params["isManyKeys"] = postvalue('isManyKeys');
-	$params["location"] = postvalue('location');
-
-	$button = new Button($params);
-	$ajax = $button; // for examle from HELP
-	$keys = $button->getKeys();
-
-	$masterData = false;
-	if ( isset($params['masterData']) && count($params['masterData']) > 0 )
-	{
-		$masterData = $params['masterData'];
-	}
-	else if ( isset($params["masterTable"]) )
-	{
-		$masterData = $button->getMasterData($params["masterTable"]);
-	}
-	
-	$contextParams = array();
-	if ( $params["location"] == PAGE_VIEW )
-	{
-		$contextParams["data"] = $button->getRecordData();
-		$contextParams["masterData"] = $masterData;
-	}
-	else if ( $params["location"] == PAGE_EDIT )
-	{
-		$contextParams["data"] = $button->getRecordData();
-		$contextParams["newData"] = $params['fieldsData'];
-		$contextParams["masterData"] = $masterData;
-	}
-	else if ( $params["location"] == "grid" )
-	{	
-		$params["location"] = "list";
-		$contextParams["data"] = $button->getRecordData();
-		$contextParams["newData"] = $params['fieldsData'];
-		$contextParams["masterData"] = $masterData;
-	}
-	else 
-	{
-		$contextParams["masterData"] = $masterData;
-	}
-
-	RunnerContext::push( new RunnerContextItem( $params["location"], $contextParams));
-	// Put your code here.
-while( $data = $button->getNextSelectedRecord() ) {
-	if( $data['Estado'] == 'En Proceso' ) {
-		$sql = "update tik_registroacciond_pa set Estado = 'Finalizado', Usuario = '".$_SESSION["UserID"];
-		$sql = ", FechaSistema = '".strftime("%Y-%m-%d %H:%M:%S")."'";
-		$sql .= "' where Tipo = '".$data['Tipo']."' and Solicitud = ".$data['Solicitud']." and No = ".$data['No'];
-		CustomQuery($sql);
-		$result["txt"] = $params["txt"]."Finalizado!";
-	}
-}
-;
-	RunnerContext::pop();
-	echo my_json_encode($result);
-	$button->deleteTempFiles();
-}
 function buttonHandler_Aut_otr_Memo($params)
 {
 	global $strTableName;
@@ -944,6 +682,114 @@ while($dataa = $button->getCurrentRecord()) {
 }
 $result["txt"] = $msg;
 $result["sts"] = $sts;
+//fclose($salida)
+;
+	RunnerContext::pop();
+	echo my_json_encode($result);
+	$button->deleteTempFiles();
+}
+function buttonHandler_AutorizarMemo($params)
+{
+	global $strTableName;
+	$result = array();
+
+	// create new button object for get record data
+	$params["keys"] = (array)my_json_decode(postvalue('keys'));
+	$params["isManyKeys"] = postvalue('isManyKeys');
+	$params["location"] = postvalue('location');
+
+	$button = new Button($params);
+	$ajax = $button; // for examle from HELP
+	$keys = $button->getKeys();
+
+	$masterData = false;
+	if ( isset($params['masterData']) && count($params['masterData']) > 0 )
+	{
+		$masterData = $params['masterData'];
+	}
+	else if ( isset($params["masterTable"]) )
+	{
+		$masterData = $button->getMasterData($params["masterTable"]);
+	}
+	
+	$contextParams = array();
+	if ( $params["location"] == PAGE_VIEW )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == PAGE_EDIT )
+	{
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else if ( $params["location"] == "grid" )
+	{	
+		$params["location"] = "list";
+		$contextParams["data"] = $button->getRecordData();
+		$contextParams["newData"] = $params['fieldsData'];
+		$contextParams["masterData"] = $masterData;
+	}
+	else 
+	{
+		$contextParams["masterData"] = $masterData;
+	}
+
+	RunnerContext::push( new RunnerContextItem( $params["location"], $contextParams));
+	// Put your code here.
+//$salida = @fopen("d:\\salida.txt", "w+") or die ("No se pudo crear archivo temporal");
+//fwrite($salida,"Inicio".PHP_EOL);
+// Put your code here.
+$result["txt"] = $params["txt"]." Autorizado(s)!";
+$result["accion"] = "";
+$pin = $params["pin"];
+$hoy = strftime('%Y-%m-%d');
+//echo "<script>alert('pin ".$pin."')</script>";
+
+while($dataa = $button->getNextSelectedRecord()) {
+	if( $dataa["Estado"] == 'Pendiente' || $dataa["Estado"] == 'Autorizado' ) {
+		//  Obtener informacion del memorando
+		$sqlb = "select * from tik_memorando a where a.NoMemorando=".$dataa["NoMemorando"];
+		$rsb = CustomQuery($sqlb);
+		if( $db = db_fetch_array($rsb) ) {
+			if( $db["RequiereAutorizacion"] == 1 && empty($db["VoBo"]) ) {
+				$result["txt"] = "Memorando no está autorizado";
+				$result["accion"] = "R";
+			} else {
+				// Obtener firma digital del solicitante
+				// Verificar quien está autorizando
+				//$sqc = "select * from tik_firmas where Usuario = '".$db["De"]."' and FIND_IN_SET('".$_SESSION["CodigoDepto"]."',Departamentos)";
+				$sqc = "select * from tik_firmas where Usuario = '".$db["De"]."'";
+				$rsc = CustomQuery($sqc);
+				if( $dc = db_fetch_array($rsc) ) {
+					if( !empty($dc["ValidoHasta"]) && $hoy > $dc["ValidoHasta"] ) {
+						$result["txt"] = "Su PIN ha vencido, verificar";
+						$result["accion"] = "R";
+					} else {
+//echo "<script>alert('Firma Digital ".$dc["FirmaDigital"]." pin ".$pin."')</script>";
+						if( $dc["FirmaDigital"] == $pin ) {
+							$sqla = "update tik_memorando set FirmaDigital = '".$pin."', Estado = 'Firmado',";
+							$sqla .= " AutorizadoPor = '".$dc["Usuario"]."'";
+							$sqla .= " where NoMemorando = ".$dataa["NoMemorando"];
+//echo "<script>alert('sqla ".$sqla." pin ".$pin."')</script>";
+	//fwrite($salida,"sqla ".$sqla.PHP_EOL);
+							CustomQuery($sqla);
+							$result["txt"] = "Memorando(s) Autorizado(s)!";
+							$result["accion"] = "A";
+						} else {
+							$result["txt"] = "PIN incorrecto!";
+							$result["accion"] = "R";
+						}
+					}
+				}
+			}
+		} else {
+			$result["txt"] = "Error en captura de Memorando";
+			$result["accion"] = "R";
+		}
+	}
+}
 //fclose($salida)
 ;
 	RunnerContext::pop();

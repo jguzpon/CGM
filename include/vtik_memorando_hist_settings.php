@@ -177,7 +177,7 @@ $tdatavtik_memorando_hist[".rowHighlite"] = true;
 
 
 
-																								
+																		
 
 $tdatavtik_memorando_hist[".ajaxCodeSnippetAdded"] = false;
 

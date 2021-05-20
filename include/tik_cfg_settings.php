@@ -141,7 +141,7 @@ $tdatatik_cfg[".rowHighlite"] = true;
 
 
 
-																								
+																		
 
 $tdatatik_cfg[".ajaxCodeSnippetAdded"] = false;
 

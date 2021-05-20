@@ -171,9 +171,6 @@ pdfDocument = {
 				
 			{"text":"","hidden":"{$item_hide_delete}"},
 				
-				
-			{"text":""},
-				
 		  ],
   "border": [ false, false, false, false ],
               "alignment": 'left',
@@ -208,6 +205,37 @@ pdfDocument = {
   },
 
 											],
+								[
+												{
+	cellId: 'c',
+	col:0,
+	row:0,
+			style: 'cell',
+		
+		
+	//	static colspan/rowspan
+					colSpan: 2,
+		
+			
+	
+	
+			"text": [
+		
+				
+			{"text":""},
+				
+		  ],
+  "border": [ false, false, false, false ],
+              "alignment": 'left',
+  },
+
+																		{ 
+				cellId: 'c',
+				row:  0,
+				col:  1,
+				text: ''
+			},
+							],
 					]
 	}
 }

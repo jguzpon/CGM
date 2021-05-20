@@ -138,7 +138,7 @@ $tdatatik_memorando_l[".rowHighlite"] = true;
 
 
 
-																																																
+																																				
 
 $tdatatik_memorando_l[".ajaxCodeSnippetAdded"] = false;
 

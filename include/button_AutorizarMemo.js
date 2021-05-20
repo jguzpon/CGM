@@ -1,0 +1,6 @@
+
+Runner.buttonEvents["AutorizarMemo"]=function(pageObj,proxy,pageid){pageObj.buttonNames[pageObj.buttonNames.length]='AutorizarMemo';if(!pageObj.buttonEventBefore['AutorizarMemo']){pageObj.buttonEventBefore['AutorizarMemo']=function(params,ctrl,pageObj,proxy,pageid,rowData,row,submit){var ajax=ctrl;params["txt"]="Memorando(s)";ajax.setMessage("Autorizando...");var gpin=prompt("Introduzca el PIN de Autorizacion");if(gpin==""){return false;}else{params["pin"]=gpin;}}}
+if(!pageObj.buttonEventAfter['AutorizarMemo']){pageObj.buttonEventAfter['AutorizarMemo']=function(result,ctrl,pageObj,proxy,pageid,rowData,row,params){var ajax=ctrl;var message=result["txt"]+" !!!";var accion=result["accion"];if(accion=='A'){location.reload();}
+ajax.setMessage(message);}}
+$('a[id="AutorizarMemo"]').each(function(){if($(this).closest('.gridRowAdd').length){return;}
+this.id="AutorizarMemo"+"_"+Runner.genId();var button_AutorizarMemo=new Runner.form.Button({id:this.id,btnName:"AutorizarMemo"});button_AutorizarMemo.init({args:[pageObj,proxy,pageid]});});};

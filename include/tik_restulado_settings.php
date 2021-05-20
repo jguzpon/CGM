@@ -150,7 +150,7 @@ $tdatatik_restulado[".rowHighlite"] = true;
 
 
 
-																																																																								
+																																																						
 
 $tdatatik_restulado[".ajaxCodeSnippetAdded"] = false;
 
