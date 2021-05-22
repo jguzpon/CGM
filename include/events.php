@@ -30,6 +30,7 @@ class class_GlobalEvents extends eventsBase
 		$this->events["BeforeLogin"]=true;
 
 
+
 //	onscreen events
 
 
@@ -196,6 +197,31 @@ return true;
 ;		
 } // function BeforeLogin
 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
 		
 		
 		
